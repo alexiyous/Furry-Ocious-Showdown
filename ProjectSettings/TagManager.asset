@@ -10,11 +10,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bridge
   - Water
   - UI
-  - 
-  - 
+  - Player Bullet
+  - Player
   - 
   - 
   - 
@@ -42,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bridge
+    uniqueID: 2910207467
+    locked: 0
+  - name: Player
+    uniqueID: 2403481553
+    locked: 0
+  - name: Player Bullet
+    uniqueID: 2853025089
     locked: 0
