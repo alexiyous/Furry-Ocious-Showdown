@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Building
+  - Drone Aim
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - UI
   - Player Bullet
   - Player
-  - 
-  - 
+  - Enemy
+  - Tower Bullet
   - 
   - 
   - 
@@ -51,4 +52,10 @@ TagManager:
     locked: 0
   - name: Player Bullet
     uniqueID: 2853025089
+    locked: 0
+  - name: Tower
+    uniqueID: 1524457273
+    locked: 0
+  - name: Tower Bullet
+    uniqueID: 2399085515
     locked: 0

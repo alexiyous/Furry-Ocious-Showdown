@@ -14,6 +14,7 @@ public class DroneController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (player == null) return;
         // Calculate the direction from the object to the player.
         Vector3 directionToPlayer = player.position - transform.position;
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroneAim : MonoBehaviour
+public class DroneAim : DroneController
 {
     private Transform aimTransform;
     [SerializeField] private GameObject bulletPrefab;
@@ -17,7 +17,6 @@ public class DroneAim : MonoBehaviour
     void Update()
     {
         HandleAiming();
-        HandleShooting();
     }
 
     private void HandleAiming()
@@ -29,14 +28,7 @@ public class DroneAim : MonoBehaviour
         aimTransform.eulerAngles = new Vector3(0, 0, angle);
     }
 
-    private void HandleShooting()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(bulletPrefab, transform.position, transform.rotation);
-        }
-    }
-
+   
     private Vector3 GetMouseWorldPosition()
     {
         Vector3 vec = GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);

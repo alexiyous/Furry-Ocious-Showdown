@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "TokenSlotSO", menuName = "ScriptableObjects/TokenSlotSO", order = 1)]
+public class TokenSlotSO : ScriptableObject
+{
+    public Sprite sprite;
+    public ComponentType bulletType;
+    public GameObject[] attackTechniques;
+    [HideInInspector] public DroneAim droneAim;
+
+    public void Attack(int index)
+    {
+        /*Instantiate(attackTechniques[index - 1], droneAim.transform.position, droneAim.transform.rotation);*/
+        Debug.Log($"Attack {index} {bulletType}");
+    }
+}
+
+public enum ComponentType
+{
+    None,
+    Baut,
+    Gear,
+    GunPowder
+}

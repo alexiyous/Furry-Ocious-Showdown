@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -15,11 +17,21 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    public static event Action Attack = delegate { };
+
+    private EventSystem eventSystem;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+        eventSystem = EventSystem.current;
+    }
+
+    private void Update()
+    {
+        Shoot();
     }
 
     // Update is called once per frame
@@ -49,8 +61,16 @@ public class PlayerController : MonoBehaviour
         }
 
         Turn();
-
     }
+
+    private void Shoot()
+    {
+        if (Input.GetMouseButtonDown(0) && !GameManager.instance.beginGame && !eventSystem.IsPointerOverGameObject())
+        {
+            Attack?.Invoke();
+        }
+    }
+
 
     private bool TryMove(Vector2 direction)
     {
