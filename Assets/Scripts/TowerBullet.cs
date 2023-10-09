@@ -11,7 +11,7 @@ public abstract class TowerBullet : MonoBehaviour
     public float bulletSpeed = 5f;
     public float damage;
     [HideInInspector] public Vector2 direction;
-    public BulletUpgrade bulletLevel = BulletUpgrade.Level1;
+    public LevelUpgrade bulletLevel = LevelUpgrade.Level1;
 
     [HideInInspector] public Transform target;
 
@@ -25,16 +25,16 @@ public abstract class TowerBullet : MonoBehaviour
         direction = new Vector2();
     }
 
-    public virtual void SetTarget(Transform _target)
-    {
-        target = _target;
-    }   
 
     // Update is called once per frame
     public void FixedUpdate()
     {
         Move();
     }
+    public virtual void SetTarget(Transform _target)
+    {
+        target = _target;
+    }   
 
     public abstract void Move();
 
@@ -49,7 +49,7 @@ public abstract class TowerBullet : MonoBehaviour
     }
 }
 
-public enum BulletUpgrade
+public enum LevelUpgrade
 {
     Level1,
     Level2,

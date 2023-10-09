@@ -6,21 +6,21 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Transform turretRotationPoint;
-    [SerializeField] private LayerMask enemyLayerMask;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform firingPoint;
+    public Transform turretRotationPoint;
+    public LayerMask enemyLayerMask;
+    public GameObject bulletPrefab;
+    public Transform firingPoint;
 
     [Header("Attributes")]
-    [SerializeField] private float targetingRange;
-    [SerializeField] private float rotationSpeed = 5f;
-    [SerializeField] private float bps = 1f; // Bullets per second
+    public float targetingRange;
+    public float rotationSpeed = 5f;
+    public float bps = 1f; // Bullets per second
 
-    private Transform target;
-    private float timeUntilFire;
+    [HideInInspector] public Transform target;
+    [HideInInspector] public float timeUntilFire;
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (target == null)
         {
@@ -46,14 +46,14 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public virtual void Shoot()
     {
-        GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
+        GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, turretRotationPoint.rotation);
         TowerBullet bulletScript = bulletObj.GetComponent<TowerBullet>();
         bulletScript.SetTarget(target);
     }
 
-    private void FindTarget()
+    public void FindTarget()
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, 
             (Vector2)transform.position, 0f, enemyLayerMask);
@@ -64,12 +64,12 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private bool CheckTargetIsInRange()
+    public bool CheckTargetIsInRange()
     {
         return Vector2.Distance(target.position, transform.position) <= targetingRange;
     }
 
-    private void RotateTowardsTarget()
+    public virtual void RotateTowardsTarget()
     {
         float angle = Mathf.Atan2(target.position.y - transform.position.y,
                        target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
@@ -80,7 +80,7 @@ public class Tower : MonoBehaviour
 
     }
 
-    private void OnDrawGizmosSelected()
+    public void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
