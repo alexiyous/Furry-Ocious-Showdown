@@ -159,7 +159,7 @@ MonoBehaviour:
   fireRate: 0.4
   bulletCount: 4
   inaccuracy: 1
-  bulletPrefab: {fileID: 1983912651402021026, guid: 175a0c48ef69c2e4192cc6e9cc99c68c, type: 3}
+  bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
   isAimed: 0
   startPoint: 1
 --- !u!114 &-2593578442455658969
@@ -228,7 +228,7 @@ MonoBehaviour:
   fireRate: 0.4
   bulletCount: 4
   inaccuracy: 1
-  bulletPrefab: {fileID: 1983912651402021026, guid: 175a0c48ef69c2e4192cc6e9cc99c68c, type: 3}
+  bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
   isAimed: 0
   startPoint: 1
 --- !u!114 &-741621621376644785
@@ -254,7 +254,7 @@ MonoBehaviour:
   fireRate: 0.4
   bulletCount: 4
   inaccuracy: 1
-  bulletPrefab: {fileID: 1983912651402021026, guid: 175a0c48ef69c2e4192cc6e9cc99c68c, type: 3}
+  bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
   isAimed: 0
   startPoint: 1
 --- !u!114 &-696439371280762659
@@ -302,7 +302,7 @@ MonoBehaviour:
   fireRate: 0.4
   bulletCount: 4
   inaccuracy: 1
-  bulletPrefab: {fileID: 1983912651402021026, guid: 175a0c48ef69c2e4192cc6e9cc99c68c, type: 3}
+  bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
   isAimed: 0
   startPoint: 1
 --- !u!114 &-276664889312341693
@@ -467,7 +467,7 @@ MonoBehaviour:
   fireRate: 0.2
   bulletCount: 6
   inaccuracy: 3
-  bulletPrefab: {fileID: 8047041956205088625, guid: 7f9cdbaea5f46664d9824904acc58d89, type: 3}
+  bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
   isAimed: 1
   startPoint: 0
 --- !u!114 &1359780149429957817
@@ -538,7 +538,7 @@ MonoBehaviour:
   fireRate: 0.2
   bulletCount: 6
   inaccuracy: 3
-  bulletPrefab: {fileID: 8047041956205088625, guid: 7f9cdbaea5f46664d9824904acc58d89, type: 3}
+  bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
   isAimed: 1
   startPoint: 0
 --- !u!114 &3942480064327803997
@@ -585,7 +585,7 @@ MonoBehaviour:
   fireRate: 0.2
   bulletCount: 6
   inaccuracy: 1
-  bulletPrefab: {fileID: 8047041956205088625, guid: 7f9cdbaea5f46664d9824904acc58d89, type: 3}
+  bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
   isAimed: 1
   startPoint: 0
 --- !u!114 &6044929450869358221
@@ -724,6 +724,6 @@ MonoBehaviour:
   fireRate: 0.2
   bulletCount: 6
   inaccuracy: 1
-  bulletPrefab: {fileID: 8047041956205088625, guid: 7f9cdbaea5f46664d9824904acc58d89, type: 3}
+  bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
   isAimed: 1
   startPoint: 0

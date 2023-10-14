@@ -119,7 +119,7 @@ MonoBehaviour:
   <deathEffect>k__BackingField: {fileID: 0}
   EnemyIdleBase: {fileID: 11400000, guid: 40874ff107b15a24aa49c38e25b50c14, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: c3ff45034612cef4a98d60def79e2296, type: 2}
-  EnemyAttackBase: {fileID: 11400000, guid: 69411e43f3d46b845927020f74f4fd97, type: 2}
+  EnemyAttackBase: {fileID: 11400000, guid: 34c3ebe2323d3dc40a34216c1d4c9fd2, type: 2}
 --- !u!212 &4882836075732901057
 SpriteRenderer:
   m_ObjectHideFlags: 0

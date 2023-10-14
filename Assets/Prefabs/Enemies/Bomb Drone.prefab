@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3049255663114454526
 Transform:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   <deathEffect>k__BackingField: {fileID: 0}
   EnemyIdleBase: {fileID: 11400000, guid: 47a1972f4dcfdda4d871f4a2980baaf7, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: dd2607c2412b0ef429fa213b5083e576, type: 2}
-  EnemyAttackBase: {fileID: 11400000, guid: b7e16982d6b76ee4ebba141bea6386b9, type: 2}
+  EnemyAttackBase: {fileID: 11400000, guid: 34c3ebe2323d3dc40a34216c1d4c9fd2, type: 2}
 --- !u!50 &3049255663114454527
 Rigidbody2D:
   serializedVersion: 4

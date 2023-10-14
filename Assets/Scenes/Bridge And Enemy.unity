@@ -174,10 +174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4882836075732901084, guid: 55e9ef1cda2ff81459b6bb528436c8bf, type: 3}
-      propertyPath: EnemyChaseBase
-      value: 
-      objectReference: {fileID: 11400000, guid: c3ff45034612cef4a98d60def79e2296, type: 2}
     - target: {fileID: 4882836075732901087, guid: 55e9ef1cda2ff81459b6bb528436c8bf, type: 3}
       propertyPath: m_Name
       value: Rocket Enemy (4)
@@ -261,12 +257,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233887476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7689533, y: -1.1910744, z: 0}
-  m_LocalScale: {x: 0.29425272, y: 0.72864586, z: 0}
+  m_LocalPosition: {x: 0.40700006, y: -0.50499994, z: 0}
+  m_LocalScale: {x: 0.043251317, y: 0.3089363, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 987610586}
-  m_RootOrder: 2
+  m_Father: {fileID: 1249142208}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242699583
 GameObject:
@@ -548,7 +544,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 813043940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8321b1a3dd65144092f0537254df517, type: 3}
+  m_Script: {fileID: 11500000, guid: a40432dc7ce2d04468da29ba0973bd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &813043942
@@ -672,8 +668,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1249142208}
-  - {fileID: 1988166133}
-  - {fileID: 233887478}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -904,7 +898,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.8033237, y: 2.3585634, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1988166133}
+  - {fileID: 233887478}
   m_Father: {fileID: 987610586}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1172,7 +1168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.5660378, g: 0.509434, b: 0.509434, a: 1}
   m_FlipX: 0
@@ -1245,31 +1241,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55e9ef1cda2ff81459b6bb528436c8bf, type: 3}
---- !u!1 &1597834958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3157312780337812251, guid: 534abd33b4297834b83ed32cd2676ae9, type: 3}
-  m_PrefabInstance: {fileID: 3157312780649103688}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1597834963
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597834958}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1778036735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,13 +1590,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988166132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16328049, y: -0.047171593, z: 0}
-  m_LocalScale: {x: 1.6798148, y: 0.7023027, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.024000105, y: -0.020000137, z: 0}
+  m_LocalScale: {x: 0.2469109, y: 0.29776716, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 987610586}
-  m_RootOrder: 1
+  m_Father: {fileID: 1249142208}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1988166134
 SpriteRenderer:
@@ -2018,10 +1989,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb Drone
       objectReference: {fileID: 0}
-    - target: {fileID: 3049255663114454523, guid: 875b6e662cbf5144d950589ff222ae00, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3049255663114454526, guid: 875b6e662cbf5144d950589ff222ae00, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -2078,10 +2045,6 @@ PrefabInstance:
     - target: {fileID: 3157312780337812251, guid: 534abd33b4297834b83ed32cd2676ae9, type: 3}
       propertyPath: m_Name
       value: Tank
-      objectReference: {fileID: 0}
-    - target: {fileID: 3157312780337812253, guid: 534abd33b4297834b83ed32cd2676ae9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3157312780337812254, guid: 534abd33b4297834b83ed32cd2676ae9, type: 3}
       propertyPath: m_RootOrder

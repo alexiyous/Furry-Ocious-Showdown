@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1983912651402021036}
   - component: {fileID: 1983912651402021033}
   - component: {fileID: 5503301048967110721}
-  - component: {fileID: 434684343501950745}
   - component: {fileID: 258842514562165030}
   - component: {fileID: 328453767260371964}
   - component: {fileID: 3193924809994478060}
+  - component: {fileID: 3708662731806205886}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -121,19 +121,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.31
---- !u!114 &434684343501950745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983912651402021026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8ba73b2e38ada4f9ce19d84e027b91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDestroy: 2
 --- !u!114 &258842514562165030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +169,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d118f4002ef4847b0e8a187d356512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3708662731806205886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983912651402021026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7359a9e88266321439eebb8ce1b3a71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 2
 --- !u!1 &1983912651781243194
 GameObject:
   m_ObjectHideFlags: 0

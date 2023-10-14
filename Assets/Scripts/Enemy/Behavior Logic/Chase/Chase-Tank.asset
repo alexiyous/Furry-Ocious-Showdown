@@ -16,9 +16,9 @@ MonoBehaviour:
   fireRateMain: 1
   bulletCountMain: 1
   inaccuracyMain: 1
-  bulletPrefabMain: {fileID: 1983912651402021026, guid: e19026af6d002ec47929fb2c3471e1a8, type: 3}
+  bulletPrefabMain: {fileID: 1983912651402021026, guid: e2c0a75e0ff70c84f9e5c73b349762e6, type: 3}
   reloadSecondaryTime: 2
   fireRateSecondary: 0.2
   bulletCountSecondary: 5
   inaccuracySecondary: 1.9
-  bulletPrefabSecondary: {fileID: 8047041956205088625, guid: 3cdca8e03d1125c479488391f8c82abf, type: 3}
+  bulletPrefabSecondary: {fileID: 8047041956205088625, guid: 3952ba94f1a36c241a863de4a61eeaac, type: 3}
