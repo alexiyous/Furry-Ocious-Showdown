@@ -45,7 +45,10 @@ public abstract class TowerBullet : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

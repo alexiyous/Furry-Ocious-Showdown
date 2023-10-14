@@ -15,6 +15,8 @@ public class Tower : MonoBehaviour
     public float targetingRange;
     public float rotationSpeed = 5f;
     public float bps = 1f; // Bullets per second
+    public Vector2 targetingSize = new Vector2(4f, 4f); // Adjust the size as needed
+    public Vector3 centerOffset = new Vector3(0f, 0f, 0f); // Adjust the offset as needed
 
     [HideInInspector] public Transform target;
     [HideInInspector] public float timeUntilFire;
@@ -53,20 +55,48 @@ public class Tower : MonoBehaviour
         bulletScript.SetTarget(target);
     }
 
-    public void FindTarget()
+    public virtual void FindTarget()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, 
-            (Vector2)transform.position, 0f, enemyLayerMask);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + centerOffset, targetingSize, 0f, enemyLayerMask);
 
-        if (hits.Length > 0)
+        if (colliders.Length > 0)
         {
-            target = hits[0].transform;
+            // Find the closest target within the box
+            float closestDistance = float.MaxValue;
+            Collider2D closestTarget = null;
+
+            foreach (Collider2D collider in colliders)
+            {
+                float distance = Vector2.Distance(transform.position, collider.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestTarget = collider;
+                }
+            }
+
+            if (closestTarget != null)
+            {
+                target = closestTarget.transform;
+            }
         }
     }
 
-    public bool CheckTargetIsInRange()
+    public virtual bool CheckTargetIsInRange()
     {
-        return Vector2.Distance(target.position, transform.position) <= targetingRange;
+        if (target == null)
+        {
+            return false;
+        }
+
+        // Calculate the half-size of the box-shaped detection area
+        Vector2 halfSize = targetingSize * 0.5f;
+
+        // Calculate the bounds of the box-shaped detection area
+        Bounds detectionBounds = new Bounds(transform.position + centerOffset, targetingSize);
+
+        // Check if the target's position is within the detection bounds
+        return detectionBounds.Contains(target.position);
     }
 
     public virtual void RotateTowardsTarget()
@@ -80,10 +110,10 @@ public class Tower : MonoBehaviour
 
     }
 
-    public void OnDrawGizmosSelected()
+    public virtual void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+        Handles.DrawWireCube(transform.position + centerOffset, targetingSize);
     }
     
 }

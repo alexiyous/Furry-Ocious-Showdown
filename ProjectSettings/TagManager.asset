@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Building
   - Drone Aim
+  - Selection
+  - Enemy Target
   layers:
   - Default
   - TransparentFX
