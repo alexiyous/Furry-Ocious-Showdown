@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyChaseSOBase : ScriptableObject
@@ -9,7 +10,7 @@ public class EnemyChaseSOBase : ScriptableObject
     protected GameObject gameObject;
 
     protected Transform playerTransform;
-    protected Transform target;
+    protected Transform[] buildingTransforms;
 
     public virtual void Initialize(GameObject gameObject, Enemy enemy)
     {
@@ -18,7 +19,11 @@ public class EnemyChaseSOBase : ScriptableObject
         this.enemy = enemy;
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        target = GameObject.FindGameObjectWithTag("Enemy Target").transform;
+
+        buildingTransforms = GameObject.FindGameObjectsWithTag("Building")
+                            .Select(building => building.transform)
+                            .ToArray();
+
     }
 
     public virtual void DoEnterLogic() { }

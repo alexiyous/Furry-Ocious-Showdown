@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HomingProjectile : MonoBehaviour
@@ -14,17 +15,48 @@ public class HomingProjectile : MonoBehaviour
 
     public float moveSpeed;
 
-    [SerializeField] private GameObject target;
+    private Transform[] buildingsTransform;
+
+    private Transform target;
+
+    public bool isFlipped = false;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player");
 
-        direction = target.transform.position - transform.position;
+
+        
+
+        /*direction = target.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = rotation;
+        transform.rotation = rotation;*/
+
+        
+        
+
+        
+    }
+
+    private void OnEnable()
+    {
+        rb = GetComponent<Rigidbody2D>();
+
+        if (isFlipped)
+        {
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+        }
+
+        timer = 0f;
+
+        buildingsTransform = GameObject.FindGameObjectsWithTag("Building")
+                            .Select(building => building.transform)
+                            .ToArray();
+
+        int randomTarget = Random.Range(0, buildingsTransform.Length);
+
+        target = buildingsTransform[randomTarget];
 
         // Store the initial rotation for reference during updates
         direction = target.transform.position - transform.position;

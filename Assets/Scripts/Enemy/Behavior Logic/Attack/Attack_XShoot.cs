@@ -6,7 +6,6 @@ using DG.Tweening;
 
 public class Attack_XShoot : EnemyAttackSOBase
 {
-    private XShootEnemy xShootEnemy;
     [SerializeField] public Rigidbody2D bulletPrefab;
 
     private float _timer;
@@ -38,8 +37,6 @@ public class Attack_XShoot : EnemyAttackSOBase
     public override void DoFrameUpdateLogic()
     {
         base.DoFrameUpdateLogic();
-
-        enemy.CheckSlowEffect();
 
         _direction = (_targetPos - enemy.transform.position).normalized;
 

@@ -8,6 +8,16 @@ public class EnemyAggroCheck : MonoBehaviour
     public GameObject[] buildingTargets { get; set; }
     private Enemy _enemy;
 
+   [field: SerializeField] public TargetType targetType { get; set; }
+
+    public enum TargetType
+    {
+        player,
+        building, 
+        all
+    }
+
+
     private void Awake()
     {
         playerTarget = GameObject.FindGameObjectWithTag("Player");
@@ -18,39 +28,77 @@ public class EnemyAggroCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == playerTarget)
+        switch (targetType)
         {
-            _enemy.SetAggroStatus(true);
-        }
-        else
-        {
-            foreach (GameObject buildingTarget in buildingTargets)
-            {
-                if (collision.gameObject == buildingTarget)
+            case TargetType.player:
+                if (collision.CompareTag("Player"))
                 {
                     _enemy.SetAggroStatus(true);
-                    break;
                 }
-            }
+                break;
+            case TargetType.building:
+                if (collision.CompareTag("Building"))
+                {
+                    _enemy.SetAggroStatus(true);
+                }
+                break;
+            case TargetType.all:
+                if (collision.CompareTag("Building") || collision.CompareTag("Player"))
+                {
+                    _enemy.SetAggroStatus(true);
+                }
+                break;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == playerTarget)
+        switch (targetType)
         {
-            _enemy.SetAggroStatus(false);
-        }
-        else
-        {
-            foreach (GameObject buildingTarget in buildingTargets)
-            {
-                if (collision.gameObject == buildingTarget)
+            case TargetType.player:
+                if (collision.CompareTag("Player"))
                 {
                     _enemy.SetAggroStatus(false);
-                    break;
                 }
-            }
+                break;
+            case TargetType.building:
+                if (collision.CompareTag("Building"))
+                {
+                    _enemy.SetAggroStatus(false);
+                }
+                break;
+            case TargetType.all:
+                if (collision.CompareTag("Building") || collision.CompareTag("Player"))
+                {
+                    _enemy.SetAggroStatus(false);
+                }
+                break;
+        }
+
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        switch (targetType)
+        {
+            case TargetType.player:
+                if (collision.CompareTag("Player"))
+                {
+                    _enemy.SetAggroStatus(true);
+                }
+                break;
+            case TargetType.building:
+                if (collision.CompareTag("Building"))
+                {
+                    _enemy.SetAggroStatus(true);
+                }
+                break;
+            case TargetType.all:
+                if (collision.CompareTag("Building") || collision.CompareTag("Player"))
+                {
+                    _enemy.SetAggroStatus(true);
+                }
+                break;
         }
     }
 }

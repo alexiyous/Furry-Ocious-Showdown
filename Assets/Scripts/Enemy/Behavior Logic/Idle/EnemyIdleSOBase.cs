@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyIdleSOBase : ScriptableObject
@@ -9,6 +10,7 @@ public class EnemyIdleSOBase : ScriptableObject
     protected GameObject gameObject;
 
     protected Transform playerTransform;
+    protected Transform[] buildingTransforms;
     protected Transform target;
 
     public virtual void Initialize(GameObject gameObject, Enemy enemy)
@@ -17,8 +19,13 @@ public class EnemyIdleSOBase : ScriptableObject
         transform = gameObject.transform;
         this.enemy = enemy;
 
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         target = GameObject.FindGameObjectWithTag("Enemy Target").transform;
+
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        buildingTransforms = GameObject.FindGameObjectsWithTag("Building")
+                            .Select(building => building.transform)
+                            .ToArray();
     }
 
     public virtual void DoEnterLogic() { }

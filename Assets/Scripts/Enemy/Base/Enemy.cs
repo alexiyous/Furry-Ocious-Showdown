@@ -179,7 +179,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
         //ScoreManager.instance.AddScore(score);
 
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
         Destroy(gameObject);
     }
 
