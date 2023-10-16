@@ -20,7 +20,7 @@ TagManager:
   - Player
   - Enemy
   - Tower Bullet
-  - 
+  - Tower
   - 
   - 
   - 
@@ -49,14 +49,14 @@ TagManager:
   - name: Bridge
     uniqueID: 2910207467
     locked: 0
-  - name: Player
-    uniqueID: 2403481553
-    locked: 0
   - name: Player Bullet
     uniqueID: 2853025089
     locked: 0
   - name: Tower
     uniqueID: 1524457273
+    locked: 0
+  - name: Player
+    uniqueID: 2403481553
     locked: 0
   - name: Tower Bullet
     uniqueID: 2399085515

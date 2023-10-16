@@ -25,12 +25,19 @@ public class MortarBullet : TowerBullet
 
     public IEnumerator DestroyBulletIfMissed(float timeToHit)
     {
+        if (this == null || !gameObject.activeInHierarchy) yield break; // Check if the bullet exists before continuing
+
         yield return new WaitForSeconds(timeToHit + 0.5f); // Wait for the calculated time + 0.5 seconds
 
-        if (!isTargeting) yield break; // If the bullet is not targeting, exit the coroutine
-        if (this.gameObject == null) yield break; // If the bullet's game object is null, exit the coroutine
-        Destroy(this.gameObject);
+        if (isTargeting)
+        {
+            if (gameObject != null) Destroy(gameObject); // Destroy the game object only if it's still targeting
+        }
+    }
 
+    public override void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
     }
 
     public override void OnTriggerEnter2D(Collider2D collision)

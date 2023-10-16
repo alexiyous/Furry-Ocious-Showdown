@@ -7,6 +7,7 @@ public class MachinegunTower : Tower
 {
     public Transform[] firingPoints;
 
+
     public override void Shoot()
     {
         int randomIndex = Random.Range(0, firingPoints.Length);
