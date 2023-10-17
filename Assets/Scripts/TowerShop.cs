@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,17 +15,24 @@ public class TowerShop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i= 0; i < towerSelect.Length; i++)
+        for (int i = 0; i < towerSelect.Length; i++)
         {
-            towerSelect[i].onClick.AddListener(() => SpawnTower(i));
+            int index = i;
+            towerSelect[i].onClick.AddListener(() => SpawnTower(index));
         }
     }
 
-    private void SpawnTower(int index)
+    public void Exit()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void SpawnTower(int index)
     {
         Instantiate(towerPrefab[index], currentSpawnPoint.position, Quaternion.identity);
         currentSpawnPoint = null;
         Destroy(currentSpawner);
         currentSpawner = null;
+        gameObject.SetActive(false);
     }
 }

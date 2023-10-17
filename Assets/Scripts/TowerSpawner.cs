@@ -46,6 +46,7 @@ public class TowerSpawner : MonoBehaviour
             SpawnNotif.transform.DOKill();
             SpawnNotif.transform.position = originNotifPosition;
             SpawnNotif.SetActive(false);
+            isInRange = false;
         }
     }
 }
