@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyAggroCheck : MonoBehaviour
 {
-    public GameObject playerTarget { get; set; }
-    public GameObject[] buildingTargets { get; set; }
     private Enemy _enemy;
 
    [field: SerializeField] public TargetType targetType { get; set; }
@@ -20,9 +18,6 @@ public class EnemyAggroCheck : MonoBehaviour
 
     private void Awake()
     {
-        playerTarget = GameObject.FindGameObjectWithTag("Player");
-        buildingTargets = GameObject.FindGameObjectsWithTag("Building");
-
         _enemy = GetComponentInParent<Enemy>();
     }
 

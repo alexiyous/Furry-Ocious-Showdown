@@ -218,6 +218,11 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
         CheckForDirection(velocity);
     }
 
+    public void MoveEnemyNoTurn(Vector2 velocity)
+    {
+        RB.velocity = velocity;
+    }
+
     public void CheckForDirection(Vector2 velocity)
     {
         if(isFacingRight && velocity.x < 0f)

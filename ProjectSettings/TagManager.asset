@@ -9,6 +9,7 @@ TagManager:
   - Drone Aim
   - Selection
   - Enemy Target
+  - Bridge Point
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,7 @@ namespace TheKiwiCoder {
         public CharacterController characterController;
 
         public AttackHelicopter attackHelicopter;
+        public Enemy enemy;
         // Add other game specific systems here
 
         public static Context CreateFromGameObject(GameObject gameObject) {
@@ -39,6 +40,7 @@ namespace TheKiwiCoder {
             // Add whatever else you need here...
 
             context.attackHelicopter = gameObject.GetComponent<AttackHelicopter>();
+            context.enemy = gameObject.GetComponent<Enemy>();
 
             return context;
         }

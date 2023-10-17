@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 
 public class BridgePoleHealth : MonoBehaviour, IDamageable
 {
@@ -13,6 +16,11 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
     [SerializeField] private float showTime;
 
     private bool isPlayerInside = false;
+
+    public event Action<BridgePoleHealth> DieEvent;
+
+    [SerializeField] private SpriteRenderer bridgeSR1;
+    [SerializeField] private SpriteRenderer bridgeSR2;
 
     private void Awake()
     {
@@ -66,7 +74,23 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        bridgeSR1.color = Color.red;
+        bridgeSR2.color = Color.red;
+
+        Vector3 originalPosition = transform.position;
+        Vector3 targetPosition = originalPosition - new Vector3(1.0f, 0.0f, 0.0f);
+
+        // Use DOTween to tween the position
+        transform.DOMove(targetPosition, 1.0f)
+            .SetEase(Ease.InOutSine) // Choose an ease type
+            .OnComplete(() => OnDie()); // When the tween is complete, call OnDie
+    }
+
+    protected virtual void OnDie()
+    {
         gameObject.SetActive(false);
+        // Check if there are any subscribers to the DieEvent.
+        DieEvent?.Invoke(this);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
