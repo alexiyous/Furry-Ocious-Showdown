@@ -63,3 +63,6 @@ TagManager:
   - name: Tower Bullet
     uniqueID: 2399085515
     locked: 0
+  - name: Bridge Down Fence
+    uniqueID: 4266958161
+    locked: 0

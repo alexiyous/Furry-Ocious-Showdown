@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    private Animator anim;
+    [SerializeField] private Animator anim;
 
     public static event Action Attack = delegate { };
 
@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponentInChildren<Animator>();
         eventSystem = EventSystem.current;
     }
 
@@ -53,11 +52,11 @@ public class PlayerController : MonoBehaviour
                 success = TryMove(new Vector2(0f, movementInput.y));
             }
 
-/*            anim.SetBool("isMoving", success);*/
+           /* anim.SetBool("isMoving", success);*/
         }
         else
         {
-            /*anim.SetBool("isMoving", false);*/
+           /* anim.SetBool("isMoving", false);*/
         }
 
         Turn();
