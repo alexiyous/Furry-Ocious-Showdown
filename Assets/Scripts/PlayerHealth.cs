@@ -94,7 +94,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         /*Instantiate(deathEffect, transform.position, transform.rotation);
         countDownMenu.SetActive(true);*/
-        gameObject.SetActive(false);
+        /*gameObject.SetActive(false);*/
     }
 
     public void Damage(int damageAmount, int armorPenetration)
