@@ -10,6 +10,7 @@ TagManager:
   - Selection
   - Enemy Target
   - Bridge Point
+  - Null Transform
   layers:
   - Default
   - TransparentFX

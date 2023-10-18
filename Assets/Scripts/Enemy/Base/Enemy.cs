@@ -5,8 +5,8 @@ using Sirenix.OdinInspector;
 
 public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckable, ISlowable
 {
-    [field: SerializeField] public float maxHealth { get; set; }
-    [field: SerializeField] public float currentHealth { get; set; }
+    [field: SerializeField] public int maxHealth { get; set; }
+    [field: SerializeField] public int currentHealth { get; set; }
     [field: SerializeField] public int armor { get; set; }
     [field: SerializeField] public float baseSpeed { get; set; }
     public float slowAmount { get; set; }
@@ -164,9 +164,16 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
     public virtual void Damage(int damageAmount, int armorPenetration)
     {
-        currentHealth -= damageAmount * (armorPenetration / armor);
+        float damage = damageAmount * ((float)armorPenetration / (float)armor);
+
+        if (damage < 1)
+        {
+            damage = 1;
+        }
+
+        currentHealth -= (int)damage;
         //AudioManager.instance.PlaySFXAdjusted(13);
-        if(currentHealth <= 0f)
+        if (currentHealth <= 0f)
         {
             Die();
         }
@@ -177,7 +184,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
         isAlive = false;
         //AudioManager.instance.PlaySFXAdjusted(12);
 
-        //ScoreManager.instance.AddScore(score);
+        ScoreManager.instance.AddScore(score);
 
         ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
         Destroy(gameObject);

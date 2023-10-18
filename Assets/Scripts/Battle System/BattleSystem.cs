@@ -101,7 +101,12 @@ public class BattleSystem : MonoBehaviour
                     waveTimerText.text = "";
                 }
             }
-            waveTimerText.text = "Next Wave In " + (int)waveArray[currentWaveIndex].GetWaveTimer() + " seconds";
+
+            if(currentWaveIndex < waveArray.Length)
+            {
+                waveTimerText.text = "Next Wave In " + (int)waveArray[currentWaveIndex].GetWaveTimer() + " seconds";
+            }
+            
         }
     }
 
@@ -151,7 +156,7 @@ public class BattleSystem : MonoBehaviour
         {
             if(timer >= 0)
             {
-                timer -= Time.deltaTime;
+                timer -= Time.deltaTime * 0.5f;
                 if (timer <= 0)
                 {
                     coroutineStarter.StartCoroutine(SpawnEnemies());

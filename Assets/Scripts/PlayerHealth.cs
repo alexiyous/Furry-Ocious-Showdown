@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     public float invulnerabilityDuration = 2.0f; // Duration of invulnerability after taking damage
     public float blinkInterval = 0.2f; // Interval for sprite blinking
 
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private GameObject countDownMenu;
-    [SerializeField] private GameObject deathEffect;
+    /*[SerializeField] private GameObject countDownMenu;
+    [SerializeField] private GameObject deathEffect;*/
+    [SerializeField] private int armor = 20;
 
     private Collider2D playerCollider;
     private Color originalColor;
@@ -17,8 +18,11 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private GameObject parent;
 
-    public int maxHealth = 5;
-    public int currentHealth;
+    /*public int maxHealth = 200;
+    public int currentHealth;*/
+
+    [field: SerializeField] public int maxHealth { get; set; } = 200;
+    [field: SerializeField] public int currentHealth { get; set; }
 
     private void Start()
     {
@@ -32,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             currentHealth--;
-            HealthUIManager.instance.HealthUpdate(currentHealth);
+            HealthUIManager.instance.UpdateHealthBar();
             if (currentHealth <= 0)
             {
                 PlayerDead();
@@ -64,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (!isInvulnerable)
+       /* if (!isInvulnerable)
         {
             AudioManager.instance.PlaySFXAdjusted(5);
             isInvulnerable = true;
@@ -77,7 +81,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             PlayerDead();
-        }
+        }*/
     }
 
     private void EndInvulnerability()
@@ -88,8 +92,34 @@ public class PlayerHealth : MonoBehaviour
 
     private void PlayerDead()
     {
-        Instantiate(deathEffect, transform.position, transform.rotation);
-        countDownMenu.SetActive(true);
-        parent.SetActive(false);
+        /*Instantiate(deathEffect, transform.position, transform.rotation);
+        countDownMenu.SetActive(true);*/
+        gameObject.SetActive(false);
+    }
+
+    public void Damage(int damageAmount, int armorPenetration)
+    {
+        isInvulnerable = true;
+        playerCollider.enabled = false;
+        float damage = damageAmount * ((float)armorPenetration / (float)armor);
+
+        if (damage < 1)
+        {
+            damage = 1;
+        }
+
+        currentHealth -= (int)damage;
+        HealthUIManager.instance.UpdateHealthBar();
+        Invoke("EndInvulnerability", invulnerabilityDuration);
+
+        if (currentHealth <= 0)
+        {
+            PlayerDead();
+        }
+    }
+
+    public void Die()
+    {
+        throw new System.NotImplementedException();
     }
 }

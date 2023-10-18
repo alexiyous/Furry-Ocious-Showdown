@@ -6,8 +6,8 @@ public class BridgePoleTarget : MonoBehaviour, IDamageable
 {
     BridgePoleHealth bridgePoleHealth;
 
-    public float maxHealth { get => ((IDamageable)bridgePoleHealth).maxHealth; set => ((IDamageable)bridgePoleHealth).maxHealth = value; }
-    public float currentHealth { get => ((IDamageable)bridgePoleHealth).currentHealth; set => ((IDamageable)bridgePoleHealth).currentHealth = value; }
+    public int maxHealth { get => ((IDamageable)bridgePoleHealth).maxHealth; set => ((IDamageable)bridgePoleHealth).maxHealth = value; }
+    public int currentHealth { get => ((IDamageable)bridgePoleHealth).currentHealth; set => ((IDamageable)bridgePoleHealth).currentHealth = value; }
 
     public void Damage(int damageAmount, int armorPenetration)
     {

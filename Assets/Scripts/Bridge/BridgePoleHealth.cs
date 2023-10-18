@@ -9,8 +9,8 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
 
     private BridgePoleHealthBar[] healthBar;
 
-    [field: SerializeField] public float maxHealth { get; set; }
-    [field: SerializeField] public float currentHealth { get; set; }
+    [field: SerializeField] public int maxHealth { get; set; }
+    [field: SerializeField] public int currentHealth { get; set; }
 
     private float timer;
     [SerializeField] private float showTime;
@@ -21,6 +21,11 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
 
     [SerializeField] private SpriteRenderer bridgeSR1;
     [SerializeField] private SpriteRenderer bridgeSR2;
+
+    [SerializeField] private BoxCollider2D boxColliderbridge1;
+    [SerializeField] private BoxCollider2D boxColliderbridge2;
+
+    private bool isDead = false;
 
     private void Awake()
     {
@@ -40,7 +45,7 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
 
         currentHealth -= (int)damage;
         //AudioManager.instance.PlaySFXAdjusted(13);
-        if (currentHealth <= 0f)
+        if (currentHealth <= 0f && !isDead)
         {
             Die();
         }
@@ -74,8 +79,13 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        isDead = true;
+
         bridgeSR1.color = Color.red;
         bridgeSR2.color = Color.red;
+
+        boxColliderbridge1.enabled = false;
+        boxColliderbridge2.enabled = false;
 
         Vector3 originalPosition = transform.position;
         Vector3 targetPosition = originalPosition - new Vector3(1.0f, 0.0f, 0.0f);

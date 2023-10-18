@@ -697,6 +697,8 @@ MonoBehaviour:
   showTime: 2
   bridgeSR1: {fileID: 9067516130305583402}
   bridgeSR2: {fileID: 9067516130050652389}
+  boxColliderbridge1: {fileID: 9067516130305583396}
+  boxColliderbridge2: {fileID: 9067516130050652391}
 --- !u!61 &751057606
 BoxCollider2D:
   m_ObjectHideFlags: 0

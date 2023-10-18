@@ -13,10 +13,14 @@ public class BridgeTotalHealth : MonoBehaviour
     private BridgePoleHealth[] bridgePoleHealths;
 
 
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
         healthBar.maxValue = maxHealth;
 
         UpdateHealthBar();
@@ -46,6 +50,7 @@ public class BridgeTotalHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             // Handle the game over or other logic here
+            Debug.Log("Game Over"); 
         }
     }
 }

@@ -16,7 +16,7 @@ public class HomingProjectile : MonoBehaviour
     public float moveSpeed;
 
     private Transform[] buildingsTransform;
-    [SerializeField] private Transform nullTransform;
+    private Transform nullTransform;
 
     private Transform target;
 
@@ -24,7 +24,7 @@ public class HomingProjectile : MonoBehaviour
 
     private void Start()
     {
-
+        nullTransform = GameObject.FindGameObjectWithTag("Null Transform").transform;
     }
 
     private void OnEnable()
@@ -46,7 +46,7 @@ public class HomingProjectile : MonoBehaviour
         if(buildingsTransform.Length != 0)
         {
             int randomTarget = Random.Range(0, buildingsTransform.Length);
-            Debug.Log(randomTarget);
+            /*Debug.Log(randomTarget);*/
 
             target = buildingsTransform[randomTarget];
         } else
