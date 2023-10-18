@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 751057606}
   m_Layer: 0
   m_Name: Bridge Point
-  m_TagString: Untagged
+  m_TagString: Bridge Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -695,6 +695,10 @@ MonoBehaviour:
   <maxHealth>k__BackingField: 1000
   <currentHealth>k__BackingField: 0
   showTime: 2
+  bridgeSR1: {fileID: 9067516130305583402}
+  bridgeSR2: {fileID: 9067516130050652389}
+  boxColliderbridge1: {fileID: 9067516130305583396}
+  boxColliderbridge2: {fileID: 9067516130050652391}
 --- !u!61 &751057606
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -863,9 +867,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
   m_Constraints: 7
 --- !u!1 &9067516130305583403
 GameObject:
@@ -1009,7 +1013,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
   m_Constraints: 7

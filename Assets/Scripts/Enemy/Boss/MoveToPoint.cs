@@ -21,7 +21,7 @@ public class MoveToPoint : ActionNode
 
         Vector2 moveDirection = (context.attackHelicopter.movePoints[pointIndex].position - context.attackHelicopter.transform.position).normalized;
 
-        context.attackHelicopter.MoveEnemyFloat(moveDirection * context.attackHelicopter.baseSpeed * context.attackHelicopter.slowAmount);
+        context.attackHelicopter.MoveEnemyNoTurn(moveDirection * context.attackHelicopter.baseSpeed * context.attackHelicopter.slowAmount);
 
         if ((context.attackHelicopter.transform.position - context.attackHelicopter.movePoints[pointIndex].position).sqrMagnitude < 0.01f)
         {

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7359a9e88266321439eebb8ce1b3a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestroy: 2
+  timeToDestroy: 4
 --- !u!114 &258842514562165030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   rotationSpeed: 2
   seekStopTime: 3
   moveSpeed: 10
+  nullTransform: {fileID: 0}
   isFlipped: 1
 --- !u!1 &1983912651781243194
 GameObject:

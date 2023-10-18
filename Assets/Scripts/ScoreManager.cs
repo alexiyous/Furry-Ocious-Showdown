@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
 
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI highScoreText;
+    /*public TextMeshProUGUI highScoreText;*/
 
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = currentScore.ToString("D9");
+        scoreText.text = currentScore.ToString("D4");
     }
 
     // Update is called once per frame
@@ -39,22 +39,22 @@ public class ScoreManager : MonoBehaviour
             highScore = currentScore;
         }
 
-        scoreText.text = currentScore.ToString("D9");
+        scoreText.text = currentScore.ToString("D4");
     }
 
     public void AddScore(int score)
     {
         currentScore += score;
 
-        scoreText.text = currentScore.ToString("D9");
+        scoreText.text = currentScore.ToString("D4");
 
-        highScoreText.text = currentScore.ToString("D9");
+        /*highScoreText.text = currentScore.ToString("D9");*/
     }
 
     public void RemoveScore()
     {
         currentScore = 0;
 
-        scoreText.text = currentScore.ToString("D9");
+        scoreText.text = currentScore.ToString("D4");
     }
 }

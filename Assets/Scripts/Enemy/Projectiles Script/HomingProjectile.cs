@@ -16,6 +16,7 @@ public class HomingProjectile : MonoBehaviour
     public float moveSpeed;
 
     private Transform[] buildingsTransform;
+    private Transform nullTransform;
 
     private Transform target;
 
@@ -23,19 +24,7 @@ public class HomingProjectile : MonoBehaviour
 
     private void Start()
     {
-
-
-        
-
-        /*direction = target.transform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = rotation;*/
-
-        
-        
-
-        
+        nullTransform = GameObject.FindGameObjectWithTag("Null Transform").transform;
     }
 
     private void OnEnable()
@@ -54,9 +43,17 @@ public class HomingProjectile : MonoBehaviour
                             .Select(building => building.transform)
                             .ToArray();
 
-        int randomTarget = Random.Range(0, buildingsTransform.Length);
+        if(buildingsTransform.Length != 0)
+        {
+            int randomTarget = Random.Range(0, buildingsTransform.Length);
+            /*Debug.Log(randomTarget);*/
 
-        target = buildingsTransform[randomTarget];
+            target = buildingsTransform[randomTarget];
+        } else
+        {
+            target = nullTransform;
+        }
+        
 
         // Store the initial rotation for reference during updates
         direction = target.transform.position - transform.position;
