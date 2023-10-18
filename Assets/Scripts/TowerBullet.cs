@@ -11,7 +11,7 @@ public abstract class TowerBullet : MonoBehaviour
     public float bulletSpeed = 5f;
     public float damage;
     [HideInInspector] public Vector2 direction;
-    public LevelUpgrade bulletLevel = LevelUpgrade.Level1;
+    [HideInInspector] public LevelUpgrade bulletLevel = LevelUpgrade.Level1;
 
     [HideInInspector] public Transform target;
 
@@ -38,7 +38,7 @@ public abstract class TowerBullet : MonoBehaviour
 
     public abstract void Move();
 
-    public void OnBecameInvisible()
+    public virtual void OnBecameInvisible()
     {
         Destroy(gameObject);
     }

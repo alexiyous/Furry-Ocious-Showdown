@@ -6,6 +6,7 @@ public class MortarTower : Tower
 
     private float timeToHitTarget; // Time to hit the target
 
+
     public override void RotateTowardsTarget()
     {
         if (!target) return;

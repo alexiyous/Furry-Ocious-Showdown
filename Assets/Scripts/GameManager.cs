@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [HideInInspector] public bool beginGame;
+    public int DebugCoin = 999999;
 
     private void Awake()
     {
