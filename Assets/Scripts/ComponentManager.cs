@@ -1,10 +1,15 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
 
 public class ComponentManager : MonoBehaviour
 {
     public Sprite defaultSprite;
+    public TextMeshProUGUI comboText;
     public List<Components> components;
     [SerializeField] private List<TokenSlotSO> tokenSOs;
     public List<Components> comboSlot;
@@ -16,8 +21,8 @@ public class ComponentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
         droneAim = GameObject.FindGameObjectWithTag("Drone Aim").GetComponent<DroneAim>();
+        Initialize();
         RandomizeBullet();
         PlayerController.Attack += CheckCombo;
     }
@@ -75,9 +80,9 @@ public class ComponentManager : MonoBehaviour
         }
     }
 
-    private void CheckCombo()
+    public void CheckCombo()
     {
-        if (comboSlot.Count < 2) return;  // Added check for comboSlot count
+        if (comboSlot.Count < 2 || GameManager.instance.isTargeting) return;  // Added check for comboSlot count
 
         Debug.Log(comboSlot[0].componentType);
         if (comboSlot[0].componentType == ComponentType.None) return;
@@ -90,7 +95,7 @@ public class ComponentManager : MonoBehaviour
         {
             if (countSameType == 2 && countNone == 1)
             {
-                comboSlot[0].tokenSO.Attack(countSameType);
+               comboSlot[0].tokenSO.Attack(countSameType);
             }
             else if (countSameType == 1 && countNone == 2)
             {
@@ -104,8 +109,47 @@ public class ComponentManager : MonoBehaviour
                 comboSlot[0].tokenSO.Attack(countSameType);
             }
         }
+        Debug.Log(comboText.text);
         UnsetCombo();
         RandomizeBullet();
+    }
+
+    public void CheckName()
+    {
+        var compoType = comboSlot[0].componentType;
+        var countSameType = comboSlot.FindAll(compo => compo.componentType == compoType).Count;
+        var countNone = comboSlot.FindAll(compo => compo.componentType == ComponentType.None).Count;
+
+        if (countNone >= 1)
+        {
+            if (countSameType == 2 && countNone == 1)
+            {
+                comboText.text = comboSlot[0].tokenSO.ComboName(countSameType);
+            }
+            else if (countSameType == 1 && countNone == 2)
+            {
+                comboText.text = comboSlot[0].tokenSO.ComboName(countSameType);
+            }
+            else if ((comboSlot[2].componentType != comboSlot[0].componentType) && countSameType == 2)
+            {
+                comboText.text = "";
+            }
+            else
+            {
+                comboText.text = "";
+            }
+        }
+        else
+        {
+            if (countSameType == 3)
+            {
+                comboText.text = comboSlot[0].tokenSO.ComboName(countSameType);
+            }
+            else
+            {
+                comboText.text = "";
+            }
+        }
     }
 
     public void UnsetCombo()
@@ -115,5 +159,6 @@ public class ComponentManager : MonoBehaviour
         {
             component.Unset(defaultSprite);
         }
+        comboText.text = "";
     }
 }

@@ -25,13 +25,14 @@ public class Components : MonoBehaviour
 
     public void SetCombo()
     {
-        if (componentManager.comboCount >= 3) return;
+        if (componentManager.comboCount >= 3 || GameManager.instance.isTargeting) return;
         if (tokenSO != null)
         {
             componentManager.comboSlot[componentManager.comboCount].tokenSO = tokenSO;
             componentManager.comboSlot[componentManager.comboCount].Set();
             Unset(componentManager.defaultSprite);
             componentManager.comboCount++;
+            componentManager.CheckName();
         }
     }
 

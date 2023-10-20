@@ -17,5 +17,9 @@ MonoBehaviour:
   attackTechniques:
   - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
   - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
-  - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
+  - {fileID: 4372602052761489600, guid: 20f2cde9e7329044bb53460f8c37eb2c, type: 3}
+  attackNames:
+  - Sniper
+  - Yarn Ball?
+  - Artillery
   droneAim: {fileID: 0}

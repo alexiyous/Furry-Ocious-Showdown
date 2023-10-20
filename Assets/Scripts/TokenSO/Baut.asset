@@ -18,4 +18,8 @@ MonoBehaviour:
   - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
   - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
   - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
+  attackNames:
+  - Shotgun Attack
+  - EMP Bomb
+  - Laser Beam
   droneAim: {fileID: 0}

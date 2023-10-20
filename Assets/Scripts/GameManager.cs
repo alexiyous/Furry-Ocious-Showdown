@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public bool beginGame;
     public int DebugCoin = 999999;
+    public bool isTargeting = false;
 
     private void Awake()
     {

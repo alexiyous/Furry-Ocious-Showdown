@@ -8,12 +8,19 @@ public class TokenSlotSO : ScriptableObject
     public Sprite sprite;
     public ComponentType bulletType;
     public GameObject[] attackTechniques;
+    public string[] attackNames;
     [HideInInspector] public DroneAim droneAim;
 
     public void Attack(int index)
     {
-        /*Instantiate(attackTechniques[index - 1], droneAim.transform.position, droneAim.transform.rotation);*/
+        Instantiate(attackTechniques[index - 1], droneAim.transform.position, droneAim.transform.rotation);
         Debug.Log($"Attack {index} {bulletType}");
+    }
+
+    public string ComboName(int index)
+    {
+        var name = attackNames[index - 1];
+        return name;
     }
 }
 
