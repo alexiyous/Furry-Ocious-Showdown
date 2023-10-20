@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class HealthUIManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class HealthUIManager : MonoBehaviour
     private PlayerHealth playerHealth;
 
     public static HealthUIManager instance;
+
+    private RectTransform rectTransform;
 
     /*[SerializeField] private Sprite origin;
     [SerializeField] private Sprite death;
@@ -31,7 +34,7 @@ public class HealthUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rectTransform = GetComponent<RectTransform>();
 
         healthBar = GetComponent<Slider>();
 
@@ -70,6 +73,8 @@ public class HealthUIManager : MonoBehaviour
     public void UpdateHealthBar()
     {
         healthBar.value = playerHealth.currentHealth;
+       
+        rectTransform.DOShakePosition(1f, new Vector3(20f, 3f, 0f), 20, 40, true);
 
         if (playerHealth.currentHealth <= 0)
         {

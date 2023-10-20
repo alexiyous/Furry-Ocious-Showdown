@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private GameObject deathEffect;*/
     [SerializeField] private int armor = 20;
 
-    private Collider2D playerCollider;
+    [SerializeField] private Collider2D playerCollider;
     private Color originalColor;
     private bool isInvulnerable = false;
 
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        playerCollider = GetComponent<Collider2D>();
+        /*playerCollider = GetComponent<Collider2D>();*/
         originalColor = spriteRenderer.color;
         currentHealth = maxHealth;
     }
@@ -102,6 +102,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         isInvulnerable = true;
         playerCollider.enabled = false;
         float damage = damageAmount * ((float)armorPenetration / (float)armor);
+
+        if (armorPenetration > armor)
+        {
+            damage = damageAmount;
+        }
 
         if (damage < 1)
         {

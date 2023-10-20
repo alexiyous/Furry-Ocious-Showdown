@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class BridgeTotalHealth : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class BridgeTotalHealth : MonoBehaviour
 
     private BridgePoleHealth[] bridgePoleHealths;
 
+    private RectTransform rectTransform;
 
     private void Awake()
     {
@@ -22,6 +24,8 @@ public class BridgeTotalHealth : MonoBehaviour
     void Start()
     {
         healthBar.maxValue = maxHealth;
+
+        rectTransform = GetComponent<RectTransform>();
 
         UpdateHealthBar();
         bridgePoleHealths = FindObjectsOfType<BridgePoleHealth>();
@@ -41,6 +45,8 @@ public class BridgeTotalHealth : MonoBehaviour
         // You can reduce the total health or update the health bar.
         currentHealth -= 1;
         UpdateHealthBar();
+
+        rectTransform.DOShakePosition(1f, new Vector3(30f, 3f, 0f), 20, 40, true);
     }
 
     private void UpdateHealthBar()
