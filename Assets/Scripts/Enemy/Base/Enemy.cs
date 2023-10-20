@@ -171,6 +171,11 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
             damage = 1;
         }
 
+        if(armorPenetration > armor)
+        {
+            damage = damageAmount;
+        }
+
         currentHealth -= (int)damage;
         //AudioManager.instance.PlaySFXAdjusted(13);
         if (currentHealth <= 0f)

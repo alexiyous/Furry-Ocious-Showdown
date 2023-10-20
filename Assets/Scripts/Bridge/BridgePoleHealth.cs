@@ -43,6 +43,11 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
             damage = 1;
         }
 
+        if (armorPenetration > armor)
+        {
+            damage = damageAmount;
+        }
+
         currentHealth -= (int)damage;
         //AudioManager.instance.PlaySFXAdjusted(13);
         if (currentHealth <= 0f && !isDead)

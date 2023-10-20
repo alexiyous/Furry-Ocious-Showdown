@@ -48,7 +48,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.579
-  m_Color: {r: 0.990566, g: 0.9163138, b: 0.36819148, a: 1}
+  m_Color: {r: 0.36862746, g: 0.54522836, b: 0.99215686, a: 1}
   m_Intensity: 1.02
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -383,9 +383,9 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1384759829
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
@@ -418,7 +418,7 @@ TrailRenderer:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 1, g: 0.58459556, b: 0, a: 0}
+      key2: {r: 0, g: 0.0017567626, b: 0.7075472, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -464,12 +464,12 @@ GameObject:
   - component: {fileID: 8047041956205088639}
   - component: {fileID: 8047041956205088634}
   - component: {fileID: 4069907336616241042}
-  - component: {fileID: 8227195908163881162}
-  - component: {fileID: -598125628247281931}
   - component: {fileID: -1104939935157371857}
   - component: {fileID: 6374715242198033983}
+  - component: {fileID: 720925497917459938}
+  - component: {fileID: 8180878826546795688}
   m_Layer: 0
-  m_Name: Faster Bullet
+  m_Name: Shotgun Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,7 +484,7 @@ Transform:
   m_GameObject: {fileID: 8047041956205088625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.36429524, y: 0.103392676, z: 1}
+  m_LocalScale: {x: 0.36429524, y: 0.103392676, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8047041955775858390}
@@ -530,9 +530,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1384759829
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79be5651c41bff439c0db1ec0ae0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 8
 --- !u!58 &4069907336616241042
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -567,40 +567,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.31
---- !u!114 &8227195908163881162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8047041956205088625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7359a9e88266321439eebb8ce1b3a71e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDestroy: 2
---- !u!114 &-598125628247281931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8047041956205088625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8754d6d1533016241a881ccd9895d260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  armorPenetration: 10
-  hitEffect: {fileID: 69044193160978531, guid: 0aa15a2887fc0bf43a7a07542961c165, type: 3}
 --- !u!50 &-1104939935157371857
 Rigidbody2D:
   serializedVersion: 4
@@ -609,7 +581,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8047041956205088625}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -634,3 +606,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d118f4002ef4847b0e8a187d356512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &720925497917459938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047041956205088625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1f5740e6d27ec448fff3739e2d2b87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  armorPenetration: 15
+  hitEffect: {fileID: 69044193160978531, guid: 0aa15a2887fc0bf43a7a07542961c165, type: 3}
+--- !u!114 &8180878826546795688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047041956205088625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adce5585ffe78544493eb4151dce2395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeToDestroy: 2

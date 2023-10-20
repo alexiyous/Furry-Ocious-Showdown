@@ -11,6 +11,8 @@ TagManager:
   - Enemy Target
   - Bridge Point
   - Null Transform
+  - Player Damage
+  - Bridge Road
   layers:
   - Default
   - TransparentFX

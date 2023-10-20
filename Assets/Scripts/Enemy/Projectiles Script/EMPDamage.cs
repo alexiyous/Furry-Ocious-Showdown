@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EMPDamage : MonoBehaviour
 {
+    [SerializeField] private string type = "Event";
+
     [SerializeField] private int damage;
     [SerializeField] private int armorPenetration = 0;
     [SerializeField] private float stunDuration = 3f;
@@ -16,11 +18,18 @@ public class EMPDamage : MonoBehaviour
     private float currentFadeTime = 0f;
 
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-        AudioManager.instance.PlaySFXAdjusted(6);
+    }
+
+    void OnEnable()
+    {
+        spriteRenderer.color = originalColor;
+        currentFadeTime = 0;
+       /* AudioManager.instance.PlaySFXAdjusted(6);*/
     }
 
     // Update is called once per frame
@@ -38,6 +47,8 @@ public class EMPDamage : MonoBehaviour
         if (fadeProgress >= 1f)
         {
             Destroy(gameObject);
+
+            /*ObjectPoolManager.ReturnObjectPool(gameObject);*/
         }
     }
 

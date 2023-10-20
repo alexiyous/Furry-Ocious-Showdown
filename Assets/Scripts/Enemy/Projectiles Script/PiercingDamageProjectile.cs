@@ -10,7 +10,7 @@ public class PiercingDamageProjectile : MonoBehaviour
     [SerializeField] private int piercePower = 1;
     [SerializeField] private GameObject hitEffect;
 
-    private void Start()
+    private void OnEnable()
     {
         count = 0;
     }
@@ -20,13 +20,14 @@ public class PiercingDamageProjectile : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<IDamageable>().Damage(damage, armorPenetration);
-            Instantiate(hitEffect, transform.position, Quaternion.identity);
+            ObjectPoolManager.SpawnObject(hitEffect, transform.position, Quaternion.identity);
 
             count++;
             
             if (count >= piercePower)
             {
-                gameObject.SetActive(false);
+
+                ObjectPoolManager.ReturnObjectPool(gameObject);
             }
         }
     }
