@@ -14,6 +14,7 @@ public class enemyHit : MonoBehaviour
         {
             collision.GetComponent<IDamageable>().Damage(damage, armorPenetration);
             ObjectPoolManager.SpawnObject(hitEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+            Destroy(gameObject);
 
             /*ObjectPoolManager.ReturnObjectPool(gameObject);*/
         }
