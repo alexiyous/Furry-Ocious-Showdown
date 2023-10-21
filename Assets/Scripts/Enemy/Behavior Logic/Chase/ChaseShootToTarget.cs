@@ -120,7 +120,7 @@ public class ChaseShootToTarget : EnemyChaseSOBase
         {
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracy, inaccuracy), 0);
 
-            Vector2 direction = (target.position - enemy.transform.position + shootInaccuracy + shootOffset).normalized;
+            Vector2 direction = (target.position - (enemy.transform.position + shootOffset) + shootInaccuracy).normalized;
 
             GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefab, transform.position + shootOffset, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
 

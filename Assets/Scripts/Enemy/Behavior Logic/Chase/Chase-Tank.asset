@@ -22,3 +22,5 @@ MonoBehaviour:
   bulletCountSecondary: 5
   inaccuracySecondary: 1.9
   bulletPrefabSecondary: {fileID: 8047041956205088625, guid: 3952ba94f1a36c241a863de4a61eeaac, type: 3}
+  offsetMain: {x: -2, y: 2.5, z: 0}
+  offsetSecondary: {x: -2, y: 2, z: 0}

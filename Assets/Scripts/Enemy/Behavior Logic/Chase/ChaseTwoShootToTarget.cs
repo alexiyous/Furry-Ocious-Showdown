@@ -19,6 +19,9 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
     [SerializeField] private float inaccuracySecondary = 1.9f;
     [SerializeField] private GameObject bulletPrefabSecondary;
 
+    public Vector3 offsetMain;
+    public Vector3 offsetSecondary;
+
     private Transform target;
 
     public override void DoAnimationTriggerEventLogic(Enemy.AnimationTriggerType triggerType)
@@ -67,6 +70,8 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
         {
             timerMain = 0f;
 
+            enemy.animator.Play("Shoot", - 1, 0f);
+
             if (target != null)
             {
                 enemy.StartCoroutine(ShootMain());
@@ -110,9 +115,9 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
         {
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracyMain, inaccuracyMain), 0);
 
-            Vector2 direction = (target.position - enemy.transform.position + shootInaccuracy).normalized;
+            Vector2 direction = (target.position - (enemy.transform.position + offsetSecondary) + shootInaccuracy).normalized;
 
-            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefabMain, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefabMain, transform.position + offsetMain, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
@@ -130,9 +135,9 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
         {
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracySecondary, inaccuracySecondary), 0);
 
-            Vector2 direction = (target.position - enemy.transform.position + shootInaccuracy).normalized;
+            Vector2 direction = (target.position - (enemy.transform.position + offsetSecondary) + shootInaccuracy).normalized;
 
-            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefabSecondary, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefabSecondary, transform.position + offsetSecondary, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
