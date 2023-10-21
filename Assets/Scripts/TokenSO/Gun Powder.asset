@@ -16,7 +16,7 @@ MonoBehaviour:
   bulletType: 3
   attackTechniques:
   - {fileID: 5615841965239622626, guid: 6091306cd298c0c4689dd5f750fda184, type: 3}
-  - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
+  - {fileID: 2237512732816274288, guid: 220f2de911943d345a8d66de15fbc40a, type: 3}
   - {fileID: 4372602052761489600, guid: 20f2cde9e7329044bb53460f8c37eb2c, type: 3}
   attackNames:
   - Sniper

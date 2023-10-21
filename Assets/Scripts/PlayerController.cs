@@ -52,11 +52,11 @@ public class PlayerController : MonoBehaviour
                 success = TryMove(new Vector2(0f, movementInput.y));
             }
 
-           /* anim.SetBool("isMoving", success);*/
+            anim.SetBool("isMoving", success);
         }
         else
         {
-           /* anim.SetBool("isMoving", false);*/
+            anim.SetBool("isMoving", false);
         }
 
         Turn();

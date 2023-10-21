@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public float invulnerabilityDuration = 2.0f; // Duration of invulnerability after taking damage
     public float blinkInterval = 0.2f; // Interval for sprite blinking
 
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private List<SpriteRenderer> spriteRenderer;
+    [SerializeField] private Animator anim;
     /*[SerializeField] private GameObject countDownMenu;
     [SerializeField] private GameObject deathEffect;*/
     [SerializeField] private int armor = 20;
@@ -15,8 +17,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private Collider2D playerCollider;
     private Color originalColor;
     private bool isInvulnerable = false;
-
-    [SerializeField] private GameObject parent;
 
     /*public int maxHealth = 200;
     public int currentHealth;*/
@@ -27,7 +27,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private void Start()
     {
         /*playerCollider = GetComponent<Collider2D>();*/
-        originalColor = spriteRenderer.color;
+        foreach (var sprite in spriteRenderer)
+        {
+            originalColor = sprite.color;
+        }
         currentHealth = maxHealth;
     }
 
@@ -46,11 +49,18 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (isInvulnerable)
         {
             float t = Mathf.PingPong(Time.time, blinkInterval) / blinkInterval; // Calculate blink effect
-            spriteRenderer.color = Color.Lerp(originalColor, Color.clear, t);
+            foreach (var sprite in spriteRenderer)
+            {
+                sprite.color = Color.Lerp(originalColor, Color.clear, t);
+            }
         }
         else
         {
-            spriteRenderer.color = originalColor; // Restore original color
+            foreach (var sprite in spriteRenderer)
+            {
+                sprite.color = originalColor; // Restore original color
+            }
+
         }
     }
 
@@ -90,11 +100,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         playerCollider.enabled = true;
     }
 
+    [Button]
     private void PlayerDead()
     {
         /*Instantiate(deathEffect, transform.position, transform.rotation);
         countDownMenu.SetActive(true);*/
         /*gameObject.SetActive(false);*/
+        anim.SetBool("isDead", true);
     }
 
     public void Damage(int damageAmount, int armorPenetration)
