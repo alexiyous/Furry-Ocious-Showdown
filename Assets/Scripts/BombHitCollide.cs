@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArtilleryBullet : MonoBehaviour
+public class BombHitCollide : MonoBehaviour
 {
-    [SerializeField] private Collider2D hitCollider;
+    public int damage;
+    public GameObject parent;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            // Instantiate Bomb Effect
+            // IMPLEMENT TAKEDAMAGE TO ENEMY
 
-            hitCollider.enabled = true;
-            
+            Debug.Log("Hit");
         }
     }
-    
 }

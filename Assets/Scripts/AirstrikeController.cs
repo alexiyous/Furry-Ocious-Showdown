@@ -1,9 +1,9 @@
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
-public class ArtilleryController : MonoBehaviour
+public class AirstrikeController : MonoBehaviour
 {
     private Transform bridgeRoad;
     private float undersideYPosition;
@@ -11,14 +11,15 @@ public class ArtilleryController : MonoBehaviour
 
     [SerializeField] private GameObject targetAim;
     [SerializeField] private GameObject flare;
-    [SerializeField] private GameObject artilleryBullet;
+    [SerializeField] private GameObject airstrikeBullet;
     [SerializeField] private Collider2D hitCollider;
-    [SerializeField] private float YOffsetSpawnPointParent;
-    [SerializeField] private Transform[] artilleryBulletSpawnPoints;
+    [SerializeField] private Vector2 OffsetSpawnPointParent;
+    [SerializeField] private Transform[] airstrikeBulletSpawnPoints;
+    [SerializeField] private Transform[] airstrikeBulletTargetHits1;
+    [SerializeField] private Transform[] airstrikeBulletTargetHits2;
 
     private GameObject flareObject;
     private bool isFlareActive = false;
-    private int bulletCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -60,22 +61,30 @@ public class ArtilleryController : MonoBehaviour
 
     public IEnumerator ShootArtillery(Vector3 currentTargetPosition)
     {
-        artilleryBulletSpawnPoints[1].parent.position = new Vector3(currentTargetPosition.x, currentTargetPosition.y + YOffsetSpawnPointParent, 0f);
+        airstrikeBulletSpawnPoints[1].parent.position = new Vector3(currentTargetPosition.x + OffsetSpawnPointParent.x, currentTargetPosition.y + OffsetSpawnPointParent.y, 0f);
 
-        while (bulletCount < 5)
+        for (int i = 0; i < airstrikeBulletTargetHits1.Length; i++)
         {
-            var randomSpawnPoint = artilleryBulletSpawnPoints[Random.Range(0, artilleryBulletSpawnPoints.Length)];
-            var artilleryBulletInstance = Instantiate(artilleryBullet, randomSpawnPoint.position, Quaternion.identity);
-            artilleryBulletInstance.SetActive(true);
-            if (artilleryBulletInstance == null) continue;
-            artilleryBulletInstance.transform.DOMove(new Vector3(currentTargetPosition.x, currentTargetPosition.y, 0f),
-                Vector2.Distance(artilleryBulletInstance.transform.position, currentTargetPosition) / 10f).SetEase(Ease.Linear).OnComplete(() =>
+            List<GameObject> airstrikeBulletInstance = new List<GameObject>();
+            airstrikeBulletInstance.Add(Instantiate(airstrikeBullet, airstrikeBulletSpawnPoints[0].position, Quaternion.identity));
+            airstrikeBulletInstance.Add(Instantiate(airstrikeBullet, airstrikeBulletSpawnPoints[1].position, Quaternion.identity));
+            foreach (GameObject airstrikeInstance in airstrikeBulletInstance)
+            {
+                airstrikeInstance.SetActive(true);
+            }
+            airstrikeBulletInstance[0].transform.DOMove(new Vector3(airstrikeBulletTargetHits1[i].position.x, airstrikeBulletTargetHits1[i].position.y, 0f),
+                Vector2.Distance(airstrikeBulletInstance[0].transform.position, airstrikeBulletTargetHits1[i].position) / 30f).SetEase(Ease.Linear).OnComplete(() =>
                 {
-                    Destroy(artilleryBulletInstance, 0.1f);
+                    Destroy(airstrikeBulletInstance[0], 0.1f);
                     hitCollider.enabled = true;
                 });
-            yield return new WaitForSeconds(1f);
-            bulletCount++;
+            airstrikeBulletInstance[1].transform.DOMove(new Vector3(airstrikeBulletTargetHits2[i].position.x, airstrikeBulletTargetHits2[i].position.y, 0f),
+                Vector2.Distance(airstrikeBulletInstance[0].transform.position, airstrikeBulletTargetHits2[i].position) / 30f).SetEase(Ease.Linear).OnComplete(() =>
+                {
+                    Destroy(airstrikeBulletInstance[1], 0.1f);
+                    hitCollider.enabled = true;
+                });
+            yield return new WaitForSeconds(0.1f);
         }
 
         Destroy(gameObject);
