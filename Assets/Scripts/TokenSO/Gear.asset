@@ -15,8 +15,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 399d730acbf91e241a2bfcffa439d100, type: 3}
   bulletType: 2
   attackTechniques:
-  - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
-  - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
+  - {fileID: 8047041956205088625, guid: 0840ace0a2c290b45ab5538d931b9eeb, type: 3}
+  - {fileID: 7203819725402975255, guid: 7f654bead595619409c2f0de04b0c108, type: 3}
   - {fileID: 411903686930178303, guid: 5f5ce98d08ab93949b4731b45f5b2ae1, type: 3}
   attackNames:
   - Grenade Launcher
