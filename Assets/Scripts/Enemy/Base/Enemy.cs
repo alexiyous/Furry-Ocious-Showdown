@@ -186,13 +186,23 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
     public virtual void Die()
     {
-        isAlive = false;
-        //AudioManager.instance.PlaySFXAdjusted(12);
+        if (isAlive)
+        {
+            //AudioManager.instance.PlaySFXAdjusted(12);
 
-        ScoreManager.instance.AddScore(score);
+            enemyCollider.enabled = false;
 
-        ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
-        Destroy(gameObject);
+            ScoreManager.instance.AddScore(score);
+
+            animator.Play("Death");
+
+            ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+            stateMachine.ChangeState(attackState);
+            Destroy(gameObject, 1);
+            isAlive = false;
+        }
+
+        
     }
 
     public void Spawn()

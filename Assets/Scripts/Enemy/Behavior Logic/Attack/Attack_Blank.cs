@@ -2,15 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Idle-MoveToTarget", menuName = "Enemy Logic/Idle Logic/Move To Target")]
-
-public class IdleMoveToTarget : EnemyIdleSOBase
+[CreateAssetMenu(fileName = "Attack-Blank", menuName = "Enemy Logic/Attack Logic/Blank")]
+public class Attack_Blank : EnemyAttackSOBase
 {
-    public float randomMovementSpeedOffset = 1;
-    public float targetOffsetY = 3;
-    Vector3 targetOffset;
-    float movementSpeed;
-
     public override void DoAnimationTriggerEventLogic(Enemy.AnimationTriggerType triggerType)
     {
         base.DoAnimationTriggerEventLogic(triggerType);
@@ -19,10 +13,10 @@ public class IdleMoveToTarget : EnemyIdleSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        enemy.animator.Play("Run");
-        movementSpeed = Random.Range(enemy.baseSpeed - randomMovementSpeedOffset, enemy.baseSpeed + randomMovementSpeedOffset);
-        targetOffset = new Vector3(0, Random.Range(-targetOffsetY, targetOffsetY), 0);
 
+        enemy.animator.Play("Death");
+
+        enemy.enemyCollider.enabled = false;
     }
 
     public override void DoExitLogic()
@@ -33,18 +27,13 @@ public class IdleMoveToTarget : EnemyIdleSOBase
     public override void DoFrameUpdateLogic()
     {
         base.DoFrameUpdateLogic();
-
-        Vector2 moveDirection = ((target.position + targetOffset) - enemy.transform.position).normalized;
-
-
-        enemy.MoveEnemyFloat(moveDirection * movementSpeed * enemy.slowAmount);
     }
 
     public override void DoPhysicsLogic()
     {
         base.DoPhysicsLogic();
 
-       
+        enemy.MoveEnemyFloat(Vector2.zero);
     }
 
     public override void Initialize(GameObject gameObject, Enemy enemy)
@@ -56,4 +45,5 @@ public class IdleMoveToTarget : EnemyIdleSOBase
     {
         base.ResetValues();
     }
+
 }
