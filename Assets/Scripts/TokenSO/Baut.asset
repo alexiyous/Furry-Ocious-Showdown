@@ -15,9 +15,9 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 87aeeaed673e2d54592efb8ba0f72548, type: 3}
   bulletType: 1
   attackTechniques:
-  - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
-  - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
-  - {fileID: 5899050420537676829, guid: 8641deafd73113d4aaf2cd752276294c, type: 3}
+  - {fileID: 1366023300589006215, guid: 7f9f1ac1b9735504a87faf46b1bb609b, type: 3}
+  - {fileID: 3643732322243283732, guid: 6fa20a0dbc3746e4193b772334d6fd2c, type: 3}
+  - {fileID: 21224981236299806, guid: 8c3d294d6d33216438b48b467a574a10, type: 3}
   attackNames:
   - Shotgun Attack
   - EMP Bomb
