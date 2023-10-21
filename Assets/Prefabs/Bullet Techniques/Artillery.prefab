@@ -124,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2002b42db7d8ec24996a57f749cfaeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 200
+  armorPenetration: 60
   parent: {fileID: 7958454562470241715}
 --- !u!50 &8642897283341872570
 Rigidbody2D:
@@ -364,7 +365,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAim: {fileID: 4372602052504235082}
-  type: Event
   flare: {fileID: 3258972547695049138}
   artilleryBullet: {fileID: 7958454562470241715}
   hitCollider: {fileID: 3340978110463945449}
