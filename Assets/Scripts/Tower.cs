@@ -10,22 +10,27 @@ public class Tower : MonoBehaviour
     public LayerMask enemyLayerMask;
     public GameObject bulletPrefab;
     public Transform firingPoint;
-    public SpriteRenderer neckRenderer;
-    public SpriteRenderer headRenderer;
     public GameObject upgradeNotif;
+    public GameObject baseDeafult;
+    public GameObject rotationDefault;
+    public GameObject[] baseObjects;
+    public GameObject[] rotationObjects;
+    public Transform[] firingP;
     public TowerSO[] towerUpgrade;
-    private TextMeshProUGUI upgradeButtonText;
+    [HideInInspector] public TextMeshProUGUI upgradeButtonText;
 
     [Header("Attributes")]
     public float targetingRange;
     public float rotationSpeed = 5f;
     public float bps = 1f; // Bullets per second
+    public float bps2 = 0f;
+    public float bps3 = 0f;
     [HideInInspector] public bool inUpgradeZone;
     public int cost;
     public Vector2 targetingSize = new Vector2(4f, 4f); // Adjust the size as needed
     public Vector3 centerOffset = new Vector3(0f, 0f, 0f); // Adjust the offset as needed
     private Vector3 originNotifPosition;
-    private LevelUpgrade levelUpgrade;
+    [HideInInspector] public LevelUpgrade levelUpgrade;
 
     [HideInInspector] public Transform target;
     [HideInInspector] public float timeUntilFire;
@@ -128,13 +133,16 @@ public class Tower : MonoBehaviour
 
     public virtual void RotateTowardsTarget()
     {
-        float angle = Mathf.Atan2(target.position.y - transform.position.y,
-                       target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
+        if (target == null)
+        {
+            return;
+        }
 
-        Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+        Vector3 direction = target.position - turretRotationPoint.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         turretRotationPoint.rotation = Quaternion.RotateTowards(turretRotationPoint.rotation,
             targetRotation, rotationSpeed * Time.deltaTime);
-
     }
 
     public virtual void OnDrawGizmosSelected()
@@ -143,29 +151,38 @@ public class Tower : MonoBehaviour
         Handles.DrawWireCube(transform.position + centerOffset, targetingSize);
     }
 
-    public void UpgradeTower()
+    public virtual void UpgradeTower()
     {
-        if (GameManager.instance.DebugCoin >= cost)
+        if (ScoreManager.instance.currentScore >= cost)
         {
 
             // IMPLEMENT SPAWN EFFECT
 
             // IMPLEMENT COIN DEDUCTION
             // This is Temporary, change it later
-            GameManager.instance.DebugCoin -= cost;
+            ScoreManager.instance.currentScore -= cost;
             if (levelUpgrade == LevelUpgrade.Level3) return;
             levelUpgrade++;
             switch (levelUpgrade)
             {
                 case LevelUpgrade.Level2:
-                    neckRenderer.sprite = towerUpgrade[0].neckSprite;
-                    headRenderer.sprite = towerUpgrade[0].headSprite;
                     cost = towerUpgrade[0].cost;
+                    baseDeafult.SetActive(false);
+                    rotationDefault.SetActive(false);
+                    baseObjects[0].SetActive(true);
+                    rotationObjects[0].SetActive(true);
+                    turretRotationPoint = rotationObjects[0].transform;
+                    firingPoint = firingP[0];
                     upgradeButtonText.text = cost.ToString();
                     break;
                 case LevelUpgrade.Level3:
-                    neckRenderer.sprite = towerUpgrade[1].neckSprite;
-                    headRenderer.sprite = towerUpgrade[1].headSprite;
+                    bps = bps3;
+                    baseObjects[0].SetActive(false);
+                    rotationObjects[0].SetActive(false);
+                    baseObjects[1].SetActive(true);
+                    rotationObjects[1].SetActive(true);
+                    turretRotationPoint = rotationObjects[1].transform;
+                    firingPoint = firingP[1];
                     upgradeNotif.SetActive(false);
                     break;
             }

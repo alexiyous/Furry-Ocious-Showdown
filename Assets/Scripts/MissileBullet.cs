@@ -21,9 +21,11 @@ public class MissileBullet : TowerBullet
                 float rotateAmount = Vector3.Cross(direction, transform.up).z;
                 rb.angularVelocity = -rotateAmount * rotateSpeed;
                 rb.velocity = transform.up * bulletSpeed * 1.5f;
+                damage = damage2;
+                armor = armor2;
                 break;
             case LevelUpgrade.Level3:
-                damage = damage * 1.5f;
+                damage = damage3;
                 direction = (target.position - transform.position).normalized;
                 float rotateAmount1 = Vector3.Cross(direction, transform.up).z;
                 rb.angularVelocity = -rotateAmount1 * rotateSpeed;
