@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 7563918481328110016}
   - component: {fileID: 5460372217704243681}
   m_Layer: 0
-  m_Name: enemy submarine
+  m_Name: Submarine Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

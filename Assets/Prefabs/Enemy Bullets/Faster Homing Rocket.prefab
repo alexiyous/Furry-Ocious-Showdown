@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   armorPenetration: 50
-  hitEffect: {fileID: 69044193160978531, guid: 0aa15a2887fc0bf43a7a07542961c165, type: 3}
+  hitEffect: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
 --- !u!50 &328453767260371964
 Rigidbody2D:
   serializedVersion: 4
