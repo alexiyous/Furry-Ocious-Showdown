@@ -6332,14 +6332,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 467495914317454296, guid: 48da46482eb273844a25cc6d3bdd4e33, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 467495914317454296, guid: 48da46482eb273844a25cc6d3bdd4e33, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.57
-      objectReference: {fileID: 0}
     - target: {fileID: 467495915853006525, guid: 48da46482eb273844a25cc6d3bdd4e33, type: 3}
       propertyPath: m_Camera
       value: 
@@ -6353,37 +6345,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 913085265575111658, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 913085265575111658, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 913085265575111658, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 913085265575111658, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 913085266713307899, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
       propertyPath: m_Name
       value: MachineGun Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 913085266713307899, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 913085266713307900, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
-      propertyPath: bps2
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 913085266713307900, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
-      propertyPath: bps3
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 913085266713307901, guid: c9f6abca0fd152f4d85d6a0fcfb92239, type: 3}
       propertyPath: m_RootOrder
