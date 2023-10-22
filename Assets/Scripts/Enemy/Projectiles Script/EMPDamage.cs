@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EMPDamage : MonoBehaviour
 {
-    [SerializeField] private string type = "Event";
 
     [SerializeField] private int damage;
     [SerializeField] private int armorPenetration = 0;

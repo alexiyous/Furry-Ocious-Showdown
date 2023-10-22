@@ -50,7 +50,6 @@ public class Tower : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B) && inUpgradeZone)
         {
-            Debug.Log("input");
             UpgradeTower();
         }
 

@@ -212,7 +212,7 @@ MonoBehaviour:
   targetingRange: 4.12
   rotationSpeed: 200
   bps: 0.3
-  bps2: 0
+  bps2: 0.3
   bps3: 0.5
   inUpgradeZone: 0
   cost: 100
