@@ -138,7 +138,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   bulletSpeed: 5
-  damage: 1
+  damage: 20
+  damage2: 20
+  damage3: 30
+  armor: 10
+  armor2: 10
+  armor3: 20
   direction: {x: 0, y: 0}
   bulletLevel: 0
   target: {fileID: 0}

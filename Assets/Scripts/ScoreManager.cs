@@ -5,8 +5,8 @@ using DG.Tweening;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int currentScore;
-    public static int highScore;
+    public int currentScore;
+    public int highScore;
 
     public static ScoreManager instance;
 
