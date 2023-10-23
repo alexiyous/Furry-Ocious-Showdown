@@ -58,9 +58,9 @@ public class StartAnyKey : MonoBehaviour
 
     void StartBlinking()
     {
-        if (isBlinking || text == null)
+        /*if (isBlinking || text == null)
             return;
-
+*/
         isBlinking = true;
         Sequence sequence = DOTween.Sequence();
 

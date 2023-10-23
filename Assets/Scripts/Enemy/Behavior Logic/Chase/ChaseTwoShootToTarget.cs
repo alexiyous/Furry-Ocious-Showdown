@@ -35,6 +35,8 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
 
         enemy.MoveEnemyFloat(Vector2.zero);
 
+        enemy.animator.StopPlayback();
+
         timerMain = 1f;
         timerSecondary = 1f;
 

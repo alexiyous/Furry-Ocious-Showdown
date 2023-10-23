@@ -144,7 +144,7 @@ MonoBehaviour:
   damage: 200
   armorPenetration: 20
   piercePower: 4
-  hitEffect: {fileID: 69044193160978531, guid: 0aa15a2887fc0bf43a7a07542961c165, type: 3}
+  hitEffect: {fileID: 2937120575847993534, guid: 9fe0f71c4e7d9fd4182effbccc9f1f18, type: 3}
 --- !u!114 &1570316740161460528
 MonoBehaviour:
   m_ObjectHideFlags: 0
