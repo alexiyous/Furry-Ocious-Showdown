@@ -6,7 +6,6 @@ public class MortarTower : Tower
 
     private float timeToHitTarget; // Time to hit the target
 
-
     public override void RotateTowardsTarget()
     {
         if (!target) return;
@@ -35,6 +34,43 @@ public class MortarTower : Tower
         {
             StartCoroutine(bulletScript.DestroyBulletIfMissed(timeToHitTarget));
 
+        }
+    }
+
+    public override void UpgradeTower()
+    {
+        if (ScoreManager.instance.currentScore >= cost)
+        {
+
+            // IMPLEMENT SPAWN EFFECT
+
+            // IMPLEMENT COIN DEDUCTION
+            // This is Temporary, change it later
+            ScoreManager.instance.currentScore -= cost;
+            if (levelUpgrade == LevelUpgrade.Level3) return;
+            levelUpgrade++;
+            switch (levelUpgrade)
+            {
+                case LevelUpgrade.Level2:
+                    baseDeafult.SetActive(false);
+                    rotationDefault.SetActive(false);
+                    baseObjects[0].SetActive(true);
+                    rotationObjects[0].SetActive(true);
+                    turretRotationPoint = rotationObjects[0].transform;
+                    firingPoint = firingP[0];
+                    cost = towerUpgrade[0].cost;
+                    upgradeButtonText.text = cost.ToString();
+                    break;
+                case LevelUpgrade.Level3:
+                    baseObjects[0].SetActive(false);
+                    rotationObjects[0].SetActive(false);
+                    baseObjects[1].SetActive(true);
+                    rotationObjects[1].SetActive(true);
+                    turretRotationPoint = rotationObjects[1].transform;
+                    firingPoint = firingP[1];
+                    upgradeNotif.SetActive(false);
+                    break;
+            }
         }
     }
 

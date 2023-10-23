@@ -5,6 +5,11 @@ public class MortarBullet : TowerBullet
 {
     public float timeToHitTarget;
     public bool isTargeting;
+    public CircleCollider2D hitZone;
+    public float bombCollide;
+    public float hitZone2;
+    public float hitZone3;
+
 
     public override void Move()
     {
@@ -13,11 +18,15 @@ public class MortarBullet : TowerBullet
         switch (bulletLevel)
         {
             case LevelUpgrade.Level2:
-                damage *= 1.2f;
+                damage = damage2;
+                armor = armor2;
+                bombCollide = hitZone2;
                 bulletSpeed *= 1.5f;
                 break;
             case LevelUpgrade.Level3:
-                damage *= 1.5f;
+                damage = damage3;
+                armor = armor3;
+                bombCollide = hitZone3;
                 bulletSpeed *= 1.5f;
                 break;
         }
@@ -31,7 +40,11 @@ public class MortarBullet : TowerBullet
 
         if (isTargeting)
         {
-            if (gameObject != null) Destroy(gameObject); // Destroy the game object only if it's still targeting
+            if (gameObject != null)
+            {
+                hitZone.radius = bombCollide;
+                Destroy(gameObject,0.2f); // Destroy the game object only if it's still targeting
+            }
         }
     }
 
@@ -45,6 +58,8 @@ public class MortarBullet : TowerBullet
         if (collision.CompareTag("Enemy"))
         {
             isTargeting = false;
+            hitZone.radius = bombCollide;
+            /*collision.GetComponent<IDamageable>().Damage(damage, armor);*/
             Destroy(gameObject);
         }
 

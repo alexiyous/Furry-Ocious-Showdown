@@ -14,11 +14,13 @@ public class DPSBullet : TowerBullet
                 rb.velocity = transform.up * bulletSpeed;
                 break;
             case LevelUpgrade.Level2:
-                damage *= 1.2f;
+                damage = damage2;
+                armor = armor2;
                 rb.velocity = transform.up * bulletSpeed * 1.5f;
                 break;
             case LevelUpgrade.Level3:
-                damage *= 1.5f;
+                damage = damage3;
+                armor = armor3;
                 rb.velocity = transform.position * bulletSpeed * 1.5f;
                 break;
         }

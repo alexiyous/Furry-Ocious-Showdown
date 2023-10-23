@@ -9,7 +9,13 @@ public abstract class TowerBullet : MonoBehaviour
 
     [Header("Attributes")]
     public float bulletSpeed = 5f;
-    public float damage;
+    public int damage;
+    public int damage2 = 0;
+    public int damage3 = 0;
+    public int armor;
+    public int armor2 = 0;
+    public int armor3 = 0;
+
     [HideInInspector] public Vector2 direction;
     [HideInInspector] public LevelUpgrade bulletLevel = LevelUpgrade.Level1;
 
@@ -47,6 +53,7 @@ public abstract class TowerBullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            /*collision.GetComponent<IDamageable>().Damage(damage, armor);*/
             Destroy(gameObject);
         }
     }
