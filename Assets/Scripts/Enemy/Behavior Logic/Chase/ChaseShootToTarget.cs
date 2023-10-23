@@ -8,12 +8,14 @@ public class ChaseShootToTarget : EnemyChaseSOBase
     [SerializeField] private float reloadTime = 2f;
     private float timer;
 
-    [SerializeField] private float fireRate = .3f;
+    [SerializeField] private float fireRate = .2f;
     [SerializeField] private int bulletCount = 3;
 
     [SerializeField] private float inaccuracy = 1f;
 
     [SerializeField] private GameObject bulletPrefab;
+
+    public Vector3 shootOffset;
 
     private Transform target;
 
@@ -25,6 +27,7 @@ public class ChaseShootToTarget : EnemyChaseSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
+        enemy.animator.Play("Aim");
 
         enemy.MoveEnemyFloat(Vector2.zero);
 
@@ -56,12 +59,15 @@ public class ChaseShootToTarget : EnemyChaseSOBase
             enemy.CheckForDirection((target.position - enemy.transform.position).normalized);
         }
 
-        
+        if(timer > reloadTime - 1f)
+        {
+            enemy.animator.Play("Aim");
+        }
 
         if (timer > reloadTime)
         {
             timer = 0f;
-
+            enemy.animator.Play("Shoot");
 
             if(target != null)
             {
@@ -114,9 +120,9 @@ public class ChaseShootToTarget : EnemyChaseSOBase
         {
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracy, inaccuracy), 0);
 
-            Vector2 direction = (target.position - enemy.transform.position + shootInaccuracy).normalized;
+            Vector2 direction = (target.position - (enemy.transform.position + shootOffset) + shootInaccuracy).normalized;
 
-            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefab, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefab, transform.position + shootOffset, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 

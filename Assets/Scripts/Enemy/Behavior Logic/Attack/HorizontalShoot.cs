@@ -71,7 +71,7 @@ public class HorizontalShoot : EnemyAttackSOBase
 
     private void Shoot()
     {
-        float xOffset = enemy.isFacingRight ? 1f : -1f;
+        float xOffset = enemy.isFacingLeft ? 1f : -1f;
         Vector3 offset = new Vector3(xOffset * 2f, 0f, 0f);
 
         Vector2 direction = playerTransform.position.x > enemy.transform.position.x ? Vector2.right : Vector2.left;

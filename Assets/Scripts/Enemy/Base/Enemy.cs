@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
     public float currentSlowTime { get; set; }
     [field: SerializeField] public int score { get; set; }
     public Rigidbody2D RB { get; set; }
-    public bool isFacingRight { get; set; } = true;
+    public bool isFacingLeft { get; set; } = true;
     public bool isAggroed { get; set; }
     public bool isWithinAttackingRadius { get; set; }
     public bool isAlive { get; set; }
@@ -186,13 +186,23 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
     public virtual void Die()
     {
-        isAlive = false;
-        //AudioManager.instance.PlaySFXAdjusted(12);
+        if (isAlive)
+        {
+            //AudioManager.instance.PlaySFXAdjusted(12);
 
-        ScoreManager.instance.AddScore(score);
+            enemyCollider.enabled = false;
 
-        ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
-        Destroy(gameObject);
+            ScoreManager.instance.AddScore(score);
+
+            animator.Play("Death");
+
+            ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+            stateMachine.ChangeState(attackState);
+            Destroy(gameObject, 1);
+            isAlive = false;
+        }
+
+        
     }
 
     public void Spawn()
@@ -237,16 +247,17 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
     public void CheckForDirection(Vector2 velocity)
     {
-        if(isFacingRight && velocity.x < 0f)
-        {
-            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
-            isFacingRight = !isFacingRight;
-        } else if(!isFacingRight && velocity.x > 0f)
+        if (isFacingLeft && velocity.x > 0f)
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
-            isFacingRight = !isFacingRight;
+            isFacingLeft = false;
+        }
+        else if (!isFacingLeft && velocity.x < 0f)
+        {
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+            isFacingLeft = true;
         }
     }
 

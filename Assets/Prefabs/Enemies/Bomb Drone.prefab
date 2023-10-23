@@ -110,7 +110,7 @@ MonoBehaviour:
   <deathEffect>k__BackingField: {fileID: 69044193160978531, guid: 0aa15a2887fc0bf43a7a07542961c165, type: 3}
   EnemyIdleBase: {fileID: 11400000, guid: 47a1972f4dcfdda4d871f4a2980baaf7, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: dd2607c2412b0ef429fa213b5083e576, type: 2}
-  EnemyAttackBase: {fileID: 11400000, guid: 34c3ebe2323d3dc40a34216c1d4c9fd2, type: 2}
+  EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}
 --- !u!50 &3049255663114454527
 Rigidbody2D:
   serializedVersion: 4

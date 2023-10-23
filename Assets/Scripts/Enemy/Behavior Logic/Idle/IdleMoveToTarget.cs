@@ -19,7 +19,7 @@ public class IdleMoveToTarget : EnemyIdleSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-
+        enemy.animator.Play("Run");
         movementSpeed = Random.Range(enemy.baseSpeed - randomMovementSpeedOffset, enemy.baseSpeed + randomMovementSpeedOffset);
         targetOffset = new Vector3(0, Random.Range(-targetOffsetY, targetOffsetY), 0);
 

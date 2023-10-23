@@ -15,10 +15,12 @@ MonoBehaviour:
   reloadMainTime: 4
   fireRateMain: 1
   bulletCountMain: 1
-  inaccuracyMain: 1
+  inaccuracyMain: 0.4
   bulletPrefabMain: {fileID: 1983912651402021026, guid: e2c0a75e0ff70c84f9e5c73b349762e6, type: 3}
   reloadSecondaryTime: 2
   fireRateSecondary: 0.2
   bulletCountSecondary: 5
   inaccuracySecondary: 1.9
   bulletPrefabSecondary: {fileID: 8047041956205088625, guid: 3952ba94f1a36c241a863de4a61eeaac, type: 3}
+  offsetMain: {x: -2, y: 2.5, z: 0}
+  offsetSecondary: {x: -2, y: 2, z: 0}

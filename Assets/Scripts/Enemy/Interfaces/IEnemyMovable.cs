@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IEnemyMovable
 {
     Rigidbody2D RB { get; set; }
-    bool isFacingRight { get; set; }
+    bool isFacingLeft { get; set; }
     void MoveEnemy(Vector2 velocity);
     void CheckForDirection(Vector2 velocity);
 }
