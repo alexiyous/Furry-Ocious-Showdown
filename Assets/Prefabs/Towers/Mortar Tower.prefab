@@ -625,6 +625,7 @@ GameObject:
   - component: {fileID: 2587263642709243123}
   - component: {fileID: 2587263642709243124}
   - component: {fileID: 2587263642709243122}
+  - component: {fileID: 1711814310552364472}
   m_Layer: 0
   m_Name: Mortar Tower
   m_TagString: Untagged
@@ -641,8 +642,8 @@ Transform:
   m_GameObject: {fileID: 2587263642709243125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.73, y: 0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2587263643151610289}
   - {fileID: 1099326524368024342}
@@ -695,8 +696,8 @@ MonoBehaviour:
   bps3: 0.3
   inUpgradeZone: 0
   cost: 100
-  targetingSize: {x: 11.9, y: 7}
-  centerOffset: {x: 5.8, y: 0, z: 0}
+  targetingSize: {x: 50, y: 10.66}
+  centerOffset: {x: 28.07, y: 0, z: 0}
   levelUpgrade: 0
   target: {fileID: 0}
   timeUntilFire: 0
@@ -726,6 +727,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3937, y: 2.0572777}
   m_EdgeRadius: 0
+--- !u!210 &1711814310552364472
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2587263642709243125}
+  m_Enabled: 1
+  m_SortingLayerID: -1384759829
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &2587263642877462011
 GameObject:
   m_ObjectHideFlags: 0
