@@ -485,8 +485,8 @@ MonoBehaviour:
   - {fileID: 8019416039099897421}
   - {fileID: 8019416038673880451}
   m_Bounds:
-    m_Center: {x: -0.023234963, y: 0.0013194084, z: -0.000000029802322}
-    m_Extent: {x: 1.0432351, y: 2.4186802, z: 8.881784e-16}
+    m_Center: {x: -0.02322948, y: 0.0013194084, z: -0.000000029802322}
+    m_Extent: {x: 1.0432372, y: 2.4186804, z: 8.881784e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
   - {fileID: 8019416038781187492}
   - {fileID: 8019416039664451703}
   m_Bounds:
-    m_Center: {x: 0.013286293, y: -0.052204847, z: -0.000000029802322}
+    m_Center: {x: 0.013293922, y: -0.052204967, z: -0.000000029802322}
     m_Extent: {x: 0.97200394, y: 1.0198652, z: 2.6645353e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 8019416039696093746}
   - component: {fileID: 8019416039696093745}
   - component: {fileID: 8019416039696093744}
+  - component: {fileID: 4958560249245018207}
   m_Layer: 0
   m_Name: Rocket Enemy
   m_TagString: Enemy
@@ -728,7 +729,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -798,6 +799,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0.37071228, y: -0.06865263}
   m_Size: {x: 4.7563553, y: 9.045921}
   m_Direction: 0
+--- !u!210 &4958560249245018207
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019416039696093741}
+  m_Enabled: 1
+  m_SortingLayerID: -1384759829
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &8019416039759032601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,8 +1183,8 @@ MonoBehaviour:
   - {fileID: 8019416038995839554}
   - {fileID: 8019416040729135270}
   m_Bounds:
-    m_Center: {x: 0.033334732, y: -0.009970188, z: -0.00000002980232}
-    m_Extent: {x: 1.4233352, y: 1.4849701, z: 1.7763568e-15}
+    m_Center: {x: 0.03334236, y: -0.009970427, z: -0.00000002980232}
+    m_Extent: {x: 1.4233352, y: 1.4849703, z: 1.7763568e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1281,7 +1293,7 @@ MonoBehaviour:
   - {fileID: 8019416040579050957}
   m_Bounds:
     m_Center: {x: -0.0025548935, y: -0.07259476, z: -0.00000002980232}
-    m_Extent: {x: 2.0775561, y: 1.7754456, z: 1.7763568e-15}
+    m_Extent: {x: 2.0775561, y: 1.7754457, z: 1.7763568e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1454,7 +1466,7 @@ MonoBehaviour:
   - {fileID: 8019416038643523228}
   - {fileID: 8019416039759032600}
   m_Bounds:
-    m_Center: {x: -0.0036005974, y: -0.03576505, z: -0.000000029802322}
+    m_Center: {x: -0.003592968, y: -0.03576505, z: -0.000000029802322}
     m_Extent: {x: 1.432011, y: 1.4791553, z: 2.6645353e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
