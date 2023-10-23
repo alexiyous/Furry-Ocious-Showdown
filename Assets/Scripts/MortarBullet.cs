@@ -59,7 +59,7 @@ public class MortarBullet : TowerBullet
         {
             isTargeting = false;
             hitZone.radius = bombCollide;
-            /*collision.GetComponent<IDamageable>().Damage(damage, armor);*/
+            collision.GetComponent<IDamageable>().Damage(damage, armor);
             Destroy(gameObject);
         }
 

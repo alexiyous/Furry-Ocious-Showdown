@@ -53,7 +53,7 @@ public abstract class TowerBullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            /*collision.GetComponent<IDamageable>().Damage(damage, armor);*/
+            collision.GetComponent<IDamageable>().Damage(damage, armor);
             Destroy(gameObject);
         }
     }
