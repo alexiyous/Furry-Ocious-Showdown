@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Idle-MoveToPlayer
   m_EditorClassIdentifier: 
   randomMovementSpeedOffset: 1
-  minPlayerY: 4
-  targetOffsetY: 3
+  minPlayerY: 8
+  targetOffsetX: 3

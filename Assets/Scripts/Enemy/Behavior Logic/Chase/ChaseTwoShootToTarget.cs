@@ -117,9 +117,16 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
         {
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracyMain, inaccuracyMain), 0);
 
-            Vector2 direction = (target.position - (enemy.transform.position + offsetSecondary) + shootInaccuracy).normalized;
+            Vector3 shootOffsetFinal = offsetMain;
 
-            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefabMain, transform.position + offsetMain, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+            if (!enemy.isFacingLeft)
+            {
+                shootOffsetFinal = -offsetMain;
+            }
+
+            Vector2 direction = (target.position - (enemy.transform.position + shootOffsetFinal) + shootInaccuracy).normalized;
+
+            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefabMain, transform.position + shootOffsetFinal, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
@@ -137,9 +144,16 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
         {
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracySecondary, inaccuracySecondary), 0);
 
-            Vector2 direction = (target.position - (enemy.transform.position + offsetSecondary) + shootInaccuracy).normalized;
+            Vector3 shootOffsetFinal = offsetSecondary;
 
-            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefabSecondary, transform.position + offsetSecondary, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+            if (!enemy.isFacingLeft)
+            {
+                shootOffsetFinal = -offsetSecondary;
+            }
+
+            Vector2 direction = (target.position - (enemy.transform.position + shootOffsetFinal) + shootInaccuracy).normalized;
+
+            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefabSecondary, transform.position + shootOffsetFinal, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 

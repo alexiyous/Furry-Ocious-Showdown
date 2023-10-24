@@ -485,8 +485,8 @@ MonoBehaviour:
   - {fileID: 8019416039099897421}
   - {fileID: 8019416038673880451}
   m_Bounds:
-    m_Center: {x: -0.02322948, y: 0.0013194084, z: -0.000000029802322}
-    m_Extent: {x: 1.0432372, y: 2.4186804, z: 8.881784e-16}
+    m_Center: {x: -0.023234963, y: 0.0013189316, z: -0.000000029802322}
+    m_Extent: {x: 1.0432351, y: 2.4186802, z: 8.881784e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -594,8 +594,8 @@ MonoBehaviour:
   - {fileID: 8019416038781187492}
   - {fileID: 8019416039664451703}
   m_Bounds:
-    m_Center: {x: 0.013293922, y: -0.052204967, z: -0.000000029802322}
-    m_Extent: {x: 0.97200394, y: 1.0198652, z: 2.6645353e-15}
+    m_Center: {x: 0.013290167, y: -0.05220449, z: -0.000000029802322}
+    m_Extent: {x: 0.9720002, y: 1.0198647, z: 2.6645353e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 8019416039696093745}
   - component: {fileID: 8019416039696093744}
   - component: {fileID: 4958560249245018207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rocket Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -759,6 +759,7 @@ MonoBehaviour:
   <baseSpeed>k__BackingField: 3
   <score>k__BackingField: 50
   <deathEffect>k__BackingField: {fileID: 69044193160978531, guid: 0aa15a2887fc0bf43a7a07542961c165, type: 3}
+  <killTimer>k__BackingField: 1
   EnemyIdleBase: {fileID: 11400000, guid: 40874ff107b15a24aa49c38e25b50c14, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: c3ff45034612cef4a98d60def79e2296, type: 2}
   EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}
@@ -1183,7 +1184,7 @@ MonoBehaviour:
   - {fileID: 8019416038995839554}
   - {fileID: 8019416040729135270}
   m_Bounds:
-    m_Center: {x: 0.03334236, y: -0.009970427, z: -0.00000002980232}
+    m_Center: {x: 0.033334732, y: -0.009970188, z: -0.00000002980232}
     m_Extent: {x: 1.4233352, y: 1.4849703, z: 1.7763568e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1292,8 +1293,8 @@ MonoBehaviour:
   - {fileID: 8019416039822522696}
   - {fileID: 8019416040579050957}
   m_Bounds:
-    m_Center: {x: -0.0025548935, y: -0.07259476, z: -0.00000002980232}
-    m_Extent: {x: 2.0775561, y: 1.7754457, z: 1.7763568e-15}
+    m_Center: {x: -0.0025548935, y: -0.072594404, z: -0.00000002980232}
+    m_Extent: {x: 2.0775561, y: 1.7754455, z: 1.7763568e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1466,8 +1467,8 @@ MonoBehaviour:
   - {fileID: 8019416038643523228}
   - {fileID: 8019416039759032600}
   m_Bounds:
-    m_Center: {x: -0.003592968, y: -0.03576505, z: -0.000000029802322}
-    m_Extent: {x: 1.432011, y: 1.4791553, z: 2.6645353e-15}
+    m_Center: {x: -0.0036158562, y: -0.03576505, z: -0.000000029802322}
+    m_Extent: {x: 1.432011, y: 1.4791551, z: 2.6645353e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

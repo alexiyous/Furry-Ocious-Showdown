@@ -43,7 +43,7 @@ public class HomingProjectile : MonoBehaviour
                             .Select(building => building.transform)
                             .ToArray();
 
-        if(buildingsTransform.Length != 0 || buildingsTransform != null)
+        if(buildingsTransform.Length != 0)
         {
             int randomTarget = Random.Range(0, buildingsTransform.Length);
             /*Debug.Log(randomTarget);*/

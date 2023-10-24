@@ -136,9 +136,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913085265230481025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: 0}
-  m_LocalScale: {x: 0.27704778, y: 0.5815, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 1.29, z: 0}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 913085267267375376}
   m_Father: {fileID: 913085266713307901}
@@ -185,8 +185,8 @@ SpriteRenderer:
   m_SortingLayerID: 1524457273
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9e69925855fc68b4aac4445c7413d888, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -232,7 +232,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 103.7, y: 22.8}
+  m_SizeDelta: {x: 167.25, y: 22.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &913085265512278566
 CanvasRenderer:
@@ -264,15 +264,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0057772d95588d544916ab971ca665a0, type: 2}
+  m_sharedMaterial: {fileID: -7358543083675554430, guid: 0057772d95588d544916ab971ca665a0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280206825
-  m_fontColor: {r: 0.9150943, g: 0.77397573, b: 0.117983796, a: 1}
+    rgba: 4283244265
+  m_fontColor: {r: 0.9137255, g: 0.11764703, b: 0.30272016, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_fontSizeMin: 19.63
   m_fontSizeMax: 72
   m_fontStyle: 33
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
   turretRotationPoint: {fileID: 913085266161373188}
   enemyLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 6144
   bulletPrefab: {fileID: 1834883980012235459, guid: f34bf6e0b77c7de4cbfa5766e8a686c6, type: 3}
   firingPoint: {fileID: 913085265605425737}
   upgradeNotif: {fileID: 913085265230481025}
@@ -823,7 +823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.01}
+  m_AnchoredPosition: {x: -0.24, y: 1.01}
   m_SizeDelta: {x: 823, y: 462.9999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &913085267267375379
