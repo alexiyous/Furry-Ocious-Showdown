@@ -17,6 +17,10 @@ public class AttackHelicopter : Enemy
 
     public Transform[] buildingsTransform;
 
+    public ParticleSystem _particleSystem;
+
+    
+
     public override void Start()
     {
         base.Start();
@@ -26,6 +30,7 @@ public class AttackHelicopter : Enemy
         buildingsTransform = GameObject.FindGameObjectsWithTag("Building")
                             .Select(building => building.transform)
                             .ToArray();
+        
     }
 
     public override void Die()
@@ -34,4 +39,68 @@ public class AttackHelicopter : Enemy
 
         machineGun.SetActive(false);
     }
+
+    public override void Damage(int damageAmount, int armorPenetration)
+    {
+        base.Damage(damageAmount, armorPenetration);
+
+        var mainModule = _particleSystem.main;
+        var emissionModule = _particleSystem.emission;
+
+        if (currentHealth <= maxHealth * 0.2f)
+        {
+            if (_particleSystem.isPlaying)
+            {
+                _particleSystem.Stop();
+                _particleSystem.Clear(); // Clear existing particles
+            }
+
+            mainModule.duration = 0.15f;
+            emissionModule.SetBurst(0, new ParticleSystem.Burst(0.0f, 15, 15, 1, 0.01f));
+            mainModule.startColor = new Color(0.2f, 0.2f, 0.2f, 1.0f);
+
+            if (!_particleSystem.isPlaying)
+            {
+                _particleSystem.Play();
+            }
+        }
+        else if (currentHealth <= maxHealth * 0.5f)
+        {
+            if (_particleSystem.isPlaying)
+            {
+                _particleSystem.Stop();
+                _particleSystem.Clear(); // Clear existing particles
+            }
+
+            mainModule.duration = 0.3f;
+            emissionModule.SetBurst(0, new ParticleSystem.Burst(0.0f, 10, 10, 1, 0.01f));
+            mainModule.startColor = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+
+            if (!_particleSystem.isPlaying)
+            {
+                _particleSystem.Play();
+            }
+        }
+        else if (currentHealth <= maxHealth * 0.8f)
+        {
+            if (_particleSystem.isPlaying)
+            {
+                _particleSystem.Stop();
+                _particleSystem.Clear(); // Clear existing particles
+            }
+
+            mainModule.duration = 0.5f;
+            emissionModule.SetBurst(0, new ParticleSystem.Burst(0.0f, 10, 10, 1, 0.01f));
+
+            if (!_particleSystem.isPlaying)
+            {
+                _particleSystem.Play();
+            }
+        }
+    }
+
+    /*public override void Update()
+    {
+        
+    }*/
 }

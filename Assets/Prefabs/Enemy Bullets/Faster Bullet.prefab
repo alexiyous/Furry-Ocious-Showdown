@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 1.02
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000eb3d76ad41b50daa395fdd5ad137428fcb23ff8e519d54fe
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: -598125628247281931}
   - component: {fileID: -1104939935157371857}
   - component: {fileID: 6374715242198033983}
+  - component: {fileID: 2401834333164015759}
   m_Layer: 0
   m_Name: Faster Bullet
   m_TagString: Untagged
@@ -634,3 +635,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d118f4002ef4847b0e8a187d356512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &2401834333164015759
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047041956205088625}
+  m_Enabled: 1
+  m_SortingLayerID: -1384759829
+  m_SortingLayer: 1
+  m_SortingOrder: 1
