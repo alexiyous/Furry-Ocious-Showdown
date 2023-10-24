@@ -1,3 +1,5 @@
+using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 
 public class MortarTower : Tower
@@ -23,6 +25,7 @@ public class MortarTower : Tower
     public override void Shoot()
     {
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, turretRotationPoint.rotation);
+        bulletObj.transform.DORotate(new Vector3(0, 0, -120), timeToHitTarget);
         var rb = bulletObj.GetComponent<Rigidbody2D>();
         rb.velocity = Vo;
         MortarBullet bulletScript = bulletObj.GetComponent<MortarBullet>();

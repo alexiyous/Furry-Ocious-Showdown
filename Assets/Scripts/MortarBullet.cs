@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
+
 
 public class MortarBullet : TowerBullet
 {
@@ -43,7 +45,7 @@ public class MortarBullet : TowerBullet
             if (gameObject != null)
             {
                 hitZone.radius = bombCollide;
-                Destroy(gameObject,0.2f); // Destroy the game object only if it's still targeting
+                Destroy(gameObject, 0.2f); // Destroy the game object after timeToHit seconds
             }
         }
     }

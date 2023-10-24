@@ -18,6 +18,7 @@ public class MineParent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.rotation = Quaternion.identity;
         bridgeRoad = GameObject.FindGameObjectWithTag("Bridge Road").transform;
 
         undersideYPosition = (bridgeRoad.position.y - bridgeRoad.localScale.y / 2f) + .5f;
