@@ -25,6 +25,10 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
     [SerializeField] private BoxCollider2D boxColliderbridge1;
     [SerializeField] private BoxCollider2D boxColliderbridge2;
 
+    public GameObject bridgePole;
+    public GameObject bridgePoleFront;
+    public GameObject bridgePoleBack;
+
     private bool isDead = false;
 
     private void Awake()
@@ -49,6 +53,9 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
         }
 
         currentHealth -= (int)damage;
+
+        bridgePole.transform.DOShakePosition(.5f, new Vector3(.1f, .1f, 0f), 20, 40, false);
+
         //AudioManager.instance.PlaySFXAdjusted(13);
         if (currentHealth <= 0f && !isDead)
         {
@@ -95,10 +102,21 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
         Vector3 originalPosition = transform.position;
         Vector3 targetPosition = originalPosition - new Vector3(1.0f, 0.0f, 0.0f);
 
+        OnDie();
+
         // Use DOTween to tween the position
         transform.DOMove(targetPosition, 1.0f)
-            .SetEase(Ease.InOutSine) // Choose an ease type
-            .OnComplete(() => OnDie()); // When the tween is complete, call OnDie
+            .SetEase(Ease.InOutSine);
+
+
+        bridgePole.transform.DOLocalMoveY(-30f, 6f)
+            .SetEase(Ease.InQuad);
+        bridgePole.transform.DOLocalMoveX(UnityEngine.Random.Range(-2f, -5f), 6f)
+            .SetEase(Ease.InQuad);
+        bridgePoleFront.transform.DOLocalRotate(new Vector3(0f, 0f, UnityEngine.Random.Range(15f, 20f)), 5f)
+            .SetEase(Ease.InQuad);
+        bridgePoleBack.transform.DOLocalRotate(new Vector3(0f, 0f, UnityEngine.Random.Range(-15f, -20f)), 5f)
+            .SetEase(Ease.InQuad);
     }
 
     protected virtual void OnDie()

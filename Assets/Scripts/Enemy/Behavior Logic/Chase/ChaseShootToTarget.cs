@@ -120,9 +120,15 @@ public class ChaseShootToTarget : EnemyChaseSOBase
         {
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracy, inaccuracy), 0);
 
-            Vector2 direction = (target.position - (enemy.transform.position + shootOffset) + shootInaccuracy).normalized;
+            Vector3 shootOffsetFinal = shootOffset;
 
-            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefab, transform.position + shootOffset, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+            if(!enemy.isFacingLeft)
+            {
+                shootOffsetFinal = -shootOffset;
+            }
+            Vector2 direction = (target.position - (enemy.transform.position + shootOffsetFinal) + shootInaccuracy).normalized;
+
+            GameObject bullet = ObjectPoolManager.SpawnObject(bulletPrefab, transform.position + shootOffsetFinal, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 

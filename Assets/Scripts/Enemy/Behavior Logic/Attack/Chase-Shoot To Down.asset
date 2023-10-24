@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reloadTime: 2
   inaccuracy: 0.1
-  bulletPrefab: {fileID: 1983912651402021026, guid: e2c0a75e0ff70c84f9e5c73b349762e6, type: 3}
+  bulletPrefab: {fileID: 5440552178215233521, guid: 89e4a8a92b2e9cf4fb218d51c1cf15a5, type: 3}
   randomMovementRange: 1
   _exitTimer: 0
   _timeTillExit: 3

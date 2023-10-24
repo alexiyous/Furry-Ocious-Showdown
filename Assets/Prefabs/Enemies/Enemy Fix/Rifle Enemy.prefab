@@ -314,8 +314,8 @@ MonoBehaviour:
   - {fileID: 4892095397627419492}
   - {fileID: 4892095397691856909}
   m_Bounds:
-    m_Center: {x: 0.014644861, y: -0.049390197, z: 0}
-    m_Extent: {x: 0.94034755, y: 1.6593904, z: 0}
+    m_Center: {x: 0.014637232, y: -0.049390078, z: 0}
+    m_Extent: {x: 0.9403628, y: 1.6593901, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -521,8 +521,8 @@ MonoBehaviour:
   - {fileID: 4892095397007847307}
   - {fileID: 4892095398327537662}
   m_Bounds:
-    m_Center: {x: 0.00000059604645, y: -0.01000011, z: 0}
-    m_Extent: {x: 0.85500056, y: 1.665, z: 0}
+    m_Center: {x: -0.0000007748604, y: -0.01000011, z: 0}
+    m_Extent: {x: 0.8549992, y: 1.665, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 4892095397643119295}
   - component: {fileID: 4892095397643119294}
   - component: {fileID: 6682583248528908128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rifle Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -762,6 +762,7 @@ MonoBehaviour:
   <baseSpeed>k__BackingField: 3
   <score>k__BackingField: 50
   <deathEffect>k__BackingField: {fileID: 69044193160978531, guid: 0aa15a2887fc0bf43a7a07542961c165, type: 3}
+  <killTimer>k__BackingField: 1
   EnemyIdleBase: {fileID: 11400000, guid: 40874ff107b15a24aa49c38e25b50c14, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: 642d797cf04c64a45acdba2ff7ff50a5, type: 2}
   EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}
@@ -1238,8 +1239,8 @@ MonoBehaviour:
   - {fileID: 4892095396663365945}
   - {fileID: 4892095398399670370}
   m_Bounds:
-    m_Center: {x: 0.031978965, y: 0.015159011, z: 0}
-    m_Extent: {x: 1.0257189, y: 1.3929701, z: 0}
+    m_Center: {x: 0.03197515, y: 0.015159488, z: 0}
+    m_Extent: {x: 1.0257151, y: 1.3929701, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1347,8 +1348,8 @@ MonoBehaviour:
   - {fileID: 4892095398435362381}
   - {fileID: 4892095396913125515}
   m_Bounds:
-    m_Center: {x: -0.023660064, y: -0.040070236, z: 0}
-    m_Extent: {x: 1.2219398, y: 0.9558098, z: 0}
+    m_Center: {x: -0.023660064, y: -0.04006982, z: 0}
+    m_Extent: {x: 1.2219398, y: 0.95580983, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1456,8 +1457,8 @@ MonoBehaviour:
   - {fileID: 4892095397602441841}
   - {fileID: 4892095397552105575}
   m_Bounds:
-    m_Center: {x: 0.022922516, y: -0.0029805303, z: 0}
-    m_Extent: {x: 1.2329152, y: 0.94978994, z: 0}
+    m_Center: {x: 0.022926092, y: -0.0029799342, z: 0}
+    m_Extent: {x: 1.232919, y: 0.94978994, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
