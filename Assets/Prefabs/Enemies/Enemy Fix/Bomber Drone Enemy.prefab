@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2649436540659953854}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23, y: 14.4, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
@@ -77,7 +77,8 @@ MonoBehaviour:
   <armor>k__BackingField: 0
   <baseSpeed>k__BackingField: 3
   <score>k__BackingField: 50
-  <deathEffect>k__BackingField: {fileID: 69044193160978531, guid: 0aa15a2887fc0bf43a7a07542961c165, type: 3}
+  <deathEffect>k__BackingField: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
+  <killTimer>k__BackingField: 0.2
   EnemyIdleBase: {fileID: 11400000, guid: 47a1972f4dcfdda4d871f4a2980baaf7, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: dd2607c2412b0ef429fa213b5083e576, type: 2}
   EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}

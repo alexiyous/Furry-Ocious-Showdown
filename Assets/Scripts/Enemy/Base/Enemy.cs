@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
     public Vector2 initialPosition { get; set; }
     public bool isHovering { get; set; }
 
+    [field: SerializeField] public float killTimer { get; set; } = 1f;
+
 
     #region State Machine Variables
 
@@ -198,7 +200,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
             ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
             stateMachine.ChangeState(attackState);
-            Destroy(gameObject, 1);
+            Destroy(gameObject, killTimer);
             isAlive = false;
         }
 

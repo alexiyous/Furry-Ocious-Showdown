@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 328453767260371964}
   - component: {fileID: 3193924809994478060}
   - component: {fileID: 7875530856660050115}
+  - component: {fileID: 1703437398882721551}
   m_Layer: 0
   m_Name: Faster Homing Rocket
   m_TagString: Untagged
@@ -185,6 +186,17 @@ MonoBehaviour:
   seekStopTime: 3
   moveSpeed: 10
   isFlipped: 1
+--- !u!210 &1703437398882721551
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983912651402021026}
+  m_Enabled: 1
+  m_SortingLayerID: -1384759829
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &1983912651781243194
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +389,7 @@ MonoBehaviour:
   m_Intensity: 1.02
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000eb3d76ad41b50daa395fdd5ad137428fcb23ff8e519d54fe
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
