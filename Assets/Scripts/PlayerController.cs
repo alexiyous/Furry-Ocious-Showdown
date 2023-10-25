@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     private EventSystem eventSystem;
 
+    public static bool canMove = true;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,7 +38,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.instance.beginGame) return;
+        if (GameManager.instance.beginGame || !canMove) return;
 
         if (movementInput != Vector2.zero)
         {

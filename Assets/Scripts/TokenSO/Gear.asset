@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0efa76e585d28d41b94cbb3cb72b783, type: 3}
   m_Name: Gear
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 399d730acbf91e241a2bfcffa439d100, type: 3}
+  sprite: {fileID: -656384289, guid: 89428624dc94c7b45915054483b2b14e, type: 3}
   bulletType: 2
   attackTechniques:
   - {fileID: 8047041956205088625, guid: 0840ace0a2c290b45ab5538d931b9eeb, type: 3}

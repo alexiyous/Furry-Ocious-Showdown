@@ -647,7 +647,6 @@ MonoBehaviour:
   - {fileID: 2900785752997210404}
   towerUpgrade:
   - {fileID: 11400000, guid: ed7de5e7e7338b348b6ea1736a4e3266, type: 2}
-  - {fileID: 11400000, guid: a614e4b1e535d4744905fedd0a9cbd52, type: 2}
   upgradeButtonText: {fileID: 0}
   targetingRange: 5.04
   rotationSpeed: 200

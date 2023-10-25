@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0efa76e585d28d41b94cbb3cb72b783, type: 3}
   m_Name: Gun Powder
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 48470cb274e470d408c403d1a07bbc87, type: 3}
+  sprite: {fileID: -544555511, guid: 1fd96c6e649e92a42a90c1ba334e6e99, type: 3}
   bulletType: 3
   attackTechniques:
   - {fileID: 5615841965239622626, guid: 6091306cd298c0c4689dd5f750fda184, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0efa76e585d28d41b94cbb3cb72b783, type: 3}
   m_Name: Baut
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 87aeeaed673e2d54592efb8ba0f72548, type: 3}
+  sprite: {fileID: 407865863, guid: b55654b3837f2614090917ac8743a29a, type: 3}
   bulletType: 1
   attackTechniques:
   - {fileID: 1366023300589006215, guid: 7f9f1ac1b9735504a87faf46b1bb609b, type: 3}

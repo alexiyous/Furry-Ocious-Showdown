@@ -208,7 +208,6 @@ MonoBehaviour:
   - {fileID: 3182664976503648055}
   towerUpgrade:
   - {fileID: 11400000, guid: 221afdd6b7a3570428d815dcd71a0fa4, type: 2}
-  - {fileID: 11400000, guid: 420e6ba04cf457843af4b500fae7617c, type: 2}
   upgradeButtonText: {fileID: 0}
   targetingRange: 4.12
   rotationSpeed: 200
