@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 21224981236299801}
   - component: {fileID: 21224981236299800}
   - component: {fileID: -7541326578341128877}
+  - component: {fileID: 3586876163301000049}
   m_Layer: 0
   m_Name: Laser Container
   m_TagString: Untagged
@@ -60,6 +61,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeToDestroy: 3
+--- !u!210 &3586876163301000049
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21224981236299806}
+  m_Enabled: 1
+  m_SortingLayerID: -1441942207
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1 &21224981282861023
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +149,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -238,10 +250,10 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.52156866, g: 0.7812582, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 2.33
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000eb3d76ad41b50daa395fdd5ad137428fcb23ff8e519d54fe
   m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

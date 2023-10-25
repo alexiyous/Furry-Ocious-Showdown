@@ -967,10 +967,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0057772d95588d544916ab971ca665a0, type: 2}
-  m_sharedMaterial: {fileID: -7358543083675554430, guid: 0057772d95588d544916ab971ca665a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a3033ff0ece76a4a88783948d94bc14, type: 2}
+  m_sharedMaterial: {fileID: 7313061870794112253, guid: 8a3033ff0ece76a4a88783948d94bc14, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -994,13 +994,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 67.82
+  m_fontSizeBase: 67.82
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1208,8 +1208,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press Any Key To Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0057772d95588d544916ab971ca665a0, type: 2}
-  m_sharedMaterial: {fileID: -7358543083675554430, guid: 0057772d95588d544916ab971ca665a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a3033ff0ece76a4a88783948d94bc14, type: 2}
+  m_sharedMaterial: {fileID: 7313061870794112253, guid: 8a3033ff0ece76a4a88783948d94bc14, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1408,8 +1408,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: QUIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0057772d95588d544916ab971ca665a0, type: 2}
-  m_sharedMaterial: {fileID: -7358543083675554430, guid: 0057772d95588d544916ab971ca665a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a3033ff0ece76a4a88783948d94bc14, type: 2}
+  m_sharedMaterial: {fileID: 7313061870794112253, guid: 8a3033ff0ece76a4a88783948d94bc14, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1433,8 +1433,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 67.82
+  m_fontSizeBase: 67.82
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
