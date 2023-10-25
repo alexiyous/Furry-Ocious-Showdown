@@ -23,7 +23,7 @@ public class YarnDamage : MonoBehaviour
                 return;
             }
 
-            Vector3 knockbackDirection = (transform.right).normalized;
+            Vector3 knockbackDirection = Vector3.right;
             Vector3 knockbackPosition = collision.transform.position + knockbackDirection * knockbackDistance;
             collision.transform.position = knockbackPosition;
             knockbackCount--;

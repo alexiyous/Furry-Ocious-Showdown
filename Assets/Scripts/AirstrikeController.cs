@@ -21,6 +21,8 @@ public class AirstrikeController : MonoBehaviour
     private GameObject flareObject;
     private bool isFlareActive = false;
 
+    public float moveSpeed = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
