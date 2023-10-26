@@ -7,6 +7,7 @@ public class MortarTower : Tower
     private Vector2 Vo;
 
     private float timeToHitTarget; // Time to hit the target
+    public float yOffset;
 
     public override void RotateTowardsTarget()
     {
@@ -16,7 +17,7 @@ public class MortarTower : Tower
         timeToHitTarget = CalculateTimeToHit(target.position, firingPoint.position, Vo);
 
         // Calculate the angle in radians between the current position and the target
-        float angle = Mathf.Atan2(Vo.y, Vo.x) - 360f;
+        float angle = Mathf.Atan2(Vo.y + yOffset, Vo.x) - 360f;
 
         // Convert the angle to degrees and set it as the Z rotation of turretRotationPoint
         turretRotationPoint.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
@@ -25,9 +26,11 @@ public class MortarTower : Tower
     public override void Shoot()
     {
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, turretRotationPoint.rotation);
-        bulletObj.transform.DORotate(new Vector3(0, 0, -120), timeToHitTarget);
+        // Use DoTween to rotate transform.up to face the target position from the instantiated current rotation
+        bulletObj.transform.DORotateQuaternion(Quaternion.LookRotation(Vector3.forward, target.position - bulletObj.transform.position), timeToHitTarget);
         var rb = bulletObj.GetComponent<Rigidbody2D>();
         rb.velocity = Vo;
+
         MortarBullet bulletScript = bulletObj.GetComponent<MortarBullet>();
         bulletScript.timeToHitTarget = timeToHitTarget;
         bulletScript.isTargeting = true;

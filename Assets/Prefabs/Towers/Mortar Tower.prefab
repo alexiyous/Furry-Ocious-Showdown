@@ -777,6 +777,7 @@ MonoBehaviour:
   levelUpgrade: 0
   target: {fileID: 0}
   timeUntilFire: 0
+  yOffset: 38
 --- !u!61 &2587263642709243122
 BoxCollider2D:
   m_ObjectHideFlags: 0

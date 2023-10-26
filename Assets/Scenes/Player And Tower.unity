@@ -913,6 +913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerSelectionUI: {fileID: 989632712}
   SpawnNotif: {fileID: 687040908}
+  buildPlace: {fileID: 0}
   towerSpawnPoint: {fileID: 2053424179}
 --- !u!61 &1490687947
 BoxCollider2D:
@@ -1072,7 +1073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525896064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1000001, y: -1.5100001, z: 0}
+  m_LocalPosition: {x: 36.07, y: 0.54, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1827,17 +1828,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1699582296}
+    - target: {fileID: 2587263642054175590, guid: bff7b2ab9e0d9824a998fd1db956c66a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2587263642709243123, guid: bff7b2ab9e0d9824a998fd1db956c66a, type: 3}
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2587263642709243123, guid: bff7b2ab9e0d9824a998fd1db956c66a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.73
+      value: 16.56
       objectReference: {fileID: 0}
     - target: {fileID: 2587263642709243123, guid: bff7b2ab9e0d9824a998fd1db956c66a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 2587263642709243123, guid: bff7b2ab9e0d9824a998fd1db956c66a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1878,6 +1883,10 @@ PrefabInstance:
     - target: {fileID: 2587263642709243124, guid: bff7b2ab9e0d9824a998fd1db956c66a, type: 3}
       propertyPath: bps3
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587263642709243124, guid: bff7b2ab9e0d9824a998fd1db956c66a, type: 3}
+      propertyPath: yOffset
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2587263642709243125, guid: bff7b2ab9e0d9824a998fd1db956c66a, type: 3}
       propertyPath: m_Name

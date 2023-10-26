@@ -8,12 +8,31 @@ public class TowerSpawner : MonoBehaviour
 {
     [SerializeField] private TowerShop towerSelectionUI;
     [SerializeField] private GameObject SpawnNotif;
+    [SerializeField] private SpriteRenderer buildPlace;
     [SerializeField] private Transform towerSpawnPoint;
     private Vector3 originNotifPosition;
-    private bool isInRange;
+    private Vector3 originBuildPlacePosition;
+    private bool isInRange = false;
+
+    private void Start()
+    {
+        originBuildPlacePosition = buildPlace.transform.position;
+        Vector3 _target = buildPlace.transform.position + Vector3.up * 0.5f;
+        buildPlace.transform.DOMove(_target, 1f, false).SetLoops(-1, LoopType.Yoyo);
+    }
 
     private void Update()
     {
+        if (!isInRange)
+        {
+            buildPlace.gameObject.SetActive(true);
+        }
+        else
+        {
+            buildPlace.gameObject.SetActive(false);
+            buildPlace.transform.position = originNotifPosition;
+        }
+
         if (Input.GetKeyDown(KeyCode.B) && isInRange)
         {
             SetTower();
