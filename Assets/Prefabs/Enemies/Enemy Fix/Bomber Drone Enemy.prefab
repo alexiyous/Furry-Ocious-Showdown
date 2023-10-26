@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2649436540659953841}
   - component: {fileID: 2649436540659953842}
   - component: {fileID: 708762602}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bomber Drone Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

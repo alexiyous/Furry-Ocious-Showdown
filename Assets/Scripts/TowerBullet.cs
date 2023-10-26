@@ -6,6 +6,7 @@ public abstract class TowerBullet : MonoBehaviour
 {
     [Header("References")]
     public Rigidbody2D rb;
+    public GameObject hitEffect;
 
     [Header("Attributes")]
     public float bulletSpeed = 5f;
@@ -17,7 +18,7 @@ public abstract class TowerBullet : MonoBehaviour
     public int armor3 = 0;
 
     [HideInInspector] public Vector2 direction;
-    [HideInInspector] public LevelUpgrade bulletLevel = LevelUpgrade.Level1;
+    /*[HideInInspector]*/ public LevelUpgrade bulletLevel = LevelUpgrade.Level1;
 
     [HideInInspector] public Transform target;
 
@@ -54,6 +55,7 @@ public abstract class TowerBullet : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<IDamageable>().Damage(damage, armor);
+            ObjectPoolManager.SpawnObject(hitEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
             Destroy(gameObject);
         }
     }

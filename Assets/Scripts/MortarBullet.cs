@@ -12,6 +12,11 @@ public class MortarBullet : TowerBullet
     public float hitZone2;
     public float hitZone3;
 
+    public GameObject explosion1;
+    public GameObject explosion2;
+    public GameObject explosion3;
+
+    private GameObject explosionToUse;
 
     public override void Move()
     {
@@ -19,17 +24,20 @@ public class MortarBullet : TowerBullet
 
         switch (bulletLevel)
         {
+            case LevelUpgrade.Level1:
+                explosionToUse = explosion1;
+                break;
             case LevelUpgrade.Level2:
+                explosionToUse = explosion2;
                 damage = damage2;
                 armor = armor2;
-                bombCollide = hitZone2;
-                bulletSpeed *= 1.5f;
+                /*bombCollide = hitZone2;*/
                 break;
             case LevelUpgrade.Level3:
+                explosionToUse = explosion3;
                 damage = damage3;
                 armor = armor3;
-                bombCollide = hitZone3;
-                bulletSpeed *= 1.5f;
+                /*bombCollide = hitZone3;*/
                 break;
         }
     }
@@ -44,7 +52,8 @@ public class MortarBullet : TowerBullet
         {
             if (gameObject != null)
             {
-                hitZone.radius = bombCollide;
+                /*hitZone.radius = bombCollide;*/
+                ObjectPoolManager.SpawnObject(explosionToUse, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
                 Destroy(gameObject, 0.2f); // Destroy the game object after timeToHit seconds
             }
         }
@@ -52,7 +61,7 @@ public class MortarBullet : TowerBullet
 
     public override void OnBecameInvisible()
     {
-        gameObject.SetActive(false);
+        /*gameObject.SetActive(false);*/
     }
 
     public override void OnTriggerEnter2D(Collider2D collision)
@@ -60,14 +69,9 @@ public class MortarBullet : TowerBullet
         if (collision.CompareTag("Enemy"))
         {
             isTargeting = false;
-            hitZone.radius = bombCollide;
+            /*hitZone.radius = bombCollide;*/
             collision.GetComponent<IDamageable>().Damage(damage, armor);
-            Destroy(gameObject);
-        }
-
-        if (collision.CompareTag("Building"))
-        {
-            isTargeting = false;
+            ObjectPoolManager.SpawnObject(explosionToUse,transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
             Destroy(gameObject);
         }
     }

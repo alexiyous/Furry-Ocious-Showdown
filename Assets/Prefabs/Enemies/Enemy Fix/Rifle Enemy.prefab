@@ -230,7 +230,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -398,8 +398,8 @@ MonoBehaviour:
   - {fileID: 4892095397627419492}
   - {fileID: 4892095397691856909}
   m_Bounds:
-    m_Center: {x: 0.014652491, y: -0.049390078, z: 0}
-    m_Extent: {x: 0.9403628, y: 1.6593901, z: 0}
+    m_Center: {x: 0.014646769, y: -0.049390197, z: 0}
+    m_Extent: {x: 0.9403571, y: 1.6593902, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -605,8 +605,8 @@ MonoBehaviour:
   - {fileID: 4892095397007847307}
   - {fileID: 4892095398327537662}
   m_Bounds:
-    m_Center: {x: 0.000014483929, y: -0.01000011, z: 0}
-    m_Extent: {x: 0.8549992, y: 1.665, z: 0}
+    m_Center: {x: 0.00000011920929, y: -0.01000011, z: 0}
+    m_Extent: {x: 0.8550001, y: 1.6650002, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 4892095397643119295}
   - component: {fileID: 4892095397643119294}
   - component: {fileID: 6682583248528908128}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Rifle Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1324,8 +1324,8 @@ MonoBehaviour:
   - {fileID: 4892095396663365945}
   - {fileID: 4892095398399670370}
   m_Bounds:
-    m_Center: {x: 0.03197515, y: 0.015159488, z: 0}
-    m_Extent: {x: 1.0257151, y: 1.3929701, z: 0}
+    m_Center: {x: 0.031978965, y: 0.015159965, z: 0}
+    m_Extent: {x: 1.0257151, y: 1.3929706, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1433,7 +1433,7 @@ MonoBehaviour:
   - {fileID: 4892095398435362381}
   - {fileID: 4892095396913125515}
   m_Bounds:
-    m_Center: {x: -0.023644805, y: -0.04006982, z: 0}
+    m_Center: {x: -0.023656249, y: -0.040069938, z: 0}
     m_Extent: {x: 1.2219398, y: 0.95580983, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1542,8 +1542,8 @@ MonoBehaviour:
   - {fileID: 4892095397602441841}
   - {fileID: 4892095397552105575}
   m_Bounds:
-    m_Center: {x: 0.022928119, y: -0.0029799342, z: 0}
-    m_Extent: {x: 1.2329171, y: 0.94978994, z: 0}
+    m_Center: {x: 0.022914886, y: -0.0029800534, z: 0}
+    m_Extent: {x: 1.2329152, y: 0.9497899, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

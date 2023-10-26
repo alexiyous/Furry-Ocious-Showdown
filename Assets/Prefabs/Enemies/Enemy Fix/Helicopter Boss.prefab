@@ -5395,7 +5395,7 @@ GameObject:
   - component: {fileID: 7761384448679689407}
   - component: {fileID: 7761384448679689406}
   - component: {fileID: 919623229}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Helicopter Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}

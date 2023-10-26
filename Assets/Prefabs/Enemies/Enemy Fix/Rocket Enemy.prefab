@@ -569,8 +569,8 @@ MonoBehaviour:
   - {fileID: 8019416039099897421}
   - {fileID: 8019416038673880451}
   m_Bounds:
-    m_Center: {x: -0.023234963, y: 0.0013194084, z: 0.000000007450581}
-    m_Extent: {x: 1.0432351, y: 2.4186807, z: 2.220446e-16}
+    m_Center: {x: -0.023234963, y: 0.0013189316, z: 0.000000007450581}
+    m_Extent: {x: 1.0432351, y: 2.4186802, z: 2.220446e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -678,8 +678,8 @@ MonoBehaviour:
   - {fileID: 8019416038781187492}
   - {fileID: 8019416039664451703}
   m_Bounds:
-    m_Center: {x: 0.013290167, y: -0.052204967, z: 0.000000007450581}
-    m_Extent: {x: 0.9720002, y: 1.0198652, z: 6.661338e-16}
+    m_Center: {x: 0.013290167, y: -0.05220449, z: 0.000000007450581}
+    m_Extent: {x: 0.9720002, y: 1.0198647, z: 6.661338e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 8019416039696093745}
   - component: {fileID: 8019416039696093744}
   - component: {fileID: 4958560249245018207}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Rocket Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1269,7 +1269,7 @@ MonoBehaviour:
   - {fileID: 8019416038995839554}
   - {fileID: 8019416040729135270}
   m_Bounds:
-    m_Center: {x: 0.033319473, y: -0.009970427, z: 0.00000000745058}
+    m_Center: {x: 0.033334732, y: -0.009970188, z: 0.00000000745058}
     m_Extent: {x: 1.4233352, y: 1.4849703, z: 4.440892e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1378,8 +1378,8 @@ MonoBehaviour:
   - {fileID: 8019416039822522696}
   - {fileID: 8019416040579050957}
   m_Bounds:
-    m_Center: {x: -0.0025548935, y: -0.07259476, z: 0.00000000745058}
-    m_Extent: {x: 2.0775561, y: 1.7754456, z: 4.440892e-16}
+    m_Center: {x: -0.0025548935, y: -0.072594404, z: 0.00000000745058}
+    m_Extent: {x: 2.0775561, y: 1.7754455, z: 4.440892e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1552,8 +1552,8 @@ MonoBehaviour:
   - {fileID: 8019416038643523228}
   - {fileID: 8019416039759032600}
   m_Bounds:
-    m_Center: {x: -0.0036158562, y: -0.03576553, z: 0.000000007450581}
-    m_Extent: {x: 1.432011, y: 1.4791548, z: 6.661338e-16}
+    m_Center: {x: -0.0036158562, y: -0.03576505, z: 0.000000007450581}
+    m_Extent: {x: 1.432011, y: 1.4791551, z: 6.661338e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

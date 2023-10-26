@@ -3,6 +3,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 
+
 public class Tower : MonoBehaviour
 {
     [Header("References")]
@@ -64,6 +65,7 @@ public class Tower : MonoBehaviour
         if (!CheckTargetIsInRange())
         {
             target = null;
+            Debug.Log("Target is out of range");
         }
         else
         {
@@ -115,19 +117,20 @@ public class Tower : MonoBehaviour
 
     public virtual bool CheckTargetIsInRange()
     {
-        if (target == null)
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + centerOffset, targetingSize, 0f, enemyLayerMask);
+
+        if (colliders.Length > 0)
         {
-            return false;
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.transform.position == target.position)
+                {
+                    return true;
+                }
+            }
         }
 
-        // Calculate the half-size of the box-shaped detection area
-        Vector2 halfSize = targetingSize * 0.5f;
-
-        // Calculate the bounds of the box-shaped detection area
-        Bounds detectionBounds = new Bounds(transform.position + centerOffset, targetingSize);
-
-        // Check if the target's position is within the detection bounds
-        return detectionBounds.Contains(target.position);
+        return false;
     }
 
     public virtual void RotateTowardsTarget()

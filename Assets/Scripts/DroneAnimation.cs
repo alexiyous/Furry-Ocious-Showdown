@@ -8,6 +8,8 @@ public class DroneAnimation : DroneController
     public float orbitSpeed = 199f; // Speed of the orbit in degrees per second.
     public float orbitRadius = 0.8f; // Radius of the orbit.
 
+    public bool isFacingRight = true;
+
     private Vector3 originalOffset;
 
     private void Start()
@@ -22,6 +24,8 @@ public class DroneAnimation : DroneController
 
     private void FixedUpdate()
     {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         // Calculate the desired position based on orbit.
         float orbitAngle = Time.time * orbitSpeed;
         Vector3 orbitPosition = Quaternion.Euler(0, 0, orbitAngle) * 
@@ -30,6 +34,21 @@ public class DroneAnimation : DroneController
 
         // Apply the orbiting position and maintain the relative offset to the parent.
         transform.position = desiredPosition + originalOffset;
-        gameObject.transform.rotation = player.rotation;
+        /*gameObject.transform.rotation = player.rotation;*/
+
+        Vector3 direction = (mousePosition - transform.position).normalized;
+
+        if(direction.x > 0 && !isFacingRight)
+        {
+            Vector3 rotator = new Vector3(transform.rotation.x, 0, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+            isFacingRight = true;
+        }
+        else if(direction.x < 0 && isFacingRight)
+        {
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+            isFacingRight = false;
+        }
     }
 }

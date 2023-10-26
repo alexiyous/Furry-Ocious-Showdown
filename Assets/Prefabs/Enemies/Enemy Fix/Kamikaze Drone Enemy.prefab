@@ -1195,8 +1195,8 @@ MonoBehaviour:
   - {fileID: 5593465264520203710}
   - {fileID: 5593465264183978846}
   m_Bounds:
-    m_Center: {x: 0.9558851, y: 0.37383533, z: 0.0000000037252903}
-    m_Extent: {x: 1.1, y: 0.57499987, z: 0}
+    m_Center: {x: 0.9558832, y: 0.37383533, z: 0.0000000037252903}
+    m_Extent: {x: 1.1000005, y: 0.57499987, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1453,7 +1453,7 @@ MonoBehaviour:
   - {fileID: 5593465265317948055}
   - {fileID: 5593465263603614955}
   m_Bounds:
-    m_Center: {x: -0.9700788, y: 0.38802797, z: 0.0000000037252903}
+    m_Center: {x: -0.97008073, y: 0.38802797, z: 0.0000000037252903}
     m_Extent: {x: 1.1000003, y: 0.57500017, z: 1.110223e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1968,7 +1968,7 @@ GameObject:
   - component: {fileID: 5593465264911904570}
   - component: {fileID: 5593465264911904571}
   - component: {fileID: 5593465264911904567}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Kamikaze Drone Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2334,7 +2334,7 @@ MonoBehaviour:
   - {fileID: 5593465263527469063}
   m_Bounds:
     m_Center: {x: -1.121508, y: -0.24644145, z: 0.0000000037252903}
-    m_Extent: {x: 1.2750002, y: 0.46539196, z: 1.110223e-16}
+    m_Extent: {x: 1.275, y: 0.46539196, z: 1.110223e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

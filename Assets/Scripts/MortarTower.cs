@@ -32,6 +32,7 @@ public class MortarTower : Tower
         bulletScript.timeToHitTarget = timeToHitTarget;
         bulletScript.isTargeting = true;
         bulletScript.SetTarget(target);
+        bulletScript.bulletLevel = levelUpgrade;
 
         if (bulletObj != null)
         {

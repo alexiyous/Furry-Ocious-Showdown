@@ -50,7 +50,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 0.32501802
 --- !u!50 &2874951256896124189
 Rigidbody2D:
   serializedVersion: 4
@@ -85,13 +85,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  hitEffect: {fileID: 2937120575847993534, guid: 9fe0f71c4e7d9fd4182effbccc9f1f18, type: 3}
   bulletSpeed: 5
-  damage: 100
-  damage2: 150
-  damage3: 200
-  armor: 30
-  armor2: 40
-  armor3: 50
+  damage: 0
+  damage2: 0
+  damage3: 0
+  armor: 0
+  armor2: 0
+  armor3: 0
   direction: {x: 0, y: 0}
   bulletLevel: 0
   target: {fileID: 0}
@@ -101,6 +102,9 @@ MonoBehaviour:
   bombCollide: 0
   hitZone2: 2.5
   hitZone3: 4
+  explosion1: {fileID: 8558216323364671597, guid: 6d66b8a4e001efd4d83fe1b3d28b0edc, type: 3}
+  explosion2: {fileID: 114213234850229923, guid: d0e2aefb46144ba419a04ade6c0094f9, type: 3}
+  explosion3: {fileID: 7289493509501450631, guid: 06e3167387874914c87f7a717e9d775e, type: 3}
 --- !u!1 &2746906528808380777
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +157,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -171,9 +175,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1895881781
-  m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingLayerID: -1384759829
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1211639890, guid: aca65f57f5cfa3c4d929d3634bf4ec0a, type: 3}
   m_Color: {r: 0.97783357, g: 1, b: 0.5911949, a: 1}
   m_FlipX: 0

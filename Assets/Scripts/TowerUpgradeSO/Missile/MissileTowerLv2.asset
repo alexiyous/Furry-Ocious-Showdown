@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d8854b631a5a143a55d865fc6f16a4, type: 3}
   m_Name: MissileTowerLv2
   m_EditorClassIdentifier: 
-  cost: 200
+  cost: 1600

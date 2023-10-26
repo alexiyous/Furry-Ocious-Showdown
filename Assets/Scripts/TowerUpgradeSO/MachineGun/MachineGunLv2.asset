@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d8854b631a5a143a55d865fc6f16a4, type: 3}
   m_Name: MachineGunLv2
   m_EditorClassIdentifier: 
-  neckSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  headSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  cost: 200
+  cost: 1600
