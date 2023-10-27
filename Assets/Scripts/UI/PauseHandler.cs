@@ -13,7 +13,7 @@ public class PauseHandler : MonoBehaviour
     private void Update()
     {
         // Check if the "Esc" key is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !TutorialHandler.isTutorialActive)
         {
             if (isPaused)
             {
