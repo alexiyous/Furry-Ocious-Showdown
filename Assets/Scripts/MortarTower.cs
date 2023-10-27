@@ -9,6 +9,14 @@ public class MortarTower : Tower
     private float timeToHitTarget; // Time to hit the target
     public float yOffset;
 
+    [Tooltip("Horizontal speed, in units/sec")]
+    public float speedBullet = 10;
+
+    [Tooltip("How high the arc should be, in units")]
+    public float arcHeight = 1;
+
+    Vector3 startPosBullet;
+
     public override void RotateTowardsTarget()
     {
         if (!target) return;
@@ -25,11 +33,16 @@ public class MortarTower : Tower
 
     public override void Shoot()
     {
-        GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, turretRotationPoint.rotation);
-        // Use DoTween to rotate transform.up to face the target position from the instantiated current rotation
-        bulletObj.transform.DORotateQuaternion(Quaternion.LookRotation(Vector3.forward, target.position - bulletObj.transform.position), timeToHitTarget);
+
+        GameObject bulletObj = Instantiate(bulletPrefab, turretRotationPoint.position, Quaternion.identity);
+
+        var mortarBullet = bulletObj.GetComponent<MortarBullet>();
+        mortarBullet.targetPos = target.position;
+
+        /* // Use DoTween to rotate transform.up to face the target position from the instantiated current rotation
+         bulletObj.transform.DORotateQuaternion(Quaternion.LookRotation(Vector3.forward, target.position - bulletObj.transform.position), timeToHitTarget);*/
         var rb = bulletObj.GetComponent<Rigidbody2D>();
-        rb.velocity = Vo;
+        /*rb.velocity = Vo;*/
 
         MortarBullet bulletScript = bulletObj.GetComponent<MortarBullet>();
         bulletScript.timeToHitTarget = timeToHitTarget;
@@ -37,11 +50,11 @@ public class MortarTower : Tower
         bulletScript.SetTarget(target);
         bulletScript.bulletLevel = levelUpgrade;
 
-        if (bulletObj != null)
+        /*if (bulletObj != null)
         {
             StartCoroutine(bulletScript.DestroyBulletIfMissed(timeToHitTarget));
 
-        }
+        }*/
     }
 
     public override void UpgradeTower()
