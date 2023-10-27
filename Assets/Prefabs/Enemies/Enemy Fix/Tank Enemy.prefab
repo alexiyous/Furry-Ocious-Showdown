@@ -145,7 +145,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 13.08
+  m_Radius: 15
 --- !u!1 &8491327711398174258
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,8 +250,8 @@ MonoBehaviour:
   - {fileID: 8491327711426864623}
   - {fileID: 8491327712682900829}
   m_Bounds:
-    m_Center: {x: 0.13756703, y: 0.2516333, z: -1.1641532e-10}
-    m_Extent: {x: 0.36724505, y: 0.4200102, z: 3.469447e-18}
+    m_Center: {x: 0.13756701, y: 0.25163317, z: -1.1641532e-10}
+    m_Extent: {x: 0.3672412, y: 0.4200102, z: 3.469447e-18}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -790,8 +790,8 @@ MonoBehaviour:
   - {fileID: 8491327711682086194}
   - {fileID: 8491327711860246428}
   m_Bounds:
-    m_Center: {x: -0.0028948784, y: -0.10898808, z: -1.1641532e-10}
-    m_Extent: {x: 1.0790851, y: 0.31823504, z: 3.469447e-18}
+    m_Center: {x: -0.0028948784, y: -0.108988196, z: -1.1641532e-10}
+    m_Extent: {x: 1.0790813, y: 0.31823504, z: 3.469447e-18}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1254,8 +1254,8 @@ MonoBehaviour:
   - {fileID: 8491327712275877566}
   - {fileID: 8491327712636550833}
   m_Bounds:
-    m_Center: {x: -0.0028967857, y: -0.10898808, z: -1.1641532e-10}
-    m_Extent: {x: 1.0790832, y: 0.31823504, z: 3.469447e-18}
+    m_Center: {x: -0.0028910637, y: -0.108988196, z: -1.1641532e-10}
+    m_Extent: {x: 1.0790851, y: 0.31823504, z: 3.469447e-18}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1481,8 +1481,8 @@ MonoBehaviour:
   - {fileID: 8491327712693986171}
   - {fileID: 8491327711518143323}
   m_Bounds:
-    m_Center: {x: -0.00080382824, y: 0.0000002682209, z: -1.1641532e-10}
-    m_Extent: {x: 0.5242, y: 0.4349999, z: 0}
+    m_Center: {x: -0.00080382824, y: 0.00000008940697, z: -1.1641532e-10}
+    m_Extent: {x: 0.5242, y: 0.43499985, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

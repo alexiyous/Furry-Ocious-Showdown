@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEditor.ShaderGraph.Internal;
 
 public class BridgeTotalHealth : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class BridgeTotalHealth : MonoBehaviour
     private BridgePoleHealth[] bridgePoleHealths;
 
     private RectTransform rectTransform;
+
+    public float shakeIntensity = 6f;
+    public float shakeDuration = .8f;
 
     private void Awake()
     {
@@ -45,6 +49,8 @@ public class BridgeTotalHealth : MonoBehaviour
         // You can reduce the total health or update the health bar.
         currentHealth -= 1;
         UpdateHealthBar();
+
+        CinemachineShake.instance.ShakeCamera(shakeIntensity, shakeDuration);
 
         rectTransform.DOShakePosition(1f, new Vector3(30f, 3f, 0f), 20, 40, true);
     }

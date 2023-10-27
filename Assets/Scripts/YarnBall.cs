@@ -20,6 +20,8 @@ public class YarnBall : MonoBehaviour
         float distance = Vector3.Distance(startPos.position, endPos.position);
         float duration = distance / moveSpeed;
 
+        transform.rotation = Quaternion.identity;
+
         transform.position = startPos.position;
         transform.DOMove(endPos.position, duration);
 

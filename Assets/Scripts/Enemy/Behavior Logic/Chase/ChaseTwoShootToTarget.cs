@@ -121,7 +121,7 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
 
             if (!enemy.isFacingLeft)
             {
-                shootOffsetFinal = -offsetMain;
+                shootOffsetFinal = new Vector3(-offsetMain.x, offsetMain.y, offsetMain.z);
             }
 
             Vector2 direction = (target.position - (enemy.transform.position + shootOffsetFinal) + shootInaccuracy).normalized;
@@ -148,7 +148,7 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
 
             if (!enemy.isFacingLeft)
             {
-                shootOffsetFinal = -offsetSecondary;
+                shootOffsetFinal = new Vector3(-offsetSecondary.x, offsetSecondary.y, offsetSecondary.z);
             }
 
             Vector2 direction = (target.position - (enemy.transform.position + shootOffsetFinal) + shootInaccuracy).normalized;

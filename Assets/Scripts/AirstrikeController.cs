@@ -20,6 +20,8 @@ public class AirstrikeController : MonoBehaviour
 
     public GameObject flareEffect;
 
+    public GameObject hitEffect;
+
     private GameObject flareObject;
     private bool isFlareActive = false;
 
@@ -85,18 +87,20 @@ public class AirstrikeController : MonoBehaviour
             airstrikeBulletInstance[0].transform.DOMove(new Vector3(airstrikeBulletTargetHits1[i].position.x, airstrikeBulletTargetHits1[i].position.y, 0f),
                 Vector2.Distance(airstrikeBulletInstance[0].transform.position, airstrikeBulletTargetHits1[i].position) / 30f).SetEase(Ease.Linear).OnComplete(() =>
                 {
-                    Destroy(airstrikeBulletInstance[0], 0.1f);
+                    ObjectPoolManager.SpawnObject(hitEffect, airstrikeBulletTargetHits1[i].position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+                    Destroy(airstrikeBulletInstance[0]);
                     hitCollider.enabled = true;
                 });
             airstrikeBulletInstance[1].transform.DOMove(new Vector3(airstrikeBulletTargetHits2[i].position.x, airstrikeBulletTargetHits2[i].position.y, 0f),
                 Vector2.Distance(airstrikeBulletInstance[0].transform.position, airstrikeBulletTargetHits2[i].position) / 30f).SetEase(Ease.Linear).OnComplete(() =>
                 {
-                    Destroy(airstrikeBulletInstance[1], 0.1f);
+                    ObjectPoolManager.SpawnObject(hitEffect, airstrikeBulletTargetHits2[i].position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+                    Destroy(airstrikeBulletInstance[1]);
                     hitCollider.enabled = true;
                 });
             yield return new WaitForSeconds(0.1f);
         }
-
+        
         Destroy(gameObject);
     }
 

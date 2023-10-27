@@ -23,7 +23,8 @@ public class AttackHelicopter : Enemy
     private bool phase2 = false;
     private bool phase3 = false;
 
-
+    public float shakeIntensity = 5f;
+    public float shakeTime = .2f;
 
     public override void Start()
     {
@@ -42,6 +43,8 @@ public class AttackHelicopter : Enemy
         base.Die();
 
         machineGun.SetActive(false);
+
+        CinemachineShake.instance.ShakeCamera(5f, 0.5f);
     }
 
     public override void Damage(int damageAmount, int armorPenetration)
