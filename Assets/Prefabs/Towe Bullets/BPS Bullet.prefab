@@ -141,12 +141,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   hitEffect: {fileID: 2937120575847993534, guid: 9fe0f71c4e7d9fd4182effbccc9f1f18, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 15
   damage: 20
-  damage2: 20
+  damage2: 40
   damage3: 30
   armor: 10
-  armor2: 10
+  armor2: 20
   armor3: 20
   direction: {x: 0, y: 0}
   bulletLevel: 0

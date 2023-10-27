@@ -4884,6 +4884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   afterTimer: 6
+  initialBurst: 10
+  initialRate: 0
 --- !u!1 &1896969073945209360
 GameObject:
   m_ObjectHideFlags: 0

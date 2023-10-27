@@ -16,6 +16,8 @@ public class ArtilleryController : MonoBehaviour
     [SerializeField] private float YOffsetSpawnPointParent;
     [SerializeField] private Transform[] artilleryBulletSpawnPoints;
 
+    public GameObject flareEffect;
+
     private GameObject flareObject;
     private bool isFlareActive = false;
     private int bulletCount = 0;
@@ -50,8 +52,15 @@ public class ArtilleryController : MonoBehaviour
         var droneAim = GameObject.FindGameObjectWithTag("Drone Aim").GetComponent<DroneAim>();
         flareObject = Instantiate(flare, droneAim.transform.position, droneAim.transform.rotation);
         flareObject.SetActive(true);
+
         flareObject.transform.DOMove(new Vector3(currentTargetPosition.x, currentTargetPosition.y, 0f),
-            Vector2.Distance(flareObject.transform.position, currentTargetPosition) / 10f).SetEase(Ease.Linear);
+            Vector2.Distance(flareObject.transform.position, currentTargetPosition) / 10f)
+            .SetEase(Ease.Linear)
+            .OnComplete(() =>
+            {
+                Debug.Log("Flare Reached Target");
+                ObjectPoolManager.SpawnObject(flareEffect, flareObject.transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+            });
         yield return new WaitForSeconds(2f);
         Destroy(flareObject);
         GameManager.instance.isTargeting = false;

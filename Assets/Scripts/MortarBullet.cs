@@ -1,7 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
-
+using Sirenix;
 
 public class MortarBullet : TowerBullet
 {
@@ -17,6 +17,8 @@ public class MortarBullet : TowerBullet
     public GameObject explosion3;
 
     private GameObject explosionToUse;
+
+    private bool isHit = false;
 
     public override void Move()
     {
@@ -46,7 +48,7 @@ public class MortarBullet : TowerBullet
     {
         if (this == null || !gameObject.activeInHierarchy) yield break; // Check if the bullet exists before continuing
 
-        yield return new WaitForSeconds(timeToHit + 0.5f); // Wait for the calculated time + 0.5 seconds
+        yield return new WaitForSeconds(timeToHit); // Wait for the calculated time + 0.5 seconds
 
         if (isTargeting)
         {
@@ -54,7 +56,7 @@ public class MortarBullet : TowerBullet
             {
                 /*hitZone.radius = bombCollide;*/
                 ObjectPoolManager.SpawnObject(explosionToUse, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
-                Destroy(gameObject, 0.2f); // Destroy the game object after timeToHit seconds
+                Destroy(gameObject); // Destroy the game object after timeToHit seconds
             }
         }
     }
@@ -66,8 +68,9 @@ public class MortarBullet : TowerBullet
 
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && !isHit)
         {
+            isHit = true;
             isTargeting = false;
             /*hitZone.radius = bombCollide;*/
             collision.GetComponent<IDamageable>().Damage(damage, armor);

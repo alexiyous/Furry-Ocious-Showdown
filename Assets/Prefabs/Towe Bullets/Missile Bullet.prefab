@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   hitEffect: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 12
   damage: 150
   damage2: 200
   damage3: 200

@@ -374,6 +374,7 @@ MonoBehaviour:
   - {fileID: 130569139791304286}
   - {fileID: 5871387093366568547}
   - {fileID: 8060246966637262}
+  flareEffect: {fileID: 1896969073945209360, guid: 30dcc6f715344c4428b5de4efc10acb1, type: 3}
 --- !u!1 &4907580434403583067
 GameObject:
   m_ObjectHideFlags: 0

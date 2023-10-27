@@ -4942,3 +4942,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   afterTimer: 6
+  initialBurst: 10
+  initialRate: 0

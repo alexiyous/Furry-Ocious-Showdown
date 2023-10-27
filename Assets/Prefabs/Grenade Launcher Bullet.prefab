@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1f5740e6d27ec448fff3739e2d2b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20
   armorPenetration: 10
   hitEffect: {fileID: 3151561300446877333, guid: 30bb3e3ab6095cb4ea7e24a854653575, type: 3}
 --- !u!114 &8180878826546795688

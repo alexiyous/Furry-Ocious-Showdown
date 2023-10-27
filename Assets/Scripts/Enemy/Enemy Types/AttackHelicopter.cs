@@ -19,7 +19,11 @@ public class AttackHelicopter : Enemy
 
     public ParticleSystem _particleSystem;
 
-    
+    private bool phase1 = false;
+    private bool phase2 = false;
+    private bool phase3 = false;
+
+
 
     public override void Start()
     {
@@ -47,8 +51,9 @@ public class AttackHelicopter : Enemy
         var mainModule = _particleSystem.main;
         var emissionModule = _particleSystem.emission;
 
-        if (currentHealth <= maxHealth * 0.2f)
+        if (currentHealth <= maxHealth * 0.3f && !phase3)
         {
+            phase3 = true;
             if (_particleSystem.isPlaying)
             {
                 _particleSystem.Stop();
@@ -64,8 +69,9 @@ public class AttackHelicopter : Enemy
                 _particleSystem.Play();
             }
         }
-        else if (currentHealth <= maxHealth * 0.5f)
+        else if (currentHealth <= maxHealth * 0.5f && !phase2)
         {
+            phase2 = true;
             if (_particleSystem.isPlaying)
             {
                 _particleSystem.Stop();
@@ -81,8 +87,9 @@ public class AttackHelicopter : Enemy
                 _particleSystem.Play();
             }
         }
-        else if (currentHealth <= maxHealth * 0.8f)
+        else if (currentHealth <= maxHealth * 0.8f && !phase1)
         {
+            phase1 = true;
             if (_particleSystem.isPlaying)
             {
                 _particleSystem.Stop();

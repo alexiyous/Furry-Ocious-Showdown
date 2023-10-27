@@ -18,6 +18,8 @@ public class AirstrikeController : MonoBehaviour
     [SerializeField] private Transform[] airstrikeBulletTargetHits1;
     [SerializeField] private Transform[] airstrikeBulletTargetHits2;
 
+    public GameObject flareEffect;
+
     private GameObject flareObject;
     private bool isFlareActive = false;
 
@@ -54,8 +56,14 @@ public class AirstrikeController : MonoBehaviour
         flareObject = Instantiate(flare, droneAim.transform.position, droneAim.transform.rotation);
         flareObject.SetActive(true);
         flareObject.transform.DOMove(new Vector3(currentTargetPosition.x, currentTargetPosition.y, 0f),
-            Vector2.Distance(flareObject.transform.position, currentTargetPosition) / 10f).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(2f);
+            Vector2.Distance(flareObject.transform.position, currentTargetPosition) / 10f)
+            .SetEase(Ease.Linear)
+            .OnComplete(() =>
+            {
+                Debug.Log("Flare Reached Target");
+                ObjectPoolManager.SpawnObject(flareEffect, flareObject.transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+            });
+        yield return new WaitForSeconds(3f);
         Destroy(flareObject);
         GameManager.instance.isTargeting = false;
         StartCoroutine(ShootArtillery(currentTargetPosition));

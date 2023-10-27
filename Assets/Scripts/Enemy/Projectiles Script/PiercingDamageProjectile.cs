@@ -27,7 +27,7 @@ public class PiercingDamageProjectile : MonoBehaviour
             if (count >= piercePower)
             {
 
-                ObjectPoolManager.ReturnObjectPool(gameObject);
+                Destroy(gameObject);
             }
         }
     }

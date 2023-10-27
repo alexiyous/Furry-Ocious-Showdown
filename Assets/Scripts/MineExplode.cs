@@ -12,7 +12,7 @@ public class MineExplode : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        
+        ObjectPoolManager.SpawnObject(explosionEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +21,7 @@ public class MineExplode : MonoBehaviour
         {
             collision.GetComponent<IDamageable>().Damage(damage, armorPenetration);
 
-            ObjectPoolManager.SpawnObject(explosionEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+            
         }
     }
 }

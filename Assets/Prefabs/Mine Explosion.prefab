@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
-  damage: 150
+  damage: 100
   armorPenetration: 60
 --- !u!58 &432332144603998871
 CircleCollider2D:
