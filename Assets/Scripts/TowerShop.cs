@@ -24,6 +24,9 @@ public class TowerShop : MonoBehaviour
     public Transform destinationPosition;
     public Image dimBackgeound;
 
+    public TextMeshProUGUI notificationText;
+    private Tween notificationTextTween;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +83,20 @@ public class TowerShop : MonoBehaviour
 
     public void SpawnTower(int index)
     {
-        if (ScoreManager.instance.currentScore < towerCost[index]) return;
+        if (ScoreManager.instance.currentScore < towerCost[index])
+        {
+            if (notificationTextTween != null)
+            {
+                // If a previous animation is in progress, stop it and set alpha to fully visible
+                notificationTextTween.Kill();
+
+            }
+            notificationText.color = new Color(notificationText.color.r, notificationText.color.g, notificationText.color.b, 1f);
+
+            notificationTextTween = notificationText.DOFade(0f, 3f);
+
+            return;
+        }
         ScoreManager.instance.currentScore -= towerCost[index];
         PlayerController.canMove = true;
         Instantiate(towerPrefab[index], currentSpawnPoint.position, Quaternion.identity);
@@ -99,4 +115,6 @@ public class TowerShop : MonoBehaviour
     {
         towerCostText[index].text += towerCost[index].ToString();
     }
+
+    
 }
