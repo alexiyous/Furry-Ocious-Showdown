@@ -58,50 +58,66 @@ public class AirstrikeController : MonoBehaviour
         flareObject = Instantiate(flare, droneAim.transform.position, droneAim.transform.rotation);
         flareObject.SetActive(true);
         flareObject.transform.DOMove(new Vector3(currentTargetPosition.x, currentTargetPosition.y, 0f),
-            Vector2.Distance(flareObject.transform.position, currentTargetPosition) / 10f)
+            Vector2.Distance(flareObject.transform.position, currentTargetPosition) / 30f)
             .SetEase(Ease.Linear)
             .OnComplete(() =>
             {
                 Debug.Log("Flare Reached Target");
                 ObjectPoolManager.SpawnObject(flareEffect, flareObject.transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
             });
-        yield return new WaitForSeconds(3f);
-        Destroy(flareObject);
         GameManager.instance.isTargeting = false;
+        yield return new WaitForSeconds(4f);
         StartCoroutine(ShootArtillery(currentTargetPosition));
     }
 
     public IEnumerator ShootArtillery(Vector3 currentTargetPosition)
     {
         airstrikeBulletSpawnPoints[1].parent.position = new Vector3(currentTargetPosition.x + OffsetSpawnPointParent.x, currentTargetPosition.y + OffsetSpawnPointParent.y, 0f);
-
-        for (int i = 0; i < airstrikeBulletTargetHits1.Length; i++)
+        List<GameObject> airstrikeBulletInstance = new List<GameObject>();
+        int i = 0;
+        while ( i < airstrikeBulletTargetHits1.Length)
         {
-            List<GameObject> airstrikeBulletInstance = new List<GameObject>();
+
             airstrikeBulletInstance.Add(Instantiate(airstrikeBullet, airstrikeBulletSpawnPoints[0].position, Quaternion.identity));
             airstrikeBulletInstance.Add(Instantiate(airstrikeBullet, airstrikeBulletSpawnPoints[1].position, Quaternion.identity));
             foreach (GameObject airstrikeInstance in airstrikeBulletInstance)
             {
                 airstrikeInstance.SetActive(true);
+                var t = airstrikeInstance.GetComponentInChildren<CircleCollider2D>();
+                t.enabled = true;
             }
             airstrikeBulletInstance[0].transform.DOMove(new Vector3(airstrikeBulletTargetHits1[i].position.x, airstrikeBulletTargetHits1[i].position.y, 0f),
-                Vector2.Distance(airstrikeBulletInstance[0].transform.position, airstrikeBulletTargetHits1[i].position) / 30f).SetEase(Ease.Linear).OnComplete(() =>
+                Vector2.Distance(airstrikeBulletInstance[0].transform.position, airstrikeBulletTargetHits1[i].position) / 100f).SetEase(Ease.Linear).OnComplete(() =>
                 {
-                    ObjectPoolManager.SpawnObject(hitEffect, airstrikeBulletTargetHits1[i].position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
-                    Destroy(airstrikeBulletInstance[0]);
-                    hitCollider.enabled = true;
+                    
+
                 });
+
             airstrikeBulletInstance[1].transform.DOMove(new Vector3(airstrikeBulletTargetHits2[i].position.x, airstrikeBulletTargetHits2[i].position.y, 0f),
-                Vector2.Distance(airstrikeBulletInstance[0].transform.position, airstrikeBulletTargetHits2[i].position) / 30f).SetEase(Ease.Linear).OnComplete(() =>
+                Vector2.Distance(airstrikeBulletInstance[1].transform.position, airstrikeBulletTargetHits2[i].position) / 100f).SetEase(Ease.Linear).OnComplete(() =>
                 {
-                    ObjectPoolManager.SpawnObject(hitEffect, airstrikeBulletTargetHits2[i].position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
-                    Destroy(airstrikeBulletInstance[1]);
-                    hitCollider.enabled = true;
+                    
                 });
+
             yield return new WaitForSeconds(0.1f);
+            StartCoroutine(DestroyAfterHit(airstrikeBulletInstance[0], airstrikeBulletTargetHits1[i]));
+            StartCoroutine(DestroyAfterHit(airstrikeBulletInstance[1], airstrikeBulletTargetHits1[i]));
+            airstrikeBulletInstance.Clear();
+            i++;
+            
         }
-        
+        Destroy(flareObject);
         Destroy(gameObject);
+    }
+
+    public IEnumerator DestroyAfterHit(GameObject artilleryBulletInstance, Transform airstrikeBulletTargetHits)
+    {
+        var artilTemp = artilleryBulletInstance;
+        var artilTarget = airstrikeBulletTargetHits;
+        ObjectPoolManager.SpawnObject(hitEffect, artilTarget.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
+        if (artilTemp == null) yield break;
+        /*artilleryBulletInstance.GetComponentInChildren<CircleCollider2D>().enabled = true;*/
+        Destroy(artilTemp, 1f);
     }
 
     private void TargetFollowMouseWithinBridge()

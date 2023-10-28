@@ -83,8 +83,6 @@ public class ComponentManager : MonoBehaviour
     public void CheckCombo()
     {
         if (comboSlot.Count < 2 || GameManager.instance.isTargeting) return;  // Added check for comboSlot count
-
-        Debug.Log(comboSlot[0].componentType);
         if (comboSlot[0].componentType == ComponentType.None) return;
 
         var compoType = comboSlot[0].componentType;
@@ -109,7 +107,6 @@ public class ComponentManager : MonoBehaviour
                 comboSlot[0].tokenSO.Attack(countSameType);
             }
         }
-        Debug.Log(comboText.text);
         UnsetCombo();
         RandomizeBullet();
     }

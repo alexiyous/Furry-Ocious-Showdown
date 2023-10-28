@@ -1,7 +1,10 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+
+
 
 
 public class Tower : MonoBehaviour
@@ -29,6 +32,8 @@ public class Tower : MonoBehaviour
     [HideInInspector] public bool inUpgradeZone;
     public int cost;
     public Vector2 targetingSize = new Vector2(4f, 4f); // Adjust the size as needed
+    public float thresholdLineGizmo = 0f;
+    private float threshold = 0f;
     public Vector3 centerOffset = new Vector3(0f, 0f, 0f); // Adjust the offset as needed
     private Vector3 originNotifPosition;
     [HideInInspector] public LevelUpgrade levelUpgrade;
@@ -38,6 +43,7 @@ public class Tower : MonoBehaviour
 
     public void Start()
     {
+        
         levelUpgrade = LevelUpgrade.Level1;
         upgradeButtonText = upgradeNotif.GetComponentInChildren<TextMeshProUGUI>();
         upgradeButtonText.text = cost.ToString();
@@ -48,6 +54,7 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        threshold = transform.position.x + centerOffset.x + thresholdLineGizmo - targetingSize.x / 2f;
 
         if (Input.GetKeyDown(KeyCode.B) && inUpgradeZone)
         {
@@ -65,7 +72,6 @@ public class Tower : MonoBehaviour
         if (!CheckTargetIsInRange())
         {
             target = null;
-            Debug.Log("Target is out of range");
         }
         else
         {
@@ -90,15 +96,24 @@ public class Tower : MonoBehaviour
 
     public virtual void FindTarget()
     {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + centerOffset, targetingSize, 0f, enemyLayerMask);
+        Collider2D[] allColliders = Physics2D.OverlapBoxAll(transform.position + centerOffset, targetingSize, 0f, enemyLayerMask);
+        List<Collider2D> collidersAboveThreshold = new List<Collider2D>();
 
-        if (colliders.Length > 0)
+        foreach (Collider2D collider in allColliders)
+        {
+            if (collider.transform.position.x > threshold)
+            {
+                collidersAboveThreshold.Add(collider);
+            }
+        }
+
+        if (collidersAboveThreshold.Count > 0)
         {
             // Find the closest target within the box
             float closestDistance = float.MaxValue;
             Collider2D closestTarget = null;
 
-            foreach (Collider2D collider in colliders)
+            foreach (Collider2D collider in collidersAboveThreshold)
             {
                 float distance = Vector2.Distance(transform.position, collider.transform.position);
                 if (distance < closestDistance)
@@ -115,15 +130,25 @@ public class Tower : MonoBehaviour
         }
     }
 
+
     public virtual bool CheckTargetIsInRange()
     {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + centerOffset, targetingSize, 0f, enemyLayerMask);
+        Collider2D[] allColliders = Physics2D.OverlapBoxAll(transform.position + centerOffset, targetingSize, 0f, enemyLayerMask);
+        List<Collider2D> collidersAboveThreshold = new List<Collider2D>();
 
-        if (colliders.Length > 0)
+        foreach (Collider2D collider in allColliders)
         {
-            foreach (Collider2D collider in colliders)
+            if (collider.transform.position.x > threshold)
             {
-                if (collider.transform.position == target.position)
+                collidersAboveThreshold.Add(collider);
+            }
+        }
+
+        if (collidersAboveThreshold.Count > 0)
+        {
+            foreach (Collider2D collider in collidersAboveThreshold)
+            {
+                if (collider.transform.position.x >= threshold)
                 {
                     return true;
                 }
@@ -151,6 +176,10 @@ public class Tower : MonoBehaviour
     {
         Handles.color = Color.red;
         Handles.DrawWireCube(transform.position + centerOffset, targetingSize);
+        Handles.DrawLine(new Vector3(transform.position.x + centerOffset.x + thresholdLineGizmo - targetingSize.x / 2f,
+            transform.position.y + centerOffset.y - targetingSize.y/2f,
+            transform.position.z), new Vector3(transform.position.x + centerOffset.x + thresholdLineGizmo - targetingSize.x / 2f,
+            transform.position.y + centerOffset.y + targetingSize.y / 2f, transform.position.z));
     }
 
     public virtual void UpgradeTower()

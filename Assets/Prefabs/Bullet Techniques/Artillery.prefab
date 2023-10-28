@@ -421,7 +421,6 @@ GameObject:
   - component: {fileID: 1831306178856798423}
   - component: {fileID: 8246583441790071160}
   - component: {fileID: 3339854580055270317}
-  - component: {fileID: 3688957470891420637}
   m_Layer: 6
   m_Name: Artillery Bullet
   m_TagString: Untagged
@@ -518,22 +517,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &3688957470891420637
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7958454562470241715}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18994212}
-  serializedVersion: 2
-  m_Radius: 0.27126384
 --- !u!1 &8803704740127191309
 GameObject:
   m_ObjectHideFlags: 0

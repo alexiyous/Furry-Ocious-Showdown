@@ -858,11 +858,14 @@ MonoBehaviour:
   inUpgradeZone: 0
   cost: 1050
   targetingSize: {x: 50, y: 10.66}
+  thresholdLineGizmo: 10
   centerOffset: {x: 32.1, y: 0, z: 0}
   levelUpgrade: 0
   target: {fileID: 0}
   timeUntilFire: 0
   yOffset: 38
+  speedBullet: 10
+  arcHeight: 1
 --- !u!61 &2587263642709243122
 BoxCollider2D:
   m_ObjectHideFlags: 0

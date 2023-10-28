@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -12,7 +13,6 @@ public class ArtilleryController : MonoBehaviour
     [SerializeField] private GameObject targetAim;
     [SerializeField] private GameObject flare;
     [SerializeField] private GameObject artilleryBullet;
-    [SerializeField] private Collider2D hitCollider;
     [SerializeField] private float YOffsetSpawnPointParent;
     [SerializeField] private Transform[] artilleryBulletSpawnPoints;
 
@@ -61,9 +61,8 @@ public class ArtilleryController : MonoBehaviour
                 Debug.Log("Flare Reached Target");
                 ObjectPoolManager.SpawnObject(flareEffect, flareObject.transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
             });
-        yield return new WaitForSeconds(2f);
-        Destroy(flareObject);
         GameManager.instance.isTargeting = false;
+        yield return new WaitForSeconds(4f);
         StartCoroutine(ShootArtillery(currentTargetPosition));
     }
 
@@ -78,16 +77,25 @@ public class ArtilleryController : MonoBehaviour
             artilleryBulletInstance.SetActive(true);
             if (artilleryBulletInstance == null) continue;
             artilleryBulletInstance.transform.DOMove(new Vector3(currentTargetPosition.x, currentTargetPosition.y, 0f),
-                Vector2.Distance(artilleryBulletInstance.transform.position, currentTargetPosition) / 10f).SetEase(Ease.Linear).OnComplete(() =>
+                Vector2.Distance(artilleryBulletInstance.transform.position, currentTargetPosition) / 30f).SetEase(Ease.Linear).OnComplete(() =>
                 {
-                    Destroy(artilleryBulletInstance, 0.1f);
-                    hitCollider.enabled = true;
+                    StartCoroutine(DestroyAfterHit(artilleryBulletInstance));
                 });
             yield return new WaitForSeconds(1f);
             bulletCount++;
         }
-
+        Destroy(flareObject);
         Destroy(gameObject);
+    }
+
+    public IEnumerator DestroyAfterHit(GameObject artilleryBulletInstance)
+    {
+        if (artilleryBulletInstance == null) yield break;
+        /*yield return new WaitForSeconds(1f);*/
+        var t = artilleryBulletInstance.GetComponentInChildren<CircleCollider2D>();
+        t.enabled = true;
+        /*artilleryBulletInstance.GetComponentInChildren<CircleCollider2D>().enabled = true;*/
+        Destroy(artilleryBulletInstance, 0.3f);
     }
 
     private void TargetFollowMouseWithinBridge()

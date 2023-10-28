@@ -14,7 +14,6 @@ public class TokenSlotSO : ScriptableObject
     public void Attack(int index)
     {
         Instantiate(attackTechniques[index - 1], droneAim.transform.position, droneAim.transform.rotation);
-        Debug.Log($"Attack {index} {bulletType}");
     }
 
     public string ComboName(int index)
