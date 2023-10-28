@@ -43,7 +43,7 @@ public class MortarBullet : TowerBullet
 
     public override void Move()
     {
-        if (!target) return;
+        if (target = null) return;
 
         float nextX;
         // Compute the next position, with arc added in
@@ -59,8 +59,16 @@ public class MortarBullet : TowerBullet
         var nextPos = new Vector3(nextX, baseY + arc, transform.position.z);
 
         // Rotate to face the next position, and then move there
-        transform.rotation = LookAt2D(nextPos - transform.position);
-        transform.position = nextPos;
+        
+        if (target != null || targetPos != null)
+        {
+
+            transform.rotation = LookAt2D(nextPos - transform.position);
+            transform.position = nextPos;
+        } else
+        {
+            Destroy(gameObject);
+        }
 
         switch (bulletLevel)
         {
