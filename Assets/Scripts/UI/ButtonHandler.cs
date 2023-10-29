@@ -21,7 +21,9 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnDeselect(BaseEventData eventData)
     {
-        transform.DOScale(originalScale, animationDuration);
+        transform.DOScale(originalScale, animationDuration).SetUpdate(true);
+
+        if (selector == null) return;
 
         if (selector.activeInHierarchy == true)
         {
@@ -41,7 +43,10 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnSelect(BaseEventData eventData)
     {
-        transform.DOScale(originalScale * scaleMultiplier, animationDuration);
+        transform.DOScale(originalScale * scaleMultiplier, animationDuration).SetUpdate(true);
+
+        if(selector == null) return;
+
         if (selector.activeInHierarchy == false)
         {
             selector.SetActive(true);
@@ -51,7 +56,10 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        transform.DOScale(originalScale, animationDuration);
+        transform.DOScale(originalScale, animationDuration).SetUpdate(true).OnComplete(() =>
+        {
+            transform.DOScale(originalScale * scaleMultiplier, animationDuration).SetUpdate(true);
+        });
         /*AudioManager.instance.PlaySFXAdjusted(0);*/
     }
 }

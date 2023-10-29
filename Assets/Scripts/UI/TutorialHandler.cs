@@ -1,8 +1,7 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using DG.Tweening;
 
 public class TutorialHandler : MonoBehaviour
 {
@@ -16,10 +15,18 @@ public class TutorialHandler : MonoBehaviour
     public GameObject nextButton;
     public GameObject prevButton;
 
+    public Vector3 originalTransform = new Vector3(.95f,.95f,.95f);
+
+
     // Start is called before the first frame update
     void OnEnable()
     {
         isTutorialActive = true;
+        transform.localScale = new Vector3 (0, 0, 0);
+
+        transform.DOScale(originalTransform, 1f).SetEase(Ease.OutBack).SetUpdate(true);
+
+        
         Time.timeScale = 0;
 
         currentPage = 0;
@@ -36,6 +43,15 @@ public class TutorialHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NextPage();
+        } else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            PrevPage();
+        }
+
+
         if (currentPage == tutorialPages.Count - 1)
         {
             nextButton.SetActive(false);
@@ -78,9 +94,14 @@ public class TutorialHandler : MonoBehaviour
     {
         if (isTutorialActive)
         {
-            Time.timeScale = 1;
-            isTutorialActive = false;
-            gameObject.SetActive(false);
+            
+
+            transform.DOScale(0, .3f).SetEase(Ease.InBack).SetUpdate(true). OnComplete(() => {
+                Time.timeScale = 1;
+                isTutorialActive = false;
+
+                gameObject.SetActive(false);
+            } );
             
         }
     }
