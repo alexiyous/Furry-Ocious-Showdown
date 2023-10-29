@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4085641771758235945}
   - component: {fileID: 6115817427163738290}
   - component: {fileID: 4913222598599017849}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Small Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7359a9e88266321439eebb8ce1b3a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestroy: 2
+  timeToDestroy: 1
 --- !u!114 &4085641771758235945
 MonoBehaviour:
   m_ObjectHideFlags: 0

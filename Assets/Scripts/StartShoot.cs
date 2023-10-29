@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.Rendering;
 
 public class StartShoot : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class StartShoot : MonoBehaviour
 
     private Transform target;
 
+    private Transform spawnerTransform;
+
     private int bulletCount;
 
     [SerializeField] private Transform shootPoint;
@@ -20,8 +24,23 @@ public class StartShoot : MonoBehaviour
 
     private bool hasShot = false;
 
+    private Vector3 startPosition;
+
+    public float offset = 2f;
+
+    private void Awake()
+    {
+        
+    }
+
     private void OnEnable()
     {
+        spawnerTransform = GameObject.FindGameObjectWithTag("Spawner").transform;
+
+        startPosition = new Vector3(transform.position.x, spawnerTransform.position.y - offset, 0f);
+        transform.position = startPosition;
+
+        transform.DOLocalMoveY(transform.position.y + offset, 1f).SetEase(Ease.Linear);
 
         hasShot = false;
         timer = 2f;
@@ -40,6 +59,7 @@ public class StartShoot : MonoBehaviour
             hasShot = true;
 
             StartCoroutine(Shoot2());
+            
 
             timer = 2f;
         }
@@ -62,5 +82,6 @@ public class StartShoot : MonoBehaviour
 
             yield return new WaitForSeconds(fireRate);
         }
+        transform.DOLocalMoveY(startPosition.y, 1f).SetEase(Ease.Linear);
     }
 }

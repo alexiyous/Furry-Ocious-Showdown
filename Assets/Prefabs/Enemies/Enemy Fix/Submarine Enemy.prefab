@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 8790563213920812453}
   - component: {fileID: 7563918481328110016}
   - component: {fileID: 5460372217704243681}
+  - component: {fileID: 8137214720168134625}
   m_Layer: 0
   m_Name: Submarine Enemy
   m_TagString: Untagged
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7359a9e88266321439eebb8ce1b3a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestroy: 5
+  timeToDestroy: 6
 --- !u!114 &5460372217704243681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,9 +180,21 @@ MonoBehaviour:
   bulletCountMin: 3
   bulletCountMax: 8
   inaccuracy: 3
-  bulletPrefab: {fileID: 8047041956205088625, guid: 3952ba94f1a36c241a863de4a61eeaac, type: 3}
+  bulletPrefab: {fileID: 8047041956205088625, guid: 2d4d59d1c1cf53a4d96f0c166ef071e3, type: 3}
   shootPoint: {fileID: 5399331253812430078}
   timer: 2
+  offset: 2
+--- !u!210 &8137214720168134625
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415998655183517244}
+  m_Enabled: 1
+  m_SortingLayerID: -1384759829
+  m_SortingLayer: 1
+  m_SortingOrder: 2
 --- !u!1 &1576424788582676798
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +519,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 228923684, guid: 4f3cbf730faee8c4b8e75e9f6fdd4e34, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
