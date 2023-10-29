@@ -23,7 +23,7 @@ public class IdleMoveToPlayer : EnemyIdleSOBase
 
         movementSpeed = Random.Range(enemy.baseSpeed - randomMovementSpeedOffset, enemy.baseSpeed + randomMovementSpeedOffset);
 
-        targetOffset = new Vector3(0, Random.Range(playerTransform.position.y + minPlayerY, playerTransform.position.y + minPlayerY + targetOffsetX), 0);
+        targetOffset = new Vector3(0, Random.Range(playerTransform.position.y + minPlayerY, playerTransform.position.y + minPlayerY), 0);
     }
 
     public override void DoExitLogic()

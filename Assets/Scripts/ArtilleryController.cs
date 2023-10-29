@@ -17,10 +17,14 @@ public class ArtilleryController : MonoBehaviour
     [SerializeField] private Transform[] artilleryBulletSpawnPoints;
 
     public GameObject flareEffect;
+    public GameObject explosionEffect;
 
     private GameObject flareObject;
     private bool isFlareActive = false;
     private int bulletCount = 0;
+
+    [SerializeField] private float xRadius = 4f;
+    [SerializeField] private float yRadius = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,7 @@ public class ArtilleryController : MonoBehaviour
 
     public IEnumerator ShootFlare(Vector3 currentTargetPosition)
     {
+
         targetAim.transform.position = currentTargetPosition;
         var droneAim = GameObject.FindGameObjectWithTag("Drone Aim").GetComponent<DroneAim>();
         flareObject = Instantiate(flare, droneAim.transform.position, droneAim.transform.rotation);
@@ -76,9 +81,10 @@ public class ArtilleryController : MonoBehaviour
             var artilleryBulletInstance = Instantiate(artilleryBullet, randomSpawnPoint.position, Quaternion.identity);
             artilleryBulletInstance.SetActive(true);
             if (artilleryBulletInstance == null) continue;
-            artilleryBulletInstance.transform.DOMove(new Vector3(currentTargetPosition.x, currentTargetPosition.y, 0f),
+            artilleryBulletInstance.transform.DOMove(new Vector3(currentTargetPosition.x + Random.Range(-xRadius, xRadius), currentTargetPosition.y + Random.Range(-yRadius, yRadius), 0f),
                 Vector2.Distance(artilleryBulletInstance.transform.position, currentTargetPosition) / 30f).SetEase(Ease.Linear).OnComplete(() =>
                 {
+                    ObjectPoolManager.SpawnObject(explosionEffect, artilleryBulletInstance.transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
                     StartCoroutine(DestroyAfterHit(artilleryBulletInstance));
                 });
             yield return new WaitForSeconds(1f);
@@ -92,8 +98,10 @@ public class ArtilleryController : MonoBehaviour
     {
         if (artilleryBulletInstance == null) yield break;
         /*yield return new WaitForSeconds(1f);*/
+        var sprite = artilleryBulletInstance.GetComponentInChildren<SpriteRenderer>();
         var t = artilleryBulletInstance.GetComponentInChildren<CircleCollider2D>();
         t.enabled = true;
+        sprite.enabled = false;
         /*artilleryBulletInstance.GetComponentInChildren<CircleCollider2D>().enabled = true;*/
         Destroy(artilleryBulletInstance, 0.3f);
     }
