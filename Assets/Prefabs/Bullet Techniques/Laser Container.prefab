@@ -201,8 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 0.4
-  damage: 100
-  armorPenetration: 50
+  damage: 60
+  armorPenetration: 100
   hitEffect: {fileID: 7678880977450364371, guid: c67ad1b5f0ac03b40bbee83dc48f3fb8, type: 3}
 --- !u!1 &21224981995640324
 GameObject:

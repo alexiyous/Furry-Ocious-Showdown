@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411903686930178303}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.8800001, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -507,7 +507,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7296644
+  m_Radius: 2.01
 --- !u!114 &411903687687091908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,8 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2002b42db7d8ec24996a57f749cfaeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
-  armorPenetration: 30
+  damage: 150
+  armorPenetration: 40
   parent: {fileID: 411903687539242404}
 --- !u!1 &411903687701814786
 GameObject:
@@ -581,8 +581,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411903687878749964}
   m_LocalRotation: {x: 0, y: 0, z: 0.10279255, w: 0.9947028}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.72606, y: 1.3579688, z: 1.171875}
+  m_LocalPosition: {x: 0.4, y: 0.06, z: 0}
+  m_LocalScale: {x: 18.89291, y: 3.1468177, z: 1.171875}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 411903687534151164}
