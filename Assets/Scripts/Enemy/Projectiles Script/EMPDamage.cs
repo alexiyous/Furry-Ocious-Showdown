@@ -10,6 +10,8 @@ public class EMPDamage : MonoBehaviour
     [SerializeField] private float stunDuration = 3f;
     [SerializeField] private float slowAmount = 0;
 
+    public GameObject hitEffect;
+
     private SpriteRenderer spriteRenderer;
 
     private Color originalColor;
@@ -57,6 +59,11 @@ public class EMPDamage : MonoBehaviour
         {
             collision.GetComponent<IDamageable>().Damage(damage, armorPenetration);
             collision.GetComponent<ISlowable>().ApplySlow(slowAmount, stunDuration, Color.blue);
+
+            GameObject hitEffectChild = hitEffect.GetComponentInChildren<ParticleSystem>().gameObject;
+
+            hitEffectChild.transform.localScale = collision.gameObject.transform.localScale;
+            Instantiate(hitEffect, collision.transform.position, Quaternion.identity);
         }
     }
 }

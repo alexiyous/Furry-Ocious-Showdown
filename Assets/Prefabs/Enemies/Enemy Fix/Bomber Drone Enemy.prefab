@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8035e5295bc3d8b408eb620a2e59fec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <maxHealth>k__BackingField: 70
+  <maxHealth>k__BackingField: 100
   <currentHealth>k__BackingField: 0
   <armor>k__BackingField: 0
   <baseSpeed>k__BackingField: 3

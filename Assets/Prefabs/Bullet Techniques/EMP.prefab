@@ -115,10 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336ac72ee357e804d8ea20c460f0190d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 70
-  armorPenetration: 10
+  damage: 100
+  armorPenetration: 5
   stunDuration: 3
   slowAmount: 0
+  hitEffect: {fileID: 1845062880509370536, guid: b68abc6694ebfa248bf49bc06d78702d, type: 3}
   fadeDuration: 1
 --- !u!114 &2598155239078816029
 MonoBehaviour:
