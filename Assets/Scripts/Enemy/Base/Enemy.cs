@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
     public Color originalColor { get; set; }
     public Collider2D enemyCollider { get; set; }
     public Animator animator { get; set; }
+    public SpriteRenderer[] sprites { get; set; }
 
     [field: SerializeField] public GameObject deathEffect { get; set; }
 
@@ -75,6 +76,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        sprites = GetComponentsInChildren<SpriteRenderer>();
 
         originalColor = spriteRenderer.color;
         slowAmount = 1;
@@ -93,7 +95,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
     {
         stateMachine.CurrentEnemyState.FrameUpdate();
 
-        if(slowAmount != 1)
+        if(slowAmount != 1 && isAlive)
         {
             animator.speed = 1 * slowAmount;
         } else
@@ -178,6 +180,8 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
             damage = damageAmount;
         }
 
+        StartCoroutine(ChangeColor(new Color(1,0.6f,0.6f)));
+
         currentHealth -= (int)damage;
         //AudioManager.instance.PlaySFXAdjusted(13);
         if (currentHealth <= 0f)
@@ -196,6 +200,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
             ScoreManager.instance.AddScore(score);
 
+            animator.speed = 1;
             animator.Play("Death");
 
             ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
@@ -214,9 +219,26 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
     public IEnumerator ChangeColor(Color color)
     {
-        spriteRenderer.color = color;
-        yield return new WaitForSeconds(.2f);
-        spriteRenderer.color = Color.white;
+        
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            Color newColor = new Color(color.r, color.g, color.b, sprite.color.a);
+            sprite.color = newColor;
+        }
+
+        Color newSpriteRendererColor = new Color(color.r, color.g, color.b, spriteRenderer.color.a);
+        spriteRenderer.color = newSpriteRendererColor;
+        yield return new WaitForSeconds(.05f);
+
+        Color newSpriteRendererColor2 = new Color(Color.white.r, Color.white.g, Color.white.b, spriteRenderer.color.a);
+        spriteRenderer.color = newSpriteRendererColor2;
+
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            Color newColor = new Color(originalColor.r, originalColor.g, originalColor.b, sprite.color.a);
+            sprite.color = newColor;
+        }
+        yield return new WaitForSeconds(.05f);
     }
 
     #endregion

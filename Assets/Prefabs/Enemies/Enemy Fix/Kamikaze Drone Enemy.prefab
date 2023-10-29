@@ -2083,11 +2083,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8035e5295bc3d8b408eb620a2e59fec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <maxHealth>k__BackingField: 200
+  <maxHealth>k__BackingField: 150
   <currentHealth>k__BackingField: 0
   <armor>k__BackingField: 10
   <baseSpeed>k__BackingField: 3
-  <score>k__BackingField: 50
+  <score>k__BackingField: 80
   <deathEffect>k__BackingField: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
   <killTimer>k__BackingField: 0.2
   EnemyIdleBase: {fileID: 11400000, guid: e2b496b97284efb48adc835fccc66c49, type: 2}

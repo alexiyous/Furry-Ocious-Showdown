@@ -20,6 +20,7 @@ public class RandomSpawner : MonoBehaviour
     private void Start()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
+        timer = 0;
     }
 
     private void FixedUpdate()

@@ -250,8 +250,8 @@ MonoBehaviour:
   - {fileID: 8491327711426864623}
   - {fileID: 8491327712682900829}
   m_Bounds:
-    m_Center: {x: 0.13756701, y: 0.25163317, z: -1.1641532e-10}
-    m_Extent: {x: 0.3672412, y: 0.4200102, z: 3.469447e-18}
+    m_Center: {x: 0.13756892, y: 0.25163317, z: -1.1641532e-10}
+    m_Extent: {x: 0.3672431, y: 0.4200102, z: 3.469447e-18}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -790,8 +790,8 @@ MonoBehaviour:
   - {fileID: 8491327711682086194}
   - {fileID: 8491327711860246428}
   m_Bounds:
-    m_Center: {x: -0.0028948784, y: -0.108988196, z: -1.1641532e-10}
-    m_Extent: {x: 1.0790813, y: 0.31823504, z: 3.469447e-18}
+    m_Center: {x: -0.002892971, y: -0.108988196, z: -1.1641532e-10}
+    m_Extent: {x: 1.0790832, y: 0.31823504, z: 3.469447e-18}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1481,8 +1481,8 @@ MonoBehaviour:
   - {fileID: 8491327712693986171}
   - {fileID: 8491327711518143323}
   m_Bounds:
-    m_Center: {x: -0.00080382824, y: 0.00000008940697, z: -1.1641532e-10}
-    m_Extent: {x: 0.5242, y: 0.43499985, z: 0}
+    m_Center: {x: -0.00080382824, y: 0.00000014901161, z: -1.1641532e-10}
+    m_Extent: {x: 0.5242, y: 0.4349999, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1678,12 +1678,14 @@ MonoBehaviour:
   <currentHealth>k__BackingField: 0
   <armor>k__BackingField: 100
   <baseSpeed>k__BackingField: 2
-  <score>k__BackingField: 300
+  <score>k__BackingField: 400
   <deathEffect>k__BackingField: {fileID: 1589043012766816229, guid: 8d14a64b7dba70d4696a63e612ef1bc6, type: 3}
   <killTimer>k__BackingField: 0
   EnemyIdleBase: {fileID: 11400000, guid: 372ca88e27dd90c4585eaec9bb847c87, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: c90aa7796f126c74dbb0ee5d1400a891, type: 2}
   EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}
+  shakeIntensity: 5
+  shakeTime: 0.2
 --- !u!50 &8491327713027037162
 Rigidbody2D:
   serializedVersion: 4
