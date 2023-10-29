@@ -367,8 +367,7 @@ MonoBehaviour:
   targetAim: {fileID: 4372602052504235082}
   flare: {fileID: 3258972547695049138}
   artilleryBullet: {fileID: 7958454562470241715}
-  hitCollider: {fileID: 3340978110463945449}
-  YOffsetSpawnPointParent: 5
+  YOffsetSpawnPointParent: 30
   artilleryBulletSpawnPoints:
   - {fileID: 5747061245979914168}
   - {fileID: 130569139791304286}

@@ -54,7 +54,7 @@ public class ArtilleryController : MonoBehaviour
         flareObject.SetActive(true);
 
         flareObject.transform.DOMove(new Vector3(currentTargetPosition.x, currentTargetPosition.y, 0f),
-            Vector2.Distance(flareObject.transform.position, currentTargetPosition) / 10f)
+            Vector2.Distance(flareObject.transform.position, currentTargetPosition) / 30f)
             .SetEase(Ease.Linear)
             .OnComplete(() =>
             {
