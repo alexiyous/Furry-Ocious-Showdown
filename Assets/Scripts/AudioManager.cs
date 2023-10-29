@@ -22,17 +22,15 @@ public class AudioManager : MonoBehaviour
 
     [ListDrawerSettings(ShowIndexLabels = true)]
     public AudioSource[] mainMusic;
-    private AudioSource currentMainMusic;
+    public AudioSource currentMainMusic;
 
     [ListDrawerSettings(ShowIndexLabels = true)]
     public AudioSource[] sfx;
 
-    public void OnAudioFilterRead(float[] data, int channels)
+    public IEnumerator PlayMainAfterFinish(int index)
     {
-        if (currentMainMusic.clip.name == "Main Level Intro" && currentMainMusic.isPlaying == false)
-        {
-            PlayMainMusic(2);
-        }
+        yield return new WaitForSeconds(currentMainMusic.clip.length);
+        PlayMainMusic(index);
     }
 
     public void PlayMainMusic(int index)

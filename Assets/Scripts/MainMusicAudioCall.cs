@@ -11,6 +11,7 @@ public class MainMusicAudioCall : MonoBehaviour
         if (playMainMusicIndex == 1)
         {
             AudioManager.instance.PlayMainMusic(playMainMusicIndex, 1f);
+            StartCoroutine(AudioManager.instance.PlayMainAfterFinish(2));
         }
         else
         {
@@ -21,6 +22,7 @@ public class MainMusicAudioCall : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (AudioManager.instance == null) return;
         AudioManager.instance.StopMainMusic(1f);
     }
 }

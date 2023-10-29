@@ -7529,11 +7529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4341fcd0aa2e44ab40a462fd4a7555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuMusic: {fileID: 0}
-  levelMusic: {fileID: 0}
-  bossMusic: {fileID: 0}
+  mainMusic: []
   sfx: []
-  fadeOutDuration: 1
 --- !u!4 &619101082
 Transform:
   m_ObjectHideFlags: 0
@@ -32845,6 +32842,7 @@ GameObject:
   - component: {fileID: 5275608416066129384}
   - component: {fileID: 5275608416066129385}
   - component: {fileID: 5275608416066129392}
+  - component: {fileID: 5275608416066129393}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -32916,6 +32914,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1180814189}
+--- !u!114 &5275608416066129393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5275608416066129386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0387b0718517a4419162b93704fc982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playMainMusicIndex: 1
 --- !u!222 &5275608416070227025
 CanvasRenderer:
   m_ObjectHideFlags: 0
