@@ -1,5 +1,5 @@
+using Sirenix.OdinInspector;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -20,76 +20,107 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public AudioSource mainMenuMusic, levelMusic, bossMusic;
+    [ListDrawerSettings(ShowIndexLabels = true)]
+    public AudioSource[] mainMusic;
+    private AudioSource currentMainMusic;
 
+    [ListDrawerSettings(ShowIndexLabels = true)]
     public AudioSource[] sfx;
 
-    public float fadeOutDuration = 1.0f;
-
-    public void PlayMainMenuMusic()//method to play main menu music, set it on the test main menu script
+    public void OnAudioFilterRead(float[] data, int channels)
     {
-        levelMusic.Stop();//stop the level music from playing
-
-        mainMenuMusic.Play();//play the main menu music
-    }
-
-    public void PlayLevelMusic()//method to play level music, set it on camera controller script
-    {
-        if (!levelMusic.isPlaying)//if level music is not playing
+        if (currentMainMusic.clip.name == "Main Level Intro" && currentMainMusic.isPlaying == false)
         {
-            mainMenuMusic.Stop();//stop the main menu music from playing
-            levelMusic.Play();//play the level music
+            PlayMainMusic(2);
         }
     }
 
-    public void PlayBossMusic(float duration)
+    public void PlayMainMusic(int index)
     {
-        if (!bossMusic.isPlaying)
+        if (currentMainMusic != null)
         {
-            StartCoroutine(FadeOutAndPlay(levelMusic, bossMusic, duration));
+            currentMainMusic.Stop();
         }
+
+        currentMainMusic = mainMusic[index];
+        currentMainMusic.Play();
+    }
+    public void PlayMainMusic(int index, float fadeTime)
+    {
+        if (currentMainMusic != null)
+        {
+            StartCoroutine(FadeOut(currentMainMusic, fadeTime));
+        }
+
+        currentMainMusic = mainMusic[index];
+        StartCoroutine(FadeIn(currentMainMusic, fadeTime));
     }
 
-    public void StopBossMusic(float duration)
+    public void StopMainMusic(float fadeTime)
     {
-        if (bossMusic.isPlaying)
-        {
-            StartCoroutine(FadeOutAndPlay(bossMusic, levelMusic, duration));
-        }
+        StartCoroutine(FadeOut(currentMainMusic, fadeTime));
     }
 
-    public void PlaySFX(int sfxToPlay)
+    public void StopMainMusic()
     {
-        sfx[sfxToPlay].Stop();
-        sfx[sfxToPlay].Play();
+        currentMainMusic.Stop();
+    }
+
+    public void PlaySFX(int index)
+    {
+        sfx[index].Stop();
+        sfx[index].Play();
     }
 
     public void PlaySFXAdjusted(int sfxToAdjust)
     {
+
         sfx[sfxToAdjust].pitch = Random.Range(.8f, 1.2f);
         PlaySFX(sfxToAdjust);
     }
 
-    private IEnumerator FadeOutAndPlay(AudioSource audioSourceToFadeOut, AudioSource audioSourceToPlay, float duration)
+    public void PlaySFX(int index, float fadeTime)
     {
-        float fadeDuration = duration; // Adjust the duration for fading out
-        float startVolume = audioSourceToFadeOut.volume;
-        float timer = 0;
+        StartCoroutine(FadeIn(sfx[index], fadeTime));
+    }
 
-        while (timer < fadeDuration)
+    public void StopSFX(int index)
+    {
+        sfx[index].Stop();
+    }
+
+    public void StopSFX(int index, float fadeTime)
+    {
+        StartCoroutine(FadeOut(sfx[index], fadeTime));
+    }
+    IEnumerator FadeOut(AudioSource audioSource, float fadeTime)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
         {
-            audioSourceToFadeOut.volume = Mathf.Lerp(startVolume, 0, timer / fadeDuration);
-            timer += Time.deltaTime;
+            audioSource.volume -= startVolume * Time.deltaTime / fadeTime;
+
             yield return null;
         }
 
-        audioSourceToFadeOut.volume = 0;
-        audioSourceToFadeOut.Stop();
+        audioSource.Stop();
+        audioSource.volume = startVolume;
+    }
 
-        // Reset the volume back to the original level
-        audioSourceToFadeOut.volume = startVolume;
+    IEnumerator FadeIn(AudioSource audioSource, float fadeTime)
+    {
+        float startVolume = audioSource.volume;
+        audioSource.volume = 0;
+        audioSource.Play();
 
-        // Start playing the new audio source
-        audioSourceToPlay.Play();
+        while (audioSource.volume < startVolume)
+        {
+            audioSource.volume += startVolume * Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+
+        audioSource.volume = startVolume;
     }
 }
