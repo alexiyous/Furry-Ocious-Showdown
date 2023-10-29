@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63862b1aa33ebda46a49c499572244b6, type: 3}
   m_Name: Idle-MoveToTarget
   m_EditorClassIdentifier: 
-  randomMovementSpeedOffset: 1
+  randomMovementSpeedOffset: 0.5
   targetOffsetY: 2.5

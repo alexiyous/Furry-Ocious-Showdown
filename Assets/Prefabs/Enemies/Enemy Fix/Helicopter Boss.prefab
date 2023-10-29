@@ -5411,7 +5411,7 @@ Transform:
   m_GameObject: {fileID: 8839942304748542649}
   m_LocalRotation: {x: 0, y: -0.11587338, z: 0, w: 0.993264}
   m_LocalPosition: {x: 17.7, y: 12, z: 0.052883193}
-  m_LocalScale: {x: 1.1200001, y: 1.12, z: 1.1200001}
+  m_LocalScale: {x: 1.1200002, y: 1.12, z: 1.1200002}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8076052035292271210}
@@ -5486,6 +5486,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _particleSystem: {fileID: 6395198614569612260}
+  pointIndex: 0
+  shakeIntensity: 5
+  shakeTime: 0.2
 --- !u!212 &7761384448679689405
 SpriteRenderer:
   m_ObjectHideFlags: 0

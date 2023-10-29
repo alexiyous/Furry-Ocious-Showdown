@@ -1195,8 +1195,8 @@ MonoBehaviour:
   - {fileID: 5593465264520203710}
   - {fileID: 5593465264183978846}
   m_Bounds:
-    m_Center: {x: 0.9558832, y: 0.37383533, z: 0.0000000037252903}
-    m_Extent: {x: 1.1000005, y: 0.57499987, z: 0}
+    m_Center: {x: 0.95588344, y: 0.37383914, z: 0.0000000037252903}
+    m_Extent: {x: 1.1000003, y: 0.5750037, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1453,7 +1453,7 @@ MonoBehaviour:
   - {fileID: 5593465265317948055}
   - {fileID: 5593465263603614955}
   m_Bounds:
-    m_Center: {x: -0.97008073, y: 0.38802797, z: 0.0000000037252903}
+    m_Center: {x: -0.97008026, y: 0.38803178, z: 0.0000000037252903}
     m_Extent: {x: 1.1000003, y: 0.57500017, z: 1.110223e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1681,7 +1681,7 @@ MonoBehaviour:
   - {fileID: 5593465264060354813}
   - {fileID: 5593465264008313607}
   m_Bounds:
-    m_Center: {x: 1.17356, y: -0.28399247, z: 0.0000000037252903}
+    m_Center: {x: 1.1735605, y: -0.28399628, z: 0.0000000037252903}
     m_Extent: {x: 1.2749999, y: 0.4658299, z: 1.110223e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1970,11 +1970,11 @@ GameObject:
   - component: {fileID: 5593465264911904567}
   m_Layer: 12
   m_Name: Kamikaze Drone Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5593465264911904572
 Transform:
   m_ObjectHideFlags: 0
@@ -2088,7 +2088,7 @@ MonoBehaviour:
   <armor>k__BackingField: 10
   <baseSpeed>k__BackingField: 3
   <score>k__BackingField: 50
-  <deathEffect>k__BackingField: {fileID: 2937120575847993534, guid: 9fe0f71c4e7d9fd4182effbccc9f1f18, type: 3}
+  <deathEffect>k__BackingField: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
   <killTimer>k__BackingField: 0.2
   EnemyIdleBase: {fileID: 11400000, guid: e2b496b97284efb48adc835fccc66c49, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: 152ec06dfed5b8142832b99879b23a62, type: 2}
@@ -2333,8 +2333,8 @@ MonoBehaviour:
   - {fileID: 5593465264546140276}
   - {fileID: 5593465263527469063}
   m_Bounds:
-    m_Center: {x: -1.121508, y: -0.24644145, z: 0.0000000037252903}
-    m_Extent: {x: 1.275, y: 0.46539196, z: 1.110223e-16}
+    m_Center: {x: -1.1215075, y: -0.24643573, z: 0.0000000037252903}
+    m_Extent: {x: 1.2750002, y: 0.46538624, z: 1.110223e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

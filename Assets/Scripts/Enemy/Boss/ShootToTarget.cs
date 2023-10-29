@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
+using Sirenix.OdinInspector;
 
 public class ShootToTarget : ActionNode
 {
     [SerializeField] private float fireRate = .5f;
     [SerializeField] private int bulletCount = 6;
     [SerializeField] private float inaccuracy = 1f;
-    [SerializeField] private GameObject bulletPrefab;
+    [InlineEditor][SerializeField] private GameObject bulletPrefab;
 
     private Transform target;
 

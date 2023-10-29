@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3496507205768504483}
   - component: {fileID: 1472125128888693420}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5440552177243565654}
   - component: {fileID: 5440552177243565655}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 8961009714594877119}
   - component: {fileID: 7169500190792894701}
   - component: {fileID: 6296787657437040833}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Drone Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}

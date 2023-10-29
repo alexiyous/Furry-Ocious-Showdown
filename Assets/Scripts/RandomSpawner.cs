@@ -11,9 +11,11 @@ public class RandomSpawner : MonoBehaviour
 
     [SerializeField] private GameObject objectToSpawn;
 
+    private float randomTimeBetweenSpawn;
+
     private bool hasSpawned = false;
 
-    private float timer;
+    private float timer = 0;
 
     private void Start()
     {
@@ -24,7 +26,7 @@ public class RandomSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= timeBetweenSpawn && !hasSpawned)
+        if (timer >= randomTimeBetweenSpawn && !hasSpawned)
         {
             hasSpawned = true;
             timer = 0;
@@ -47,13 +49,7 @@ public class RandomSpawner : MonoBehaviour
 
         ObjectPoolManager.SpawnObject(objectToSpawn, spawnPoint, Quaternion.identity);
 
-        float randomTimeBetweenSpawn = Random.Range(timeBetweenSpawn - randomTime, timeBetweenSpawn + randomTime);
-        if (randomTimeBetweenSpawn < 0)
-        {
-            randomTimeBetweenSpawn = Random.Range(timeBetweenSpawn, timeBetweenSpawn + randomTime);
-        }
-
-        timeBetweenSpawn = randomTimeBetweenSpawn;
+        randomTimeBetweenSpawn = Random.Range(timeBetweenSpawn - randomTime, timeBetweenSpawn + randomTime);
 
         hasSpawned = false;
     }

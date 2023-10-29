@@ -19,6 +19,8 @@ public class AttackHelicopter : Enemy
 
     public ParticleSystem _particleSystem;
 
+    public int pointIndex = 0;
+
     private bool phase1 = false;
     private bool phase2 = false;
     private bool phase3 = false;
@@ -44,7 +46,7 @@ public class AttackHelicopter : Enemy
 
         machineGun.SetActive(false);
 
-        CinemachineShake.instance.ShakeCamera(5f, 0.5f);
+        CinemachineShake.instance.ShakeCamera(shakeIntensity, shakeTime);
     }
 
     public override void Damage(int damageAmount, int armorPenetration)
@@ -109,8 +111,10 @@ public class AttackHelicopter : Enemy
         }
     }
 
-    /*public override void Update()
+    public override void Update()
     {
-        
-    }*/
+        Vector2 moveDirection = (movePoints[pointIndex].position - transform.position).normalized;
+
+        MoveEnemyNoTurn(moveDirection * baseSpeed);
+    }
 }
