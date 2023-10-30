@@ -18,3 +18,4 @@ MonoBehaviour:
   randomMovementRange: 1
   _exitTimer: 0
   _timeTillExit: 3
+  soundToPlay: 3

@@ -37,7 +37,7 @@ public class AttackHelicopter : Enemy
         buildingsTransform = GameObject.FindGameObjectsWithTag("Building")
                             .Select(building => building.transform)
                             .ToArray();
-        
+        AudioManager.instance.PlaySFX(8);
     }
 
     public override void Die()
@@ -46,12 +46,16 @@ public class AttackHelicopter : Enemy
 
         machineGun.SetActive(false);
 
+        AudioManager.instance.StopSFX(8);
+
         CinemachineShake.instance.ShakeCamera(shakeIntensity, shakeTime);
     }
 
     public override void Damage(int damageAmount, int armorPenetration)
     {
         base.Damage(damageAmount, armorPenetration);
+
+        AudioManager.instance.PlaySFXAdjusted(16);
 
         var mainModule = _particleSystem.main;
         var emissionModule = _particleSystem.emission;

@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
     public SpriteRenderer[] sprites { get; set; }
 
     [field: SerializeField] public GameObject deathEffect { get; set; }
+    [field: SerializeField] public int deathSound { get; set; }
 
     public Vector2 initialPosition { get; set; }
     public bool isHovering { get; set; }
@@ -194,7 +195,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
     {
         if (isAlive)
         {
-            //AudioManager.instance.PlaySFXAdjusted(12);
+            AudioManager.instance.PlaySFXAdjusted(deathSound);
 
             enemyCollider.enabled = false;
 

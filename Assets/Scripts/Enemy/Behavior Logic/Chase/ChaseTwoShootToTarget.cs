@@ -22,6 +22,9 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
     public Vector3 offsetMain;
     public Vector3 offsetSecondary;
 
+    public int soundToPlayMain;
+    public int soundToPlaySecondary;
+
     private Transform target;
 
     public override void DoAnimationTriggerEventLogic(Enemy.AnimationTriggerType triggerType)
@@ -115,6 +118,8 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
     {
         for (int i = 0; i < bulletCountMain; i++)
         {
+            AudioManager.instance.PlaySFXAdjusted(soundToPlayMain);
+
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracyMain, inaccuracyMain), 0);
 
             Vector3 shootOffsetFinal = offsetMain;
@@ -142,6 +147,8 @@ public class ChaseTwoShootToTarget : EnemyChaseSOBase
     {
         for (int i = 0; i < bulletCountSecondary; i++)
         {
+            AudioManager.instance.PlaySFXAdjusted(soundToPlaySecondary);
+
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracySecondary, inaccuracySecondary), 0);
 
             Vector3 shootOffsetFinal = offsetSecondary;

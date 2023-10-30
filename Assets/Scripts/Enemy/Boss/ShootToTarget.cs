@@ -11,6 +11,8 @@ public class ShootToTarget : ActionNode
     [SerializeField] private float inaccuracy = 1f;
     [InlineEditor][SerializeField] private GameObject bulletPrefab;
 
+    public int soundToPlay = 9;
+
     private Transform target;
 
     public bool isAimed = true;
@@ -45,6 +47,8 @@ public class ShootToTarget : ActionNode
     {
         for (int i = 0; i < bulletCount; i++)
         {
+            AudioManager.instance.PlaySFXAdjusted(soundToPlay);
+
             Vector2 direction;
             GameObject bullet;
             float angle;

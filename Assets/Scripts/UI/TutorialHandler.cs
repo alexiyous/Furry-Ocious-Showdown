@@ -22,6 +22,7 @@ public class TutorialHandler : MonoBehaviour
     void OnEnable()
     {
         isTutorialActive = true;
+
         transform.localScale = new Vector3 (0, 0, 0);
 
         transform.DOScale(originalTransform, 1f).SetEase(Ease.OutBack).SetUpdate(true);
@@ -97,12 +98,22 @@ public class TutorialHandler : MonoBehaviour
             
 
             transform.DOScale(0, .3f).SetEase(Ease.InBack).SetUpdate(true). OnComplete(() => {
-                Time.timeScale = 1;
+
+                if(!PauseHandler.isPaused)
+                {
+                    Time.timeScale = 1;
+                }
+                
                 isTutorialActive = false;
 
                 gameObject.SetActive(false);
             } );
             
         }
+    }
+
+    public void OpenTutorial()
+    {
+        gameObject.SetActive(true);
     }
 }

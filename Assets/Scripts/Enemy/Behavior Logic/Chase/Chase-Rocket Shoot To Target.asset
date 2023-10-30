@@ -17,4 +17,5 @@ MonoBehaviour:
   bulletCount: 1
   inaccuracy: 0.5
   bulletPrefab: {fileID: 1983912651402021026, guid: e2c0a75e0ff70c84f9e5c73b349762e6, type: 3}
+  soundToPlay: 15
   shootOffset: {x: -1, y: 0, z: 0}

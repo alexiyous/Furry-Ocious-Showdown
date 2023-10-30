@@ -1966,8 +1966,8 @@ GameObject:
   - component: {fileID: 5593465264911904568}
   - component: {fileID: 5593465264911904569}
   - component: {fileID: 5593465264911904570}
-  - component: {fileID: 5593465264911904571}
   - component: {fileID: 5593465264911904567}
+  - component: {fileID: 3444012270810045664}
   m_Layer: 12
   m_Name: Kamikaze Drone Enemy
   m_TagString: Enemy
@@ -2071,28 +2071,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.2242203, y: 4.1629868}
   m_EdgeRadius: 0
---- !u!114 &5593465264911904571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5593465264911904574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8035e5295bc3d8b408eb620a2e59fec7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <maxHealth>k__BackingField: 150
-  <currentHealth>k__BackingField: 0
-  <armor>k__BackingField: 10
-  <baseSpeed>k__BackingField: 3
-  <score>k__BackingField: 80
-  <deathEffect>k__BackingField: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
-  <killTimer>k__BackingField: 0.2
-  EnemyIdleBase: {fileID: 11400000, guid: e2b496b97284efb48adc835fccc66c49, type: 2}
-  EnemyChaseBase: {fileID: 11400000, guid: 152ec06dfed5b8142832b99879b23a62, type: 2}
-  EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}
 --- !u!212 &5593465264911904567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2145,6 +2123,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3444012270810045664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593465264911904574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d8fbf4130f12745b8e3ce5c41e407c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <maxHealth>k__BackingField: 150
+  <currentHealth>k__BackingField: 0
+  <armor>k__BackingField: 10
+  <baseSpeed>k__BackingField: 3
+  <score>k__BackingField: 80
+  <deathEffect>k__BackingField: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
+  <deathSound>k__BackingField: 5
+  <killTimer>k__BackingField: 0.2
+  EnemyIdleBase: {fileID: 11400000, guid: e2b496b97284efb48adc835fccc66c49, type: 2}
+  EnemyChaseBase: {fileID: 11400000, guid: 152ec06dfed5b8142832b99879b23a62, type: 2}
+  EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}
 --- !u!1 &5593465264919674564
 GameObject:
   m_ObjectHideFlags: 0

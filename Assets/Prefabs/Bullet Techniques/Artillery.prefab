@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 150
-  armorPenetration: 60
+  armorPenetration: 50
   parent: {fileID: 7958454562470241715}
 --- !u!50 &8642897283341872570
 Rigidbody2D:

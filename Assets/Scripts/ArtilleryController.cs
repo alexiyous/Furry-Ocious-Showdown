@@ -77,6 +77,8 @@ public class ArtilleryController : MonoBehaviour
 
         while (bulletCount < 5)
         {
+            AudioManager.instance.PlaySFXAdjusted(21);
+
             var randomSpawnPoint = artilleryBulletSpawnPoints[Random.Range(0, artilleryBulletSpawnPoints.Length)];
             var artilleryBulletInstance = Instantiate(artilleryBullet, randomSpawnPoint.position, Quaternion.identity);
             artilleryBulletInstance.SetActive(true);

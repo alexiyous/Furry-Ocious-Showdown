@@ -80,6 +80,7 @@ MonoBehaviour:
   <baseSpeed>k__BackingField: 3
   <score>k__BackingField: 50
   <deathEffect>k__BackingField: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
+  <deathSound>k__BackingField: 5
   <killTimer>k__BackingField: 0.2
   EnemyIdleBase: {fileID: 11400000, guid: 47a1972f4dcfdda4d871f4a2980baaf7, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: dd2607c2412b0ef429fa213b5083e576, type: 2}

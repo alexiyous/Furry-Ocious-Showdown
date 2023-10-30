@@ -657,10 +657,12 @@ MonoBehaviour:
   inUpgradeZone: 0
   cost: 1000
   targetingSize: {x: 26.2, y: 38.7}
+  thresholdLineGizmo: 0
   centerOffset: {x: 15.5, y: 0, z: 0}
   levelUpgrade: 0
   target: {fileID: 0}
   timeUntilFire: 0
+  soundToPlay: 18
   firingPoints:
   - {fileID: 913085265605425737}
   - {fileID: 913085265872361477}

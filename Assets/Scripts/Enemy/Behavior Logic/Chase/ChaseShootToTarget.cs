@@ -15,6 +15,8 @@ public class ChaseShootToTarget : EnemyChaseSOBase
 
     [SerializeField] private GameObject bulletPrefab;
 
+    public int soundToPlay;
+
     public Vector3 shootOffset;
 
     private Transform target;
@@ -118,6 +120,8 @@ public class ChaseShootToTarget : EnemyChaseSOBase
     {
         for (int i = 0; i < bulletCount; i++)
         {
+            AudioManager.instance.PlaySFXAdjusted(soundToPlay);
+
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracy, inaccuracy), 0);
 
             Vector3 shootOffsetFinal = shootOffset;

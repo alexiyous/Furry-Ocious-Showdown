@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.instance.beginGame || !canMove) return;
+        if (GameManager.instance.beginGame || !canMove || Time.timeScale == 0) return;
 
         if (movementInput != Vector2.zero)
         {

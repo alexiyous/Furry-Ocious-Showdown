@@ -34,6 +34,8 @@ public class MortarTower : Tower
     public override void Shoot()
     {
 
+        AudioManager.instance.PlaySFXAdjusted(soundToPlay);
+
         GameObject bulletObj = Instantiate(bulletPrefab, turretRotationPoint.position, Quaternion.identity);
 
         var mortarBullet = bulletObj.GetComponent<MortarBullet>();

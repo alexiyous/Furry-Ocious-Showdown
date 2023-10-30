@@ -218,10 +218,12 @@ MonoBehaviour:
   inUpgradeZone: 0
   cost: 1100
   targetingSize: {x: 26.2, y: 38.7}
+  thresholdLineGizmo: 0
   centerOffset: {x: 14.9, y: 0, z: 0}
   levelUpgrade: 0
   target: {fileID: 0}
   timeUntilFire: 0
+  soundToPlay: 19
 --- !u!61 &4370436600652511303
 BoxCollider2D:
   m_ObjectHideFlags: 0

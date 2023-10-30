@@ -863,6 +863,7 @@ MonoBehaviour:
   levelUpgrade: 0
   target: {fileID: 0}
   timeUntilFire: 0
+  soundToPlay: 20
   yOffset: 38
   speedBullet: 10
   arcHeight: 1

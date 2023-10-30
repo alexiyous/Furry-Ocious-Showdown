@@ -142,6 +142,7 @@ MonoBehaviour:
   bulletCount: 8
   inaccuracy: 3
   bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
+  soundToPlay: 9
   isAimed: 1
   startPoint: 0
 --- !u!114 &-7132062610261878391
@@ -262,6 +263,7 @@ MonoBehaviour:
   bulletCount: 6
   inaccuracy: 1
   bulletPrefab: {fileID: 1983912651402021026, guid: 0904f0a2a88ead94a9efa9d45d98a792, type: 3}
+  soundToPlay: 10
   isAimed: 1
   startPoint: 1
 --- !u!114 &-5187918407001038783
@@ -372,6 +374,7 @@ MonoBehaviour:
   bulletCount: 4
   inaccuracy: 1
   bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
+  soundToPlay: 10
   isAimed: 0
   startPoint: 1
 --- !u!114 &-3026440563250610427
@@ -519,6 +522,7 @@ MonoBehaviour:
   bulletCount: 4
   inaccuracy: 1
   bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
+  soundToPlay: 10
   isAimed: 0
   startPoint: 1
 --- !u!114 &-1329060083471006258
@@ -566,6 +570,7 @@ MonoBehaviour:
   bulletCount: 4
   inaccuracy: 1
   bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
+  soundToPlay: 10
   isAimed: 0
   startPoint: 1
 --- !u!114 &-696439371280762659
@@ -614,6 +619,7 @@ MonoBehaviour:
   bulletCount: 4
   inaccuracy: 1
   bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
+  soundToPlay: 10
   isAimed: 0
   startPoint: 1
 --- !u!114 &-356184584769325405
@@ -843,6 +849,7 @@ MonoBehaviour:
   bulletCount: 6
   inaccuracy: 3
   bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
+  soundToPlay: 9
   isAimed: 1
   startPoint: 0
 --- !u!114 &1359780149429957817
@@ -917,6 +924,7 @@ MonoBehaviour:
   bulletCount: 6
   inaccuracy: 3
   bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
+  soundToPlay: 9
   isAimed: 1
   startPoint: 0
 --- !u!114 &3362821925704772035
@@ -1011,6 +1019,7 @@ MonoBehaviour:
   bulletCount: 6
   inaccuracy: 1
   bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
+  soundToPlay: 9
   isAimed: 1
   startPoint: 0
 --- !u!114 &4264674985289443295
@@ -1206,6 +1215,7 @@ MonoBehaviour:
   bulletCount: 6
   inaccuracy: 1
   bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
+  soundToPlay: 10
   isAimed: 1
   startPoint: 1
 --- !u!114 &8422816934020564957
@@ -1232,6 +1242,7 @@ MonoBehaviour:
   bulletCount: 6
   inaccuracy: 1
   bulletPrefab: {fileID: 8047041956205088625, guid: 29f1cc5fdafca06489574976e14c553c, type: 3}
+  soundToPlay: 9
   isAimed: 1
   startPoint: 0
 --- !u!114 &8776971813438309060
@@ -1279,5 +1290,6 @@ MonoBehaviour:
   bulletCount: 6
   inaccuracy: 1
   bulletPrefab: {fileID: 1983912651402021026, guid: 314c33f8d9a6f444487f9bdcd8e21bae, type: 3}
+  soundToPlay: 10
   isAimed: 1
   startPoint: 1

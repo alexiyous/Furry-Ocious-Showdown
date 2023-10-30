@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2002b42db7d8ec24996a57f749cfaeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 150
+  damage: 120
   armorPenetration: 40
   parent: {fileID: 411903687539242404}
 --- !u!1 &411903687701814786

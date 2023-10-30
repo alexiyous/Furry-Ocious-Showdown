@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 21224981236299800}
   - component: {fileID: -7541326578341128877}
   - component: {fileID: 3586876163301000049}
+  - component: {fileID: 2998517841354725003}
   m_Layer: 0
   m_Name: Laser Container
   m_TagString: Untagged
@@ -75,6 +76,19 @@ SortingGroup:
   m_SortingLayerID: -1441942207
   m_SortingLayer: 2
   m_SortingOrder: 0
+--- !u!114 &2998517841354725003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21224981236299806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44e7569294dc9646b7bc9be247a56e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: 27
 --- !u!1 &21224981282861023
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitRate: 0.4
-  damage: 60
+  damage: 45
   armorPenetration: 100
   hitEffect: {fileID: 7678880977450364371, guid: c67ad1b5f0ac03b40bbee83dc48f3fb8, type: 3}
 --- !u!1 &21224981995640324

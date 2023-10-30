@@ -72,6 +72,8 @@ public class AirstrikeController : MonoBehaviour
 
     public IEnumerator ShootArtillery(Vector3 currentTargetPosition)
     {
+        AudioManager.instance.PlaySFXAdjusted(22);
+
         airstrikeBulletSpawnPoints[1].parent.position = new Vector3(currentTargetPosition.x + OffsetSpawnPointParent.x, currentTargetPosition.y + OffsetSpawnPointParent.y, 0f);
         List<GameObject> airstrikeBulletInstance = new List<GameObject>();
         int i = 0;

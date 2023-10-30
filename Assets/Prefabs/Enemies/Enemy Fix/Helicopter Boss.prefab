@@ -5461,6 +5461,7 @@ MonoBehaviour:
   <baseSpeed>k__BackingField: 5
   <score>k__BackingField: 10000
   <deathEffect>k__BackingField: {fileID: 6860238695463817466, guid: 4f7084083a71e644195c69c14fe5b000, type: 3}
+  <deathSound>k__BackingField: 6
   <killTimer>k__BackingField: 0
   EnemyIdleBase: {fileID: 11400000, guid: 9746179f64249254b9f607674bdbc874, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: 23b65e96ba9eaa64d8cc1093682ecfe0, type: 2}

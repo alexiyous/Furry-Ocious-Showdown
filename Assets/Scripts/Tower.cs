@@ -41,6 +41,8 @@ public class Tower : MonoBehaviour
     [HideInInspector] public Transform target;
     [HideInInspector] public float timeUntilFire;
 
+    public int soundToPlay;
+
     public void Start()
     {
         
@@ -88,6 +90,8 @@ public class Tower : MonoBehaviour
 
     public virtual void Shoot()
     {
+        AudioManager.instance.PlaySFXAdjusted(soundToPlay);
+
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, turretRotationPoint.rotation);
         TowerBullet bulletScript = bulletObj.GetComponent<TowerBullet>();
         bulletScript.bulletLevel = levelUpgrade;

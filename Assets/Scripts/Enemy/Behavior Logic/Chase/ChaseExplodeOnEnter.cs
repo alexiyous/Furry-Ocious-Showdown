@@ -8,6 +8,8 @@ public class ChaseExplodeOnEnter : EnemyChaseSOBase
 
     [SerializeField] private GameObject explosionPrefab;
 
+    public int soundToPlay;
+
     public override void DoAnimationTriggerEventLogic(Enemy.AnimationTriggerType triggerType)
     {
         base.DoAnimationTriggerEventLogic(triggerType);
@@ -16,6 +18,8 @@ public class ChaseExplodeOnEnter : EnemyChaseSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
+
+        AudioManager.instance.PlaySFXAdjusted(soundToPlay);
     }
 
     public override void DoExitLogic()
@@ -59,6 +63,8 @@ public class ChaseExplodeOnEnter : EnemyChaseSOBase
 
     private void Explode()
     {
+        AudioManager.instance.StopSFX(soundToPlay);
+
         ObjectPoolManager.SpawnObject(explosionPrefab, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
 
         enemy.Die();

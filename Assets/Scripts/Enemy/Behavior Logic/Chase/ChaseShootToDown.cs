@@ -20,6 +20,8 @@ public class ChaseShootToDown : EnemyChaseSOBase
     [SerializeField] private float _exitTimer;
     [SerializeField] private float _timeTillExit = 2f;
 
+    public int soundToPlay;
+
     public override void DoAnimationTriggerEventLogic(Enemy.AnimationTriggerType triggerType)
     {
         base.DoAnimationTriggerEventLogic(triggerType);
@@ -109,6 +111,8 @@ public class ChaseShootToDown : EnemyChaseSOBase
     private void Shoot()
     {
         isShooting = true;
+
+        AudioManager.instance.PlaySFXAdjusted(soundToPlay);
 
         Vector3 shootInaccuracy = new Vector3(Random.Range(-inaccuracy, inaccuracy), 0, 0);
 

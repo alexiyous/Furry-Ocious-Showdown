@@ -1680,12 +1680,16 @@ MonoBehaviour:
   <baseSpeed>k__BackingField: 2
   <score>k__BackingField: 400
   <deathEffect>k__BackingField: {fileID: 1589043012766816229, guid: 8d14a64b7dba70d4696a63e612ef1bc6, type: 3}
+  <deathSound>k__BackingField: 6
   <killTimer>k__BackingField: 0
   EnemyIdleBase: {fileID: 11400000, guid: 372ca88e27dd90c4585eaec9bb847c87, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: c90aa7796f126c74dbb0ee5d1400a891, type: 2}
   EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}
   shakeIntensity: 5
   shakeTime: 0.2
+  lowHitSound: 16
+  highHitSound: 25
+  aliveSound: 11
 --- !u!50 &8491327713027037162
 Rigidbody2D:
   serializedVersion: 4
