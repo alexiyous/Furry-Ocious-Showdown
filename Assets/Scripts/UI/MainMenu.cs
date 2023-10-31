@@ -19,12 +19,17 @@ public class MainMenu : MonoBehaviour
     }
     public void playGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Level 1");
 
     }
 
     public void quitGame()
     {
         Application.Quit();
+    }
+
+    public void openCredits()
+    {
+        SceneManager.LoadScene("Credit");
     }
 }
