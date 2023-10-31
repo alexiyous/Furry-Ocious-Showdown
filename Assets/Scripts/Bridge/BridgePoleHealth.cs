@@ -40,6 +40,8 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
 
     public void Damage(int damageAmount, int armorPenetration)
     {
+        AudioManager.instance.PlaySFXAdjusted(32);
+
         float damage = damageAmount * ((float)armorPenetration / (float)armor);
 
         if(damage < 1)
@@ -91,6 +93,8 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        AudioManager.instance.PlaySFXAdjusted(33);
+
         isDead = true;
 
         bridgeSR1.color = Color.red;

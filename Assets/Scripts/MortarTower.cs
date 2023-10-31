@@ -63,7 +63,7 @@ public class MortarTower : Tower
     {
         if (ScoreManager.instance.currentScore >= cost)
         {
-
+            AudioManager.instance.PlaySFXAdjusted(34);
             // IMPLEMENT SPAWN EFFECT
 
             // IMPLEMENT COIN DEDUCTION

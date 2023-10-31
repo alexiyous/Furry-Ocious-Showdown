@@ -111,6 +111,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void Damage(int damageAmount, int armorPenetration)
     {
+        AudioManager.instance.PlaySFXAdjusted(31);
+
         isInvulnerable = true;
         playerCollider.enabled = false;
         float damage = damageAmount * ((float)armorPenetration / (float)armor);

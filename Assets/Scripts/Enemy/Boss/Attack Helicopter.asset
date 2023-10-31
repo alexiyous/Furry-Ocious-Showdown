@@ -444,10 +444,10 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   startSpeed: 0
-  newSpeed: 3
+  newSpeed: 4
   pointIndex: 3
   timeToNewSpeed: 0
-  moveEase: 0
+  moveEase: 27
 --- !u!114 &-2047565912200541110
 MonoBehaviour:
   m_ObjectHideFlags: 0

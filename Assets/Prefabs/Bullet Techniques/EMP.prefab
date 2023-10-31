@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3643732322243283818}
   - component: {fileID: 3643732322243283819}
   - component: {fileID: 2598155239078816029}
+  - component: {fileID: 4698334477798409250}
   m_Layer: 0
   m_Name: EMP
   m_TagString: Untagged
@@ -134,3 +135,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeToDestroy: 1
+--- !u!114 &4698334477798409250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3643732322243283732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44e7569294dc9646b7bc9be247a56e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: 28

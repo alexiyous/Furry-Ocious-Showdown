@@ -190,7 +190,7 @@ public class Tower : MonoBehaviour
     {
         if (ScoreManager.instance.currentScore >= cost)
         {
-
+            AudioManager.instance.PlaySFXAdjusted(34);
             // IMPLEMENT SPAWN EFFECT
 
             // IMPLEMENT COIN DEDUCTION

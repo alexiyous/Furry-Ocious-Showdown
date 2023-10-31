@@ -8,6 +8,8 @@ public class MainMusicAudioCall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         if (playMainMusicIndex == 1)
         {
             AudioManager.instance.PlayMainMusic(playMainMusicIndex, 1f);

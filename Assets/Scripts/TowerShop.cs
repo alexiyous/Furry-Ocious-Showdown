@@ -100,6 +100,7 @@ public class TowerShop : MonoBehaviour
         ScoreManager.instance.currentScore -= towerCost[index];
         PlayerController.canMove = true;
         Instantiate(towerPrefab[index], currentSpawnPoint.position, Quaternion.identity);
+        AudioManager.instance.PlaySFXAdjusted(34);
         currentSpawnPoint = null;
         Destroy(currentSpawner);
         currentSpawner = null;
