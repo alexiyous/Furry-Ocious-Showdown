@@ -1968,6 +1968,7 @@ GameObject:
   - component: {fileID: 5593465264911904570}
   - component: {fileID: 5593465264911904567}
   - component: {fileID: 3444012270810045664}
+  - component: {fileID: 4139671369830171812}
   m_Layer: 12
   m_Name: Kamikaze Drone Enemy
   m_TagString: Enemy
@@ -2146,6 +2147,19 @@ MonoBehaviour:
   EnemyIdleBase: {fileID: 11400000, guid: e2b496b97284efb48adc835fccc66c49, type: 2}
   EnemyChaseBase: {fileID: 11400000, guid: 152ec06dfed5b8142832b99879b23a62, type: 2}
   EnemyAttackBase: {fileID: 11400000, guid: 5632ddb55e17b954d8e1eaa12d30f0e4, type: 2}
+--- !u!114 &4139671369830171812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593465264911904574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44e7569294dc9646b7bc9be247a56e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: 42
 --- !u!1 &5593465264919674564
 GameObject:
   m_ObjectHideFlags: 0

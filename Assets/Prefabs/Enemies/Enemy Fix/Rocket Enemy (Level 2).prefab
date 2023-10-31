@@ -159,7 +159,7 @@ MonoBehaviour:
   <currentHealth>k__BackingField: 0
   <armor>k__BackingField: 20
   <baseSpeed>k__BackingField: 3
-  <score>k__BackingField: 125
+  <score>k__BackingField: 85
   <deathEffect>k__BackingField: {fileID: 2937120575847993534, guid: 9fe0f71c4e7d9fd4182effbccc9f1f18, type: 3}
   <deathSound>k__BackingField: 26
   <killTimer>k__BackingField: 1

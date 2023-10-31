@@ -90,7 +90,7 @@ public class MortarBullet : TowerBullet
         }
 
         // Do something when we reach the target
-        if ((nextPos - targetPos).sqrMagnitude < 0.05f)
+        if ((nextPos - targetPos).sqrMagnitude < 0.1f)
         {
             ObjectPoolManager.SpawnObject(explosionToUse, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
             Destroy(gameObject); // Destroy the game object after timeToHit seconds
