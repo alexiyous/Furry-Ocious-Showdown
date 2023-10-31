@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 using TMPro;
 
 public class StartAnyKey : MonoBehaviour
 {
-    public GameObject buttons;
+    public CanvasGroup buttons;
+
+    public GameObject background;
+    public CanvasGroup logo;
 
     private bool isBlinking = false;
     private bool isPressed = false;
@@ -18,6 +22,8 @@ public class StartAnyKey : MonoBehaviour
 
     public float blinkDuration = 0.5f; // Duration of each blink cycle
     public float blinkAlpha = 0.5f;    // Target alpha during the blink
+
+    public float targetPosition; // The target position you want to move the UI element to
 
     // Start is called before the first frame update
     void Start()
@@ -45,12 +51,15 @@ public class StartAnyKey : MonoBehaviour
 
                 // Fade out the TextMeshPro text by modifying the alpha of its color
                 sequence.Append(text.DOColor(new Color(initialTextColor.r, initialTextColor.g, initialTextColor.b, 0.0f), fadeDuration));
-
+                sequence.Join(background.transform.DOMoveX(targetPosition, 1f));
+                sequence.Join(logo.DOFade(0, 1f));
                 // When the animation is complete, set the GameObject inactive and activate 'buttons'
                 sequence.OnComplete(() =>
                 {
                     gameObject.SetActive(false);
-                    buttons.SetActive(true);
+                    buttons.gameObject.SetActive(true);
+                    buttons.DOFade(1f,1f);
+                    logo.gameObject.SetActive(false);
                 });
             }
         }
