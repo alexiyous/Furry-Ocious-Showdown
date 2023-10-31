@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
+
     BoxCollider2D boxCollider2D;
 
     [SerializeField] private float timeBetweenSpawn;

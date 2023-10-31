@@ -776,6 +776,7 @@ MonoBehaviour:
   animationDuration: 0.1
   scaleMultiplier: 1.1
   selector: {fileID: 4655933947205298615}
+  clickSound: 36
 --- !u!1 &4655933946955877208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1240,7 @@ MonoBehaviour:
   animationDuration: 0.1
   scaleMultiplier: 1.1
   selector: {fileID: 4655933947205298615}
+  clickSound: 37
 --- !u!1 &4655933947359314042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4655933947471243217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1665,6 +1667,7 @@ MonoBehaviour:
   animationDuration: 0.1
   scaleMultiplier: 1.05
   selector: {fileID: 4655933947205298615}
+  clickSound: 37
 --- !u!1 &4655933947638220580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1857,7 @@ MonoBehaviour:
   animationDuration: 0.1
   scaleMultiplier: 1.1
   selector: {fileID: 4655933947205298615}
+  clickSound: 36
 --- !u!1 &4981058604294391671
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private Vector3 originalScale;
 
+    public int clickSound = 36;
+
     private void Start()
     {
         originalScale = transform.localScale;
@@ -43,6 +45,8 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnSelect(BaseEventData eventData)
     {
+        AudioManager.instance.PlaySFXAdjusted(35);
+
         transform.DOScale(originalScale * scaleMultiplier, animationDuration).SetUpdate(true);
 
         if(selector == null) return;
@@ -56,6 +60,8 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        AudioManager.instance.PlaySFXAdjusted(clickSound);
+
         transform.DOScale(originalScale, animationDuration).SetUpdate(true).OnComplete(() =>
         {
             transform.DOScale(originalScale * scaleMultiplier, animationDuration).SetUpdate(true);

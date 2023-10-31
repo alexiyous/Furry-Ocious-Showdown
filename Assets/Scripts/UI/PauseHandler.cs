@@ -28,7 +28,7 @@ public class PauseHandler : MonoBehaviour
 
     public void Pause()
     {
-        /*AudioManager.instance.PlaySFXAdjusted(0);*/
+        AudioManager.instance.PlaySFXAdjusted(38);
 
         pauseMenu.SetActive(true);
 
@@ -40,7 +40,7 @@ public class PauseHandler : MonoBehaviour
 
     public void Unpause()
     {
-        /*AudioManager.instance.PlaySFXAdjusted(0);*/
+        AudioManager.instance.PlaySFXAdjusted(39);
 
         pauseMenu.SetActive(false);
 

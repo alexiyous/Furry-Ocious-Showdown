@@ -4646,10 +4646,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial Menu 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4655933947471243218, guid: 46d8979a57b3b1f4fa48d4e80f130f63, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46d8979a57b3b1f4fa48d4e80f130f63, type: 3}
 --- !u!1 &328276329
@@ -16601,6 +16597,10 @@ PrefabInstance:
       value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 3069788546853373074, guid: 96760c1533ef8f04ba50872f043a5d11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069788546853373074, guid: 96760c1533ef8f04ba50872f043a5d11, type: 3}
       propertyPath: m_TagString
       value: Spawner
       objectReference: {fileID: 0}
@@ -19680,7 +19680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749734803921960843, guid: ed968ed621f4af0459767575c269b4b7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed968ed621f4af0459767575c269b4b7, type: 3}

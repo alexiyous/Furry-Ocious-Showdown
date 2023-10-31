@@ -25,4 +25,4 @@ MonoBehaviour:
   offsetMain: {x: -2, y: 2.5, z: 0}
   offsetSecondary: {x: -2, y: 2, z: 0}
   soundToPlayMain: 12
-  soundToPlaySecondary: 4
+  soundToPlaySecondary: 41

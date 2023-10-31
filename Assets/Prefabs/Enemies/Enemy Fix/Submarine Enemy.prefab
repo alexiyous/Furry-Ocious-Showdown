@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 7563918481328110016}
   - component: {fileID: 5460372217704243681}
   - component: {fileID: 8137214720168134625}
+  - component: {fileID: 120664334005769588}
   m_Layer: 0
   m_Name: Submarine Enemy
   m_TagString: Untagged
@@ -195,6 +196,19 @@ SortingGroup:
   m_SortingLayerID: -1384759829
   m_SortingLayer: 1
   m_SortingOrder: 2
+--- !u!114 &120664334005769588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415998655183517244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44e7569294dc9646b7bc9be247a56e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay: 40
 --- !u!1 &1576424788582676798
 GameObject:
   m_ObjectHideFlags: 0

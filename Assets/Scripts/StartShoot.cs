@@ -69,6 +69,8 @@ public class StartShoot : MonoBehaviour
     {
         for (int i = 0; i < bulletCount; i++)
         {
+            AudioManager.instance.PlaySFXAdjusted(4);
+
             Vector3 shootInaccuracy = new Vector3(0, Random.Range(-inaccuracy, inaccuracy), 0);
 
             Vector2 direction = (target.position - shootPoint.position + shootInaccuracy).normalized;
