@@ -30,6 +30,6 @@ public class CreditsHandler : MonoBehaviour
 
     public void OpenMainScene()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneTransitionHandler.instance.EndTransition("Main Menu");
     }
 }

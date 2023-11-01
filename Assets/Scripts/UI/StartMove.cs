@@ -25,7 +25,11 @@ public class StartMove : MonoBehaviour
 
         // Use DoTween to move the UI element
         rectTransform.anchoredPosition = initialPosition; // Set the initial position
-        rectTransform.DOAnchorPos(finalPosition, duration).SetEase(easeType);
+        rectTransform.DOAnchorPos(finalPosition, duration).SetEase(easeType).OnComplete(() =>
+        {
+
+            SceneTransitionHandler.instance.EndTransition("Main Menu");
+        });
 
     }
 

@@ -653,7 +653,7 @@ MonoBehaviour:
   rotationSpeed: 200
   bps: 5
   bps2: 4
-  bps3: 9
+  bps3: 10
   inUpgradeZone: 0
   cost: 1000
   targetingSize: {x: 26.2, y: 38.7}

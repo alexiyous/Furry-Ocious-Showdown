@@ -75,6 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8cf4616ef9e3fb4da4e6ed7fccc72e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
-  armorPenetration: 40
+  damage: 250
+  armorPenetration: 60
   explosionEffect: {fileID: 1039657656470077013, guid: 3fe5c724ac5c13542b94fb542ed3a09b, type: 3}

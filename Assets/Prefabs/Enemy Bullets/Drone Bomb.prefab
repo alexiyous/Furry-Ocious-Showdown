@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79be5651c41bff439c0db1ec0ae0a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 9
 --- !u!58 &2042198054978686738
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -586,8 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8754d6d1533016241a881ccd9895d260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
-  armorPenetration: 10
+  damage: 25
+  armorPenetration: 20
   hitEffect: {fileID: 146258226600307552, guid: 2c9694686d64a2846951c21705e5ecde, type: 3}
 --- !u!50 &6090583707678594223
 Rigidbody2D:

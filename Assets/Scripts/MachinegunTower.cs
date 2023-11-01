@@ -65,6 +65,7 @@ public class MachinegunTower : Tower
         int randomIndex = UnityEngine.Random.Range(0, firingPoints.Count);
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoints[randomIndex].position, turretRotationPoint.rotation);
         TowerBullet bulletScript = bulletObj.GetComponent<TowerBullet>();
+        bulletScript.bulletLevel = levelUpgrade;
         bulletScript.SetTarget(target);
     }
 }

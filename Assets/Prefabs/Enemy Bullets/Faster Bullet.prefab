@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  armorPenetration: 10
+  armorPenetration: 20
   hitEffect: {fileID: 2937120575847993534, guid: 9fe0f71c4e7d9fd4182effbccc9f1f18, type: 3}
 --- !u!50 &-1104939935157371857
 Rigidbody2D:

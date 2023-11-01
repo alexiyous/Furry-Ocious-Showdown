@@ -10,10 +10,12 @@ public class PauseHandler : MonoBehaviour
     [HideInInspector]
     public static bool isPaused = false;
 
+    public static bool ableToPause = true;
+
     private void Update()
     {
         // Check if the "Esc" key is pressed
-        if (Input.GetKeyDown(KeyCode.Escape) && !TutorialHandler.isTutorialActive)
+        if (Input.GetKeyDown(KeyCode.Escape) && !TutorialHandler.isTutorialActive && ableToPause)
         {
             if (isPaused)
             {
@@ -28,6 +30,9 @@ public class PauseHandler : MonoBehaviour
 
     public void Pause()
     {
+        if(!ableToPause) return;
+        if(TutorialHandler.isTutorialActive) return;
+
         AudioManager.instance.PlaySFXAdjusted(38);
 
         pauseMenu.SetActive(true);
@@ -52,6 +57,7 @@ public class PauseHandler : MonoBehaviour
     public void Quit()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Main Menu");
+        isPaused = false;
+        SceneTransitionHandler.instance.EndTransition("Main Menu");
     }
 }

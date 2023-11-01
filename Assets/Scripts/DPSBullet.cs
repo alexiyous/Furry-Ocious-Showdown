@@ -21,7 +21,7 @@ public class DPSBullet : TowerBullet
             case LevelUpgrade.Level3:
                 damage = damage3;
                 armor = armor3;
-                rb.velocity = transform.position * bulletSpeed * 1.5f;
+                rb.velocity = transform.up * bulletSpeed * 1.5f;
                 break;
         }
     }

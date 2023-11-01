@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 3069788546853373077}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3069788546853373079
 Transform:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 45.61, y: 10.6}
+  m_Size: {x: 45.61, y: 1.1793642}
   m_EdgeRadius: 0
 --- !u!114 &3069788546853373077
 MonoBehaviour:
@@ -71,6 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e3dab576095b143a7c9fa6e5860a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenSpawn: 15
-  randomTime: 10
+  timeBetweenSpawn: 30
+  randomTime: 5
   objectToSpawn: {fileID: 1415998655183517244, guid: 9ecb01a051ef8be4b8b6b510fcdcd182, type: 3}

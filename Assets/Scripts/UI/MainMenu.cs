@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     }
     public void playGame()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneTransitionHandler.instance.EndTransition("Level 1");
 
     }
 
@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void openCredits()
     {
-        SceneManager.LoadScene("Credit");
+        SceneTransitionHandler.instance.EndTransition("Credit");
+
     }
 }

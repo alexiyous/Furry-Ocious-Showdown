@@ -33,12 +33,11 @@ public class IntroVideoController : MonoBehaviour
         // Unsubscribe from the event to prevent multiple calls
         vp.loopPointReached -= VideoEnded;
 
-        // Load the specified scene
-        SceneManager.LoadScene(sceneToLoad);
+        SceneTransitionHandler.instance.EndTransition(sceneToLoad);
     }
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneTransitionHandler.instance.EndTransition(sceneToLoad);
     }
 }

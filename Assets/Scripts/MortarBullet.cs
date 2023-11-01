@@ -1,4 +1,5 @@
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class MortarBullet : TowerBullet
 {
@@ -9,9 +10,9 @@ public class MortarBullet : TowerBullet
     public float hitZone2;
     public float hitZone3;
 
-    public GameObject explosion1;
-    public GameObject explosion2;
-    public GameObject explosion3;
+    [InlineEditor] public GameObject explosion1;
+    [InlineEditor] public GameObject explosion2;
+    [InlineEditor] public GameObject explosion3;
 
     private GameObject explosionToUse;
 
