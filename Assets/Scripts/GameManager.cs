@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public bool hasWon = false;
+    public bool hasLost = false;
+
     [HideInInspector] public bool beginGame;
     public int DebugCoin = 999999;
     public bool isTargeting = false;
@@ -24,5 +27,18 @@ public class GameManager : MonoBehaviour
         }
 
         beginGame = true;
+    }
+
+    public IEnumerator Defeat()
+    {
+        if(!hasWon)
+        {
+            hasLost = true;
+            PauseHandler.ableToPause = false;
+
+            yield return new WaitForSecondsRealtime(1f);
+
+            SceneTransitionHandler.instance.EndTransition("Defeat");
+        }
     }
 }

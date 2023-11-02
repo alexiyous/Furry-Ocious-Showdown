@@ -216,7 +216,7 @@ MonoBehaviour:
   bps2: 0.3
   bps3: 0.5
   inUpgradeZone: 0
-  cost: 1100
+  cost: 1300
   targetingSize: {x: 26.2, y: 38.7}
   thresholdLineGizmo: 0
   centerOffset: {x: 14.9, y: 0, z: 0}

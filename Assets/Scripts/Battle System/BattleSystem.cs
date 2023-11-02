@@ -119,6 +119,7 @@ public class BattleSystem : MonoBehaviour
                 if(areWavesOver())
                 {
                     Debug.Log("battle over");
+                    StartCoroutine(Victory());
                     state = State.BattleEnd;
                     OnBattleEnd?.Invoke(this, EventArgs.Empty);
                 }
@@ -138,6 +139,21 @@ public class BattleSystem : MonoBehaviour
         }
 
         return true;
+    }
+
+    public IEnumerator Victory()
+    {
+        if (!GameManager.instance.hasLost)
+        {
+            GameManager.instance.hasWon = true;
+            PauseHandler.ableToPause = false;
+
+            yield return new WaitForSecondsRealtime(3f);
+
+            SceneTransitionHandler.instance.EndTransition("Victory");
+        }
+
+
     }
 
     [System.Serializable]

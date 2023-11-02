@@ -52,7 +52,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &472288607649309784
 Transform:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   <maxHealth>k__BackingField: 220
   <currentHealth>k__BackingField: 0
   <armor>k__BackingField: 20
-  <baseSpeed>k__BackingField: 3
+  <baseSpeed>k__BackingField: 3.5
   <score>k__BackingField: 85
   <deathEffect>k__BackingField: {fileID: 2937120575847993534, guid: 9fe0f71c4e7d9fd4182effbccc9f1f18, type: 3}
   <deathSound>k__BackingField: 26

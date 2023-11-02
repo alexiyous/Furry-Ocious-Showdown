@@ -19,6 +19,8 @@ public class BridgeTotalHealth : MonoBehaviour
     public float shakeIntensity = 6f;
     public float shakeDuration = .8f;
 
+    public bool hasDied = false;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -62,7 +64,15 @@ public class BridgeTotalHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             // Handle the game over or other logic here
-            Debug.Log("Game Over"); 
+            if(!hasDied)
+            {
+                hasDied = true;
+                GameManager.instance.hasLost = true;
+                Debug.Log("Game Over");
+                StartCoroutine(GameManager.instance.Defeat());
+            }
+
+            
         }
     }
 }

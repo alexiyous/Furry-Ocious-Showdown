@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private Color originalColor;
     private bool isInvulnerable = false;
 
+    private bool hasDead = false;
+
     /*public int maxHealth = 200;
     public int currentHealth;*/
 
@@ -103,10 +105,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [Button]
     private void PlayerDead()
     {
-        /*Instantiate(deathEffect, transform.position, transform.rotation);
-        countDownMenu.SetActive(true);*/
-        /*gameObject.SetActive(false);*/
-        anim.SetBool("isDead", true);
+        if(!hasDead)
+        {
+            hasDead = true;
+            GameManager.instance.hasLost = true;
+            playerCollider.enabled = false;
+            anim.SetBool("isDead", true);
+            StartCoroutine(GameManager.instance.Defeat());
+        }
+        
     }
 
     public void Damage(int damageAmount, int armorPenetration)
