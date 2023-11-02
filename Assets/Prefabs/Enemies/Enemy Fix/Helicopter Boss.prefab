@@ -5401,7 +5401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8907714912818035842
 Transform:
   m_ObjectHideFlags: 0
@@ -5455,9 +5455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2866393e2dccf2546a184e01049a594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <maxHealth>k__BackingField: 5000
+  <maxHealth>k__BackingField: 8000
   <currentHealth>k__BackingField: 0
-  <armor>k__BackingField: 50
+  <armor>k__BackingField: 80
   <baseSpeed>k__BackingField: 5
   <score>k__BackingField: 10000
   <deathEffect>k__BackingField: {fileID: 6860238695463817466, guid: 4f7084083a71e644195c69c14fe5b000, type: 3}
@@ -5488,8 +5488,8 @@ MonoBehaviour:
   - {fileID: 0}
   _particleSystem: {fileID: 6395198614569612260}
   pointIndex: 0
-  shakeIntensity: 5
-  shakeTime: 0.2
+  shakeIntensity: 6
+  shakeTime: 0.3
 --- !u!212 &7761384448679689405
 SpriteRenderer:
   m_ObjectHideFlags: 0

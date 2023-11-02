@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3879c37e2411a63479a3353b6d2311a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Main Menu
+  sceneName: Credit
 --- !u!114 &641047921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89260350427f96f4eb2e374520fa7ab7, type: 2}
   m_sharedMaterial: {fileID: 2125698521985195062, guid: 89260350427f96f4eb2e374520fa7ab7, type: 2}

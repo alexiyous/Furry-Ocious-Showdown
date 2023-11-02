@@ -235,7 +235,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   startSpeed: 0
-  newSpeed: 5
+  newSpeed: 6
   pointIndex: 6
   timeToNewSpeed: 1
   moveEase: 26
@@ -307,7 +307,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  duration: 3
+  duration: 5
 --- !u!114 &-4005925959107330091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  duration: 4
+  duration: 5
 --- !u!114 &-741621621376644785
 MonoBehaviour:
   m_ObjectHideFlags: 0
