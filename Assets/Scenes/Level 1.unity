@@ -30753,7 +30753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749734803921960842, guid: ed968ed621f4af0459767575c269b4b7, type: 3}
       propertyPath: waveArray.Array.data[0].timer
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5749734803921960842, guid: ed968ed621f4af0459767575c269b4b7, type: 3}
       propertyPath: waveArray.Array.data[1].timer
@@ -30769,7 +30769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749734803921960842, guid: ed968ed621f4af0459767575c269b4b7, type: 3}
       propertyPath: waveArray.Array.data[4].timer
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5749734803921960842, guid: ed968ed621f4af0459767575c269b4b7, type: 3}
       propertyPath: waveArray.Array.data[5].timer
