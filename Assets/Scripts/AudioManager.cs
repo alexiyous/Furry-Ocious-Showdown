@@ -87,6 +87,14 @@ public class AudioManager : MonoBehaviour
         sfx[index].Stop();
     }
 
+    public void StopAllSFX()
+    {
+        foreach (var sfx in sfx)
+        {
+            sfx.Stop();
+        }
+    }
+
     public void StopSFX(int index, float fadeTime)
     {
         StartCoroutine(FadeOut(sfx[index], fadeTime));

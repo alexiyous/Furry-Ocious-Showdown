@@ -26,5 +26,6 @@ public class MainMusicAudioCall : MonoBehaviour
     {
         if (AudioManager.instance == null) return;
         AudioManager.instance.StopMainMusic(1f);
+        AudioManager.instance.StopAllSFX();
     }
 }
