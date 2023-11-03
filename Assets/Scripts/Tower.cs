@@ -176,6 +176,7 @@ public class Tower : MonoBehaviour
             targetRotation, rotationSpeed * Time.deltaTime);
     }
 
+#if UNITY_EDITOR
     public virtual void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
@@ -185,6 +186,7 @@ public class Tower : MonoBehaviour
             transform.position.z), new Vector3(transform.position.x + centerOffset.x + thresholdLineGizmo - targetingSize.x / 2f,
             transform.position.y + centerOffset.y + targetingSize.y / 2f, transform.position.z));
     }
+#endif
 
     public virtual void UpgradeTower()
     {
