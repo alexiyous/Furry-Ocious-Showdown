@@ -16,13 +16,14 @@ GameObject:
   - component: {fileID: 2649436540659953842}
   - component: {fileID: 708762602}
   - component: {fileID: 1966421514315590793}
+  - component: {fileID: 5745182321150205884}
   m_Layer: 12
   m_Name: Bomber Drone Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2649436540659953852
 Transform:
   m_ObjectHideFlags: 0
@@ -209,6 +210,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 42
+--- !u!114 &5745182321150205884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649436540659953854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000eb3d76ad41b50daa395fdd5ad137428fcb23ff8e519d54fe
+  m_ShapePath:
+  - {x: -1.0577983, y: 0.5666795, z: 0}
+  - {x: 0.9696497, y: 0.5163088, z: 0}
+  - {x: 2.8581283, y: 0.24373356, z: 0}
+  - {x: 2.8460228, y: 0.01772308, z: 0}
+  - {x: 1.2809671, y: -0.118758045, z: 0}
+  - {x: -1.2089112, y: -0.10074314, z: 0}
+  - {x: -2.8698559, y: 0.057318844, z: 0}
+  - {x: -2.8331966, y: 0.22552712, z: 0}
+  m_ShapePathHash: -528199419
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -389776
 --- !u!1 &2649436541216408434
 GameObject:
   m_ObjectHideFlags: 0

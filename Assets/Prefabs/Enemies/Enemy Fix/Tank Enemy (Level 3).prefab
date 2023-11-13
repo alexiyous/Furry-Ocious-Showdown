@@ -462,8 +462,8 @@ MonoBehaviour:
   - {fileID: 6022410994430147283}
   - {fileID: 6022410995673719393}
   m_Bounds:
-    m_Center: {x: 0.13756703, y: 0.25163257, z: 2.0372681e-10}
-    m_Extent: {x: 0.36724502, y: 0.42000997, z: 1.3877788e-17}
+    m_Center: {x: 0.137566, y: 0.25163293, z: 2.0372681e-10}
+    m_Extent: {x: 0.36724606, y: 0.4200101, z: 1.3877788e-17}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -777,7 +777,7 @@ MonoBehaviour:
   - {fileID: 6022410994713680398}
   - {fileID: 6022410993814034592}
   m_Bounds:
-    m_Center: {x: -0.0028947592, y: -0.108988196, z: 2.0372681e-10}
+    m_Center: {x: -0.0028985739, y: -0.108988196, z: 2.0372681e-10}
     m_Extent: {x: 1.0790851, y: 0.31823507, z: 6.938894e-18}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1198,6 +1198,7 @@ GameObject:
   - component: {fileID: 6022410994977147094}
   - component: {fileID: 6022410994977147095}
   - component: {fileID: 1959787889840324733}
+  - component: {fileID: 8316282051978215701}
   m_Layer: 11
   m_Name: Tank Enemy (Level 3)
   m_TagString: Enemy
@@ -1397,6 +1398,48 @@ SortingGroup:
   m_SortingLayerID: -1384759829
   m_SortingLayer: 1
   m_SortingOrder: 1
+--- !u!114 &8316282051978215701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022410994977147098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000eb3d76ad41b50daa395fdd5ad137428fcb23ff8e519d54fe
+  m_ShapePath:
+  - {x: -1.885343, y: 2.6512644, z: 3.541445e-12}
+  - {x: -1.2390872, y: 2.789837, z: 0.000000008419107}
+  - {x: -1.2102702, y: 3.548673, z: 0.000000008419107}
+  - {x: -0.53787225, y: 4.067371, z: 0.000000008419107}
+  - {x: -0.12482787, y: 4.2498746, z: 0.000000008419107}
+  - {x: -0.44180626, y: 4.8838387, z: 0.000000008419107}
+  - {x: -0.05758349, y: 5.2680593, z: 0.000000008419107}
+  - {x: 0.3842688, y: 5.258454, z: 0.000000008419107}
+  - {x: 0.70125175, y: 4.797389, z: 0.000000008419107}
+  - {x: 0.50914264, y: 4.25948, z: 0.000000008419107}
+  - {x: 0.89982283, y: 3.6700602, z: 0.000000008419107}
+  - {x: 1.2327218, y: 2.8027735, z: 0.000000008419107}
+  - {x: 3.3582711, y: 2.3370404, z: 3.541445e-12}
+  - {x: 4.5717587, y: 1.5699551, z: -0.0000002788322}
+  - {x: 4.589453, y: 0.31362912, z: -0.0000002788322}
+  - {x: 2.7947164, y: -0.56328535, z: 3.541445e-12}
+  - {x: -2.2965672, y: -0.63686335, z: 3.541445e-12}
+  - {x: -4.3399997, y: 0.6007009, z: 0.000000008419107}
+  - {x: -3.996787, y: 2.035939, z: 0.000000008419107}
+  m_ShapePathHash: 1969297386
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -407676
 --- !u!1 &6022410995135550840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,8 +1627,8 @@ MonoBehaviour:
   - {fileID: 6022410993933439362}
   - {fileID: 6022410995367715213}
   m_Bounds:
-    m_Center: {x: -0.0028928518, y: -0.10898796, z: 2.0372681e-10}
-    m_Extent: {x: 1.079087, y: 0.31823507, z: 6.938894e-18}
+    m_Center: {x: -0.0028947592, y: -0.108988196, z: 2.0372681e-10}
+    m_Extent: {x: 1.0790851, y: 0.31823507, z: 6.938894e-18}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1727,8 +1770,8 @@ MonoBehaviour:
   - {fileID: 6022410995729906759}
   - {fileID: 6022410994273561703}
   m_Bounds:
-    m_Center: {x: -0.00080001354, y: -0.000000059604645, z: 2.0372681e-10}
-    m_Extent: {x: 0.52419996, y: 0.4349996, z: 1.3877788e-17}
+    m_Center: {x: -0.00080382824, y: 0, z: 2.0372681e-10}
+    m_Extent: {x: 0.52419996, y: 0.43499988, z: 1.3877788e-17}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

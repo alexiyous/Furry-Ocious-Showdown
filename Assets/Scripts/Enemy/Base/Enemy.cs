@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.Rendering.Universal;
 
 public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckable, ISlowable
 {
@@ -31,6 +32,8 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
     public bool isHovering { get; set; }
 
     [field: SerializeField] public float killTimer { get; set; } = 1f;
+
+    public ShadowCaster2D shadowCaster { get; set; }
 
 
     #region State Machine Variables
@@ -78,6 +81,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
         enemyCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         sprites = GetComponentsInChildren<SpriteRenderer>();
+        shadowCaster = GetComponent<ShadowCaster2D>();
 
         originalColor = spriteRenderer.color;
         slowAmount = 1;
@@ -203,6 +207,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
             animator.speed = 1;
             animator.Play("Death");
+            shadowCaster.enabled = false;
 
             ObjectPoolManager.SpawnObject(deathEffect, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
             stateMachine.ChangeState(attackState);

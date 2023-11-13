@@ -5395,13 +5395,14 @@ GameObject:
   - component: {fileID: 7761384448679689407}
   - component: {fileID: 7761384448679689406}
   - component: {fileID: 919623229}
+  - component: {fileID: 5137138047340610716}
   m_Layer: 12
   m_Name: Helicopter Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8907714912818035842
 Transform:
   m_ObjectHideFlags: 0
@@ -5613,3 +5614,41 @@ SortingGroup:
   m_SortingLayerID: -1384759829
   m_SortingLayer: 1
   m_SortingOrder: 10
+--- !u!114 &5137138047340610716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8839942304748542649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000eb3d76ad41b50daa395fdd5ad137428fcb23ff8e519d54fe
+  m_ShapePath:
+  - {x: -4.6556797, y: 0.067773655, z: -0.000009101543}
+  - {x: -4.312786, y: 0.095227554, z: -0.0000020089506}
+  - {x: -2.8119924, y: 0.85959494, z: -0.000006038054}
+  - {x: -2.2930582, y: 0.9551412, z: -0.000003603416}
+  - {x: -1.7501143, y: 0.941863, z: -0.0000022856223}
+  - {x: -1.7501153, y: 1.1673354, z: -0.0000063769717}
+  - {x: -1.4478986, y: 1.1477289, z: -0.0000014515745}
+  - {x: -1.3975345, y: 1.0006808, z: -0.0000034565421}
+  - {x: -0.764208, y: 0.9141945, z: -0.000004533926}
+  - {x: -0.10498161, y: 0.36821598, z: -0.0000050057156}
+  - {x: 3.4121113, y: 0.19175386, z: -0.0000051463103}
+  - {x: 3.8421881, y: 1.1334374, z: -0.0000028062009}
+  - {x: 4.216677, y: 1.1521976, z: -0.000007069286}
+  - {x: 3.8635583, y: -0.32342353, z: -0.000005722524}
+  - {x: -4.6113343, y: -0.3840653, z: -0.0000048679294}
+  m_ShapePathHash: 924141659
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -411024

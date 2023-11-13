@@ -1195,8 +1195,8 @@ MonoBehaviour:
   - {fileID: 5593465264520203710}
   - {fileID: 5593465264183978846}
   m_Bounds:
-    m_Center: {x: 0.95588344, y: 0.37383914, z: 0.0000000037252903}
-    m_Extent: {x: 1.1000003, y: 0.5750037, z: 0}
+    m_Center: {x: 0.9558832, y: 0.3738358, z: 0.0000000037252903}
+    m_Extent: {x: 1.1, y: 0.5749994, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1453,8 +1453,8 @@ MonoBehaviour:
   - {fileID: 5593465265317948055}
   - {fileID: 5593465263603614955}
   m_Bounds:
-    m_Center: {x: -0.97008026, y: 0.38803178, z: 0.0000000037252903}
-    m_Extent: {x: 1.1000003, y: 0.57500017, z: 1.110223e-16}
+    m_Center: {x: -0.9700731, y: 0.38803178, z: 0.0000000037252903}
+    m_Extent: {x: 1.1000079, y: 0.57500017, z: 1.110223e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1681,8 +1681,8 @@ MonoBehaviour:
   - {fileID: 5593465264060354813}
   - {fileID: 5593465264008313607}
   m_Bounds:
-    m_Center: {x: 1.1735605, y: -0.28399628, z: 0.0000000037252903}
-    m_Extent: {x: 1.2749999, y: 0.4658299, z: 1.110223e-16}
+    m_Center: {x: 1.1735753, y: -0.28399676, z: 0.0000000037252903}
+    m_Extent: {x: 1.2749999, y: 0.4658304, z: 1.110223e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1969,13 +1969,14 @@ GameObject:
   - component: {fileID: 5593465264911904567}
   - component: {fileID: 3444012270810045664}
   - component: {fileID: 4139671369830171812}
+  - component: {fileID: 5301703592907039022}
   m_Layer: 12
   m_Name: Kamikaze Drone Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5593465264911904572
 Transform:
   m_ObjectHideFlags: 0
@@ -2160,6 +2161,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: 42
+--- !u!114 &5301703592907039022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593465264911904574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000eb3d76ad41b50daa395fdd5ad137428fcb23ff8e519d54fe
+  m_ShapePath:
+  - {x: -1.0883437, y: 0.9996811, z: 0}
+  - {x: -0.22981885, y: 1.0096141, z: 0}
+  - {x: -0.056086633, y: 0.7173379, z: 0}
+  - {x: 2.0274284, y: 1.0936567, z: 0}
+  - {x: 2.1100438, y: 0.955979, z: 0}
+  - {x: 0.121678255, y: 0.2989678, z: 0}
+  - {x: 0.18587416, y: -0.8015428, z: 0}
+  - {x: 2.4179444, y: -1.3349147, z: 0}
+  - {x: 2.3209603, y: -1.562039, z: 0}
+  - {x: 0.286564, y: -1.1958418, z: 0}
+  - {x: 0.16260451, y: -2.1887085, z: 0}
+  - {x: -1.5008215, y: -2.163695, z: 0}
+  - {x: -1.5330284, y: -1.1286883, z: 0}
+  - {x: -3.605608, y: -1.5481824, z: 0}
+  - {x: -3.6454806, y: -1.0539577, z: 0}
+  - {x: -1.4920477, y: -0.732809, z: 0}
+  - {x: -1.4828197, y: 0.2831141, z: 0}
+  - {x: -3.402448, y: 0.84320813, z: 0}
+  - {x: -3.461685, y: 1.1391492, z: 0}
+  - {x: -1.3723025, y: 0.6538016, z: 0}
+  m_ShapePathHash: -868559598
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -394898
 --- !u!1 &5593465264919674564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,8 +2392,8 @@ MonoBehaviour:
   - {fileID: 5593465264546140276}
   - {fileID: 5593465263527469063}
   m_Bounds:
-    m_Center: {x: -1.1215075, y: -0.24643573, z: 0.0000000037252903}
-    m_Extent: {x: 1.2750002, y: 0.46538624, z: 1.110223e-16}
+    m_Center: {x: -1.1214851, y: -0.24643907, z: 0.0000000037252903}
+    m_Extent: {x: 1.2750078, y: 0.46538958, z: 1.110223e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

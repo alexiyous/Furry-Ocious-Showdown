@@ -10076,7 +10076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7bc7e1d887e7748bfb1b4706f2bf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
+  fadeDuration: 1.4
   targetIntensity: 0
   targetFalloff: 1
   targetRadius: 0

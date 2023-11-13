@@ -569,7 +569,7 @@ MonoBehaviour:
   - {fileID: 8019416039099897421}
   - {fileID: 8019416038673880451}
   m_Bounds:
-    m_Center: {x: -0.023234963, y: 0.0013184547, z: -0.000000029802322}
+    m_Center: {x: -0.023250103, y: 0.0013194084, z: -0.000000029802322}
     m_Extent: {x: 1.0432351, y: 2.4186802, z: 8.881784e-16}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -678,8 +678,8 @@ MonoBehaviour:
   - {fileID: 8019416038781187492}
   - {fileID: 8019416039664451703}
   m_Bounds:
-    m_Center: {x: 0.013320625, y: -0.052205443, z: -0.000000029802322}
-    m_Extent: {x: 0.9720001, y: 1.0198654, z: 2.6645353e-15}
+    m_Center: {x: 0.013290167, y: -0.052205086, z: -0.000000029802322}
+    m_Extent: {x: 0.9720002, y: 1.0198652, z: 2.6645353e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -729,13 +729,14 @@ GameObject:
   - component: {fileID: 8019416039696093745}
   - component: {fileID: 8019416039696093744}
   - component: {fileID: 4958560249245018207}
+  - component: {fileID: 1880651295}
   m_Layer: 11
   m_Name: Rocket Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8019416039696093743
 Transform:
   m_ObjectHideFlags: 0
@@ -897,6 +898,35 @@ SortingGroup:
   m_SortingLayerID: -1384759829
   m_SortingLayer: 1
   m_SortingOrder: 1
+--- !u!114 &1880651295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019416039696093741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000eb3d76ad41b50daa395fdd5ad137428fcb23ff8e519d54fe
+  m_ShapePath:
+  - {x: -1.3187447, y: 3.4686322, z: 0.00000008195639}
+  - {x: -0.13964081, y: 4.3999066, z: 0.00000008195639}
+  - {x: 1.3306961, y: 4.3601294, z: 0.00000008195639}
+  - {x: 2.4453125, y: 3.3215082, z: 0.00000008195639}
+  - {x: 1.477066, y: -4.2561793, z: 0.00000008195639}
+  - {x: -0.48641586, y: -4.2746563, z: 0.00000008195639}
+  m_ShapePathHash: -952460175
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -382514
 --- !u!1 &8019416039759032601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,8 +1300,8 @@ MonoBehaviour:
   - {fileID: 8019416038995839554}
   - {fileID: 8019416040729135270}
   m_Bounds:
-    m_Center: {x: 0.033334732, y: -0.009970427, z: -0.00000002980232}
-    m_Extent: {x: 1.4233352, y: 1.4849699, z: 1.7763568e-15}
+    m_Center: {x: 0.033319473, y: -0.009970903, z: -0.00000002980232}
+    m_Extent: {x: 1.4233352, y: 1.4849703, z: 1.7763568e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1379,8 +1409,8 @@ MonoBehaviour:
   - {fileID: 8019416039822522696}
   - {fileID: 8019416040579050957}
   m_Bounds:
-    m_Center: {x: -0.0025548935, y: -0.07259536, z: -0.00000002980232}
-    m_Extent: {x: 2.0775561, y: 1.7754452, z: 1.7763568e-15}
+    m_Center: {x: -0.0025548935, y: -0.07259488, z: -0.00000002980232}
+    m_Extent: {x: 2.0775561, y: 1.7754457, z: 1.7763568e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1553,7 +1583,7 @@ MonoBehaviour:
   - {fileID: 8019416038643523228}
   - {fileID: 8019416039759032600}
   m_Bounds:
-    m_Center: {x: -0.0036005974, y: -0.035764575, z: -0.000000029802322}
+    m_Center: {x: -0.0036158562, y: -0.03576553, z: -0.000000029802322}
     m_Extent: {x: 1.432011, y: 1.4791553, z: 2.6645353e-15}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
