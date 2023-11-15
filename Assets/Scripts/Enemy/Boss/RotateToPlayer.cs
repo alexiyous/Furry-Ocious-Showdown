@@ -12,7 +12,7 @@ public class RotateToPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = GameObject.FindGameObjectWithTag("Player Damage").transform;
     }
 
     // Update is called once per frame

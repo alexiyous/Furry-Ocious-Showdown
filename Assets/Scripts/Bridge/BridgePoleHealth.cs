@@ -110,7 +110,7 @@ public class BridgePoleHealth : MonoBehaviour, IDamageable
 
         // Use DOTween to tween the position
         transform.DOMove(targetPosition, 1.0f)
-            .SetEase(Ease.InBack);
+            .SetEase(Ease.Linear);
 
 
         bridgePole.transform.DOLocalMoveY(-30f, 6f)

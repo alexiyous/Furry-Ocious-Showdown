@@ -8,8 +8,6 @@ public class TutorialHandler : MonoBehaviour
     public static bool isTutorialActive = false;
     public List<GameObject> tutorialPages;
 
-    public List<CanvasGroup> tutorialPages2;
-
     private int currentPage = 0;
 
     public GameObject nextButton;

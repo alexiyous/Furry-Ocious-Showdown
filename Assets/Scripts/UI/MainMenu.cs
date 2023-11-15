@@ -17,9 +17,9 @@ public class MainMenu : MonoBehaviour
     {
         /*AudioManager.instance.PlayMainMenuMusic();*/
     }
-    public void playGame()
+    public void playGame(string sceneName)
     {
-        SceneTransitionHandler.instance.EndTransition("Level 1");
+        SceneTransitionHandler.instance.EndTransition(sceneName);
 
     }
 
@@ -32,5 +32,16 @@ public class MainMenu : MonoBehaviour
     {
         SceneTransitionHandler.instance.EndTransition("Credit");
 
+    }
+
+    public void enableDisableElement(GameObject _element)
+    {
+        if(_element.activeInHierarchy == true)
+        {
+            _element.SetActive(false);
+        } else
+        {
+            _element.SetActive(true);
+        }
     }
 }
