@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5464170559930413074}
   - component: {fileID: 2874951256896124189}
   - component: {fileID: 4451476416649676148}
+  - component: {fileID: 5486905929421271447}
   m_Layer: 9
   m_Name: Mortar Bullet
   m_TagString: Untagged
@@ -111,6 +112,19 @@ MonoBehaviour:
   arcHeight: 7.23
   maxSpeedIncrease: 50
   maxArcIncrease: 7.4
+--- !u!114 &5486905929421271447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050914574477754125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adce5585ffe78544493eb4151dce2395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeToDestroy: 4
 --- !u!1 &2746906528808380777
 GameObject:
   m_ObjectHideFlags: 0

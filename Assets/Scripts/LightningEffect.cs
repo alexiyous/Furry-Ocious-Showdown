@@ -8,6 +8,8 @@ public class LightningEffect : MonoBehaviour
 {
     private Light2D _light2D;
 
+    public AudioSource[] lightningSounds;
+
     public float minStrikeDelay = 10;
     public float maxStrikeDelay = 30;
 
@@ -37,11 +39,17 @@ public class LightningEffect : MonoBehaviour
 
     IEnumerator Flash()
     {
+        
+
         float thunderDelay = Random.Range(minThunderDelay, maxThunderDelay);
 
         while(enabled)
         {
             yield return new WaitForSeconds(Random.Range(minStrikeDelay, maxStrikeDelay));
+
+            int soundIndex = Random.Range(0, lightningSounds.Length - 1);
+
+            lightningSounds[soundIndex].Play();
 
             float flashes = Random.Range(minFlash, maxFlash);
             for(int i = 0; i < flashes;i++)

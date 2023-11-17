@@ -159,9 +159,10 @@ public class BattleSystem : MonoBehaviour
     [System.Serializable]
     private class Wave
     {
-        [InlineEditor][SerializeField] private Enemy[] enemyArray;
         [SerializeField] private float timer;
         [SerializeField] private float spawnRate = .5f;
+        [Space]
+        [SerializeField] public WaveObject waveObject;
 
         private MonoBehaviour coroutineStarter;
         public Wave(MonoBehaviour starter)
@@ -182,7 +183,7 @@ public class BattleSystem : MonoBehaviour
         }
         private IEnumerator SpawnEnemies()
         {
-            foreach (Enemy enemySpawn in enemyArray)
+            foreach (Enemy enemySpawn in waveObject.enemies)
             {
                 enemySpawn.Spawn();
                 yield return new WaitForSeconds(spawnRate);
@@ -193,7 +194,7 @@ public class BattleSystem : MonoBehaviour
         {
             if(timer < 0)
             {
-                foreach(Enemy enemy in enemyArray)
+                foreach(Enemy enemy in waveObject.enemies)
                 {
                     if(enemy.isAlive)
                     {
